@@ -1,0 +1,24 @@
+{
+    "name": "predicates",
+    "version": "0.1.0",
+    "description": "Set of various predicates for type checking, assertions, filtering etc",
+    "main": "index.js",
+    "keywords": [
+        "predicates",
+        "type",
+        "check",
+        "assert",
+        "filter"
+    ],
+    "dependencies": {},
+    "devDependencies": {
+        "blanket": "^1.1.6",
+        "mocha": "^2.0.1"
+    },
+    "scripts": {
+        "test": "mocha -r ./test/bootstrap --reporter spec ./test/*Test.js",
+        "coverage": "mocha -r ./test/bootstrap -R html-cov ./test/*Test.js > coverage.html"
+    },
+    "author": "Łukasz Kużyński",
+    "license": "MIT"
+}
