@@ -3,9 +3,13 @@
     "version": "0.1.0",
     "description": "Set of various predicates for type checking, assertions, filtering etc",
     "main": "index.js",
-    "repository": "https://github.com/wookieb/predicates",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/wookieb/predicates"
+    },
     "keywords": [
         "predicates",
+        "predicate",
         "type",
         "check",
         "assert",

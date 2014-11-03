@@ -10,3 +10,12 @@ npm install predicates
 
 ##Documentation
 @TODO
+
+
+##Changelog
+
+###0.2
+* Added "startsWith" and "endsWith" functions
+* Added type checking for property names for hasOwnProperty and hasProperty predicate
+* Fixed error type declaration for @throws
+

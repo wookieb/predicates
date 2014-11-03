@@ -8,7 +8,7 @@ var isRegexp = require('./regexp'),
  *
  * @param {RegExp} regexp
  * @param {String} value
- * @throws TypeError if regexp is not a regexp
+ * @throws {TypeError} if regexp is not a regexp
  * @returns {(Boolean|Predicate)} bool if two arguments provided, otherwise a predicate
  */
 module.exports = function(regexp) {

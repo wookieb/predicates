@@ -6,7 +6,7 @@ var assertPredicates = require('./utils/assertPredicates');
  * Returns a function that calls predicates in order until one of them returns true
  *
  * @param {...Predicate} predicate
- * @throws TypeError if not every predicate is a function
+ * @throws {TypeError} if not every predicate is a function
  * @returns {Predicate}
  */
 module.exports = function(predicate) {

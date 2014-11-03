@@ -4,7 +4,7 @@
  * Function compares values using === operator
  *
  * @param {...*} allowedValue
- * @throws Error if 0 or 1 allowed value provided
+ * @throws {Error} if 0 or 1 allowed value provided
  * @returns {Predicate}
  */
 module.exports = function() {

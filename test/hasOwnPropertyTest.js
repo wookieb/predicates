@@ -7,6 +7,16 @@ describe('hasOwnProperty', function() {
         assert.ok(hasOwnProperty('property') instanceof Function);
     });
 
+    it('throws a TypeError is property is not a string', function() {
+        assert.throws(function() {
+            hasOwnProperty({});
+        }, TypeError, /must be a string/);
+
+        assert.throws(function() {
+            hasOwnProperty({})({});
+        }, TypeError, /must be a string/);
+    });
+
     it('checks whether an object has own property', function() {
         var objectWithUndefinedProperty = {
                 property: undefined
