@@ -8,16 +8,26 @@ var isFunction = require('./function'),
  * Checks whether a value is undefined or satisfies given predicate
  * Very useful to check optional arguments of function.
  *
+ * @function undefinedOr
+ *
  * @example
- * is.undefinedOr(is.string)(undefined); // true
- * is.undefinedOr(is.string)('test'); // true
- * is.undefinedOr(is.number)('test'); // false
+ * var is = require('predicates');
+ *
+ * var isUndefinedOrString = is.undefinedOr(is.string);
+ *
+ * isUndefinedOrString(undefined); // true
+ * isUndefinedOrString('test'); // true
+ * // same as
+ * is.undefinedOr(is.string, undefined); // true
+ * is.undefinedOr(is.string, 'test'); // true
+ *
+ * isUndefinedOrString({}); // false
  *
  * @param {Predicate} predicate
  * @param {*} value
  * @returns {(Boolean|Predicate)} returns bool if more than 1 argument provided, otherwise a predicate
  */
-module.exports = function(predicate, value) {
+module.exports = function undefinedOr(predicate, value) {
     if (!isFunction(predicate)) {
         throw new TypeError('Predicate must be a function');
     }

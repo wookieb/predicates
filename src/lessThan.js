@@ -5,11 +5,25 @@ var handleCurry = require('./utils/handleCurry');
 /**
  * Checks whether a value is less than expected number
  *
+ * **Aliases** _less_, _lt_
+ *
+ * @function lessThan
+ *
+ * @example
+ *
+ * var isChildAge = is.lessThan(18);
+ *
+ * isChildAge(10); // true
+ * // same as
+ * is.lessThan(18, 10); // true
+ * isChildAge(18); // false
+ * isChildAge(22); // false
+ *
  * @param {Number} expected
  * @param {Number} value
- * @returns {(Boolean|Predicate)} bool if two arguments provided, otherwise a predicate
+ * @returns {(Boolean|Predicate)} bool if at least two arguments provided, otherwise a predicate
  */
-module.exports = function(expected, value) {
+module.exports = function lessThan(expected, value) {
     return handleCurry.call(this, arguments, function(value) {
         return value < expected;
     });

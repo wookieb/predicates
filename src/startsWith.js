@@ -5,13 +5,25 @@ var isString = require('./string'),
 /**
  * Checks whether a string starts with a given prefix
  *
+ * @function startsWith
+ *
+ * @example
+ * var is = require('predicates');
+ *
+ * var isProfessor = is.startsWith('Prof. ');
+ * isProfessor('Prof. Bend Ovah'); // true
+ * // same as
+ * is.startsWith('Prof. ', 'Prof. Bend Ovah'); // true
+ *
+ * isProfessor('Dr. Here U\' Are'); // false
+ *
  * @param {String} prefix
  * @param {String} value
  * @throws {TypeError} if prefix is not a string
  * @throws {Error} if prefix is empty
- * @returns {(Boolean|Predicate)} returns bool if two arguments provided, otherwise a predicate
+ * @returns {(Boolean|Predicate)} returns bool if at least two arguments provided, otherwise a predicate
  */
-module.exports = function(prefix) {
+module.exports = function startsWith(prefix) {
     if (!isString(prefix)) {
         throw new TypeError('Prefix must be a string');
     }

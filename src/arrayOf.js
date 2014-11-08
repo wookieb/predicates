@@ -7,13 +7,28 @@ var isArray = require('./array'),
 /**
  * Checks whether every element of an array passes the predicate
  *
+ * **Aliases** _arrOf_
+ *
+ * @function arrayOf
+ *
+ * @example
+ * var is = require('predicates');
+ *
+ * var isArrayOfStrings = is.arrayOf(is.string);
+ *
+ * isArrayOfStrings(['1', '2']); // true
+ * // same as
+ * is.arrayOf(is.string, ['1', '2']); // true
+ *
+ * isArrayOfStrings([1, 2]); // false
+ *
  * @param {Predicate} predicate
  * @param {Array} value
  * @param {...*} additionalArgs additional arguments passed to the predicate
  * @throws {TypeError} if predicate is not a function
- * @returns {(Boolean|Predicate)} returns bool if two arguments provided, otherwise a predicate
+ * @returns {(Boolean|Predicate)} returns bool if at least two arguments provided, otherwise a predicate
  */
-module.exports = function(predicate) {
+module.exports = function arrayOf(predicate) {
     if (!isFunction(predicate)) {
         throw new TypeError('Predicate must be a function');
     }

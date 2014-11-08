@@ -1,6 +1,6 @@
 {
     "name": "predicates",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "description": "Set of various predicates for type checking, assertions, filtering etc",
     "main": "index.js",
     "repository": {
@@ -18,11 +18,14 @@
     "dependencies": {},
     "devDependencies": {
         "blanket": "^1.1.6",
+        "dmd-examples-highlight": "^0.1.1",
+        "jsdoc-to-markdown": "^0.5.9",
         "mocha": "^2.0.1"
     },
     "scripts": {
         "test": "mocha -r ./test/bootstrap --reporter spec ./test/*Test.js",
-        "coverage": "mocha -r ./test/bootstrap -R html-cov ./test/*Test.js > coverage.html"
+        "coverage": "mocha -r ./test/bootstrap -R html-cov ./test/*Test.js > coverage.html",
+        "docs": "jsdoc2md -v src/*.js --plugin dmd-examples-highlight --partial jsdoc2md/name-prefix.hbs jsdoc2md/fields.hbs jsdoc2md/throws.hbs > docs/api.md"
     },
     "author": "Łukasz Kużyński",
     "license": "MIT"

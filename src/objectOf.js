@@ -6,15 +6,27 @@ var isObject = require('./object'),
 
 /**
  * Checks whether every enumerable property of object satisfies a predicate
- * The predicate is being called with the following properties:
- * * property value
- * * property name
+ *
+ * **Aliases** _objOf_
+ *
+ * @function objectOf
+ *
+ * @example
+ * var is = require('predicates');
+ *
+ * var isObjectOfStrings = is.objectOf(is.string);
+ *
+ * isObjectOfStrings({key: 'value', key1: 'value'}); // true
+ * // same as
+ * is.objectOf(is.string, {key: 'value', key1: 'value'}); // true
+ *
+ * isObjectOfStrings({key: 1, key1: 'value'}); // false
  *
  * @param {Predicate} predicate
  * @param {Object} object
- * @returns {(Boolean|Predicate)} returns bool if two arguments provided, otherwise a predicate
+ * @returns {(Boolean|Predicate)} returns bool if at least two arguments provided, otherwise a predicate
  */
-module.exports = function(predicate, object) {
+module.exports = function objectOf(predicate, object) {
     if (!isFunction(predicate)) {
         throw new TypeError('Predicate must be a function');
     }

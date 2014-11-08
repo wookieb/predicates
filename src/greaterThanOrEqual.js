@@ -5,11 +5,26 @@ var handleCurry = require('./utils/handleCurry');
 /**
  * Checks whether a value is greater or equal to expected number
  *
+ * **Aliases** _greaterOrEqual_, _greaterEq_, _gtEq_
+ *
+ * @function greaterThanOrEqual
+ *
+ * @example
+ * var is = require('predicates');
+ *
+ * var isAdultAge = is.greaterThanOrEqual(18);
+ *
+ * isAdultAge(22); // true
+ * // same as
+ * is.greaterThanOrEqual(18, 22);
+ *
+ * isAdultAge(16); // false
+ *
  * @param {Number} expected
  * @param {Number} value
- * @returns {(Boolean|Predicate)} bool if two arguments provided, otherwise a predicate
+ * @returns {(Boolean|Predicate)} bool if at least two arguments provided, otherwise a predicate
  */
-module.exports = function(expected, value) {
+module.exports = function greaterThanOrEqual(expected, value) {
     return handleCurry.call(this, arguments, function(value) {
         return value >= expected;
     });

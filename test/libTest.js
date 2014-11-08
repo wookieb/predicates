@@ -17,7 +17,7 @@ describe('Tests whether all functions are included', function() {
     fs.readdirSync('./src')
         .filter(function(file) {
             var stat = fs.statSync('./src/'+file);
-            return stat.isFile();
+            return stat.isFile() && file !== 'predicate.js';
         })
         .map(function(file) {
             var functionName = file.replace(/\.js$/, '');
