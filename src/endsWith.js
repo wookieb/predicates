@@ -19,7 +19,7 @@ var isString = require('./string'),
  * isYelling('be quiet please'); // false
  *
  * @param {String} suffix
- * @param {String} value
+ * @param {String} [value]
  * @throws {TypeError} if suffix is not a string
  * @throws {Error} if suffix is empty
  * @returns {(Boolean|Predicate)} returns bool if at least two arguments provided, otherwise a predicate

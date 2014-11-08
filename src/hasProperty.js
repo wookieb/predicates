@@ -23,7 +23,7 @@ var isObject = require('./object'),
  * isDuck({type: 'car'}); // false
  *
  * @param {String} property
- * @param {Object} object
+ * @param {Object} [object]
  * @throws {TypeError} if property is not a string
  * @returns {(Boolean|Predicate)} bool if at least two arguments provided, otherwise a predicate
  */

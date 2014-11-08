@@ -26,7 +26,7 @@ var handleCurry = require('./utils/handleCurry'),
  *
  *
  * @param {Function} clazz
- * @param {*} value
+ * @param {*} [value]
  * @throws {TypeError} if class is not a function
  * @returns {(Boolean|Predicate)} bool if at least two arguments provided, otherwise a predicate
  */

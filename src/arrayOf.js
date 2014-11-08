@@ -23,8 +23,8 @@ var isArray = require('./array'),
  * isArrayOfStrings([1, 2]); // false
  *
  * @param {Predicate} predicate
- * @param {Array} value
- * @param {...*} additionalArgs additional arguments passed to the predicate
+ * @param {Array} [value]
+ * @param {...*} [additionalArgs] additional arguments passed to the predicate
  * @throws {TypeError} if predicate is not a function
  * @returns {(Boolean|Predicate)} returns bool if at least two arguments provided, otherwise a predicate
  */

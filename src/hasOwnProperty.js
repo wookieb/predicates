@@ -30,7 +30,7 @@ var isObject = require('./object'),
  * isCustomized(timer2); // false
  *
  * @param {String} property
- * @param {Object} object
+ * @param {Object} [object]
  * @throws {TypeError} if property is not a string
  * @returns {(Boolean|Predicate)} bool if at least two arguments provided, otherwise a predicate
  */

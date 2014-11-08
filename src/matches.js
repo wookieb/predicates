@@ -22,7 +22,7 @@ var isRegexp = require('./regexp'),
  * isWindows9x('Windows 10); // false
  *
  * @param {RegExp} regexp
- * @param {String} value
+ * @param {String} [value]
  * @throws {TypeError} if regexp is not a regexp
  * @returns {(Boolean|Predicate)} bool if at least two arguments provided, otherwise a predicate
  */

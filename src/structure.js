@@ -30,7 +30,7 @@ var isObjectOfPredicates = objectOf(isFunction);
  * is.structure(schema, person); // true
  * isPerson({name: 'Tommy'});
  * @param {Object} structure
- * @param {Object} value
+ * @param {Object} [value]
  * @return {(Boolean|Predicate)} returns bool if more than 1 argument provided, otherwise a predicate
  */
 module.exports = function structure(structure, value) {

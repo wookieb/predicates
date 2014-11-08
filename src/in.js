@@ -23,7 +23,7 @@ var isArray = require('./array'),
  * isImage('text/html'); // false
  *
  * @param {Array} collection of allowed values
- * @param {*} value
+ * @param {*} [value]
  * @throws {TypeError} if collection is not an array
  * @throws {Error} if collection is empty
  * @returns {(Boolean|Predicate)} bool if at least two arguments provided, otherwise a predicate

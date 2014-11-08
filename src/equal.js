@@ -20,7 +20,7 @@ var handleCurry = require('./utils/handleCurry');
  * isTimmy('Franko'); // false
  *
  * @param {*} expected
- * @param {*} value
+ * @param {*} [value]
  * @returns {(Boolean|Predicate)} bool if at least two arguments provided, otherwise a predicate
  */
 module.exports = function equal(expected, value) {

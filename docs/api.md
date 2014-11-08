@@ -6,46 +6,46 @@
 * [any(...predicate)](#any)
 * [array(value)](#array)
 * [arrayLike(value)](#arrayLike)
-* [arrayOf(predicate, value, ...additionalArgs)](#arrayOf)
+* [arrayOf(predicate, [value], [...additionalArgs])](#arrayOf)
 * [blank(value)](#blank)
 * [boolean(value)](#boolean)
 * [date(value)](#date)
 * [defined(value)](#defined)
 * [empty(value)](#empty)
-* [endsWith(suffix, value)](#endsWith)
-* [equal(expected, value)](#equal)
+* [endsWith(suffix, [value])](#endsWith)
+* [equal(expected, [value])](#equal)
 * [false(value)](#false)
 * [falsy(value)](#falsy)
 * [finite(value)](#finite)
 * [function(value)](#function)
-* [greaterThan(expected, value)](#greaterThan)
-* [greaterThanOrEqual(expected, value)](#greaterThanOrEqual)
-* [hasOwnProperty(property, object)](#hasOwnProperty)
-* [hasProperty(property, object)](#hasProperty)
-* [in(collection, value)](#in)
-* [instanceOf(clazz, value)](#instanceOf)
+* [greaterThan(expected, [value])](#greaterThan)
+* [greaterThanOrEqual(expected, [value])](#greaterThanOrEqual)
+* [hasOwnProperty(property, [object])](#hasOwnProperty)
+* [hasProperty(property, [object])](#hasProperty)
+* [in(collection, [value])](#in)
+* [instanceOf(clazz, [value])](#instanceOf)
 * [integer(value)](#integer)
-* [lessThan(expected, value)](#lessThan)
-* [lessThanOrEqual(expected, value)](#lessThanOrEqual)
-* [matches(regexp, value)](#matches)
+* [lessThan(expected, [value])](#lessThan)
+* [lessThanOrEqual(expected, [value])](#lessThanOrEqual)
+* [matches(regexp, [value])](#matches)
 * [NaN(value)](#NaN)
 * [negative(value)](#negative)
-* [not(predicate, value, ...additionalArgs)](#not)
+* [not(predicate, [value], [...additionalArgs])](#not)
 * [null(value)](#null)
 * [number(value)](#number)
 * [object(value)](#object)
-* [objectOf(predicate, object)](#objectOf)
+* [objectOf(predicate, [object], [...additionalArgs])](#objectOf)
 * [oneOf(...allowedValue)](#oneOf)
 * [positive(value)](#positive)
 * [regExp(value)](#regExp)
-* [startsWith(prefix, value)](#startsWith)
+* [startsWith(prefix, [value])](#startsWith)
 * [strictEqual(expected, [value])](#strictEqual)
 * [string(value)](#string)
-* [structure(structure, value)](#structure)
+* [structure(structure, [value])](#structure)
 * [true(value)](#true)
 * [truthy(value)](#truthy)
 * [undefined(value)](#undefined)
-* [undefinedOr(predicate, value)](#undefinedOr)
+* [undefinedOr(predicate, [value])](#undefinedOr)
 
 **Typedefs**
 
@@ -143,7 +143,7 @@ is.arrayLike([1, 2, 3]); // true
 is.arrayLike({}); // false
 ```
 <a name="arrayOf"></a>
-#arrayOf(predicate, value, ...additionalArgs)
+#arrayOf(predicate, [value], [...additionalArgs])
 Checks whether every element of an array passes the predicate
 
 **Aliases** _arrOf_
@@ -151,8 +151,8 @@ Checks whether every element of an array passes the predicate
 **Params**
 
 - predicate <code>[Predicate](#Predicate)</code>  
-- value `Array`  
-- ...additionalArgs `*` - additional arguments passed to the predicate  
+- \[value\] `Array`  
+- \[...additionalArgs\] `*` - additional arguments passed to the predicate  
 
 **Throws**
 
@@ -264,13 +264,13 @@ is.empty([1]); // false
 is.empty('test'); // false
 ```
 <a name="endsWith"></a>
-#endsWith(suffix, value)
+#endsWith(suffix, [value])
 Checks whether a string ends with a given suffix
 
 **Params**
 
 - suffix `String`  
-- value `String`  
+- \[value\] `String`  
 
 **Throws**
 
@@ -291,7 +291,7 @@ is.endsWith('!', 'shut up!'); // true
 isYelling('be quiet please'); // false
 ```
 <a name="equal"></a>
-#equal(expected, value)
+#equal(expected, [value])
 Checks whether values are equal (using == operator)
 
 **Aliases** _equalTo_, _eq_
@@ -299,7 +299,7 @@ Checks whether values are equal (using == operator)
 **Params**
 
 - expected `*`  
-- value `*`  
+- \[value\] `*`  
 
 **Returns**: `Boolean` | [Predicate](#Predicate) - bool if at least two arguments provided, otherwise a predicate  
 **Example**  
@@ -385,7 +385,7 @@ is.function(alert); // true
 is.function('alert'); // false
 ```
 <a name="greaterThan"></a>
-#greaterThan(expected, value)
+#greaterThan(expected, [value])
 Checks whether a value is greater than expected number
 
 **Aliases** _greater_, _gt_
@@ -393,7 +393,7 @@ Checks whether a value is greater than expected number
 **Params**
 
 - expected `Number`  
-- value `Number`  
+- \[value\] `Number`  
 
 **Returns**: `Boolean` | [Predicate](#Predicate) - bool if at least two arguments provided, otherwise a predicate  
 **Example**  
@@ -408,7 +408,7 @@ is.greaterThan(0, 10); // true
 isGreaterThan0(-1); // false
 ```
 <a name="greaterThanOrEqual"></a>
-#greaterThanOrEqual(expected, value)
+#greaterThanOrEqual(expected, [value])
 Checks whether a value is greater or equal to expected number
 
 **Aliases** _greaterOrEqual_, _greaterEq_, _gtEq_
@@ -416,7 +416,7 @@ Checks whether a value is greater or equal to expected number
 **Params**
 
 - expected `Number`  
-- value `Number`  
+- \[value\] `Number`  
 
 **Returns**: `Boolean` | [Predicate](#Predicate) - bool if at least two arguments provided, otherwise a predicate  
 **Example**  
@@ -432,7 +432,7 @@ is.greaterThanOrEqual(18, 22);
 isAdultAge(16); // false
 ```
 <a name="hasOwnProperty"></a>
-#hasOwnProperty(property, object)
+#hasOwnProperty(property, [object])
 Checks whether an object has own property
 
 **Aliases** _hasOwn_
@@ -440,7 +440,7 @@ Checks whether an object has own property
 **Params**
 
 - property `String`  
-- object `Object`  
+- \[object\] `Object`  
 
 **Throws**
 
@@ -467,7 +467,7 @@ is.hasOwnProperty('delay', timer1); // true
 isCustomized(timer2); // false
 ```
 <a name="hasProperty"></a>
-#hasProperty(property, object)
+#hasProperty(property, [object])
 Checks whether an object has a given property
 
 **Aliases** _has_
@@ -475,7 +475,7 @@ Checks whether an object has a given property
 **Params**
 
 - property `String`  
-- object `Object`  
+- \[object\] `Object`  
 
 **Throws**
 
@@ -495,14 +495,14 @@ is.hasProperty('quack', {quack: ':)'}); // true
 isDuck({type: 'car'}); // false
 ```
 <a name="in"></a>
-#in(collection, value)
+#in(collection, [value])
 Checks whether a value exists in collection
 Values are compared using === operator
 
 **Params**
 
 - collection `Array` - of allowed values  
-- value `*`  
+- \[value\] `*`  
 
 **Throws**
 
@@ -526,7 +526,7 @@ is.in(['image/gif', 'image/jpeg'], 'image/jpeg'); // true
 isImage('text/html'); // false
 ```
 <a name="instanceOf"></a>
-#instanceOf(clazz, value)
+#instanceOf(clazz, [value])
 Checks whether a value is an instance of given "class"
 
 **Aliases** _instance_
@@ -534,7 +534,7 @@ Checks whether a value is an instance of given "class"
 **Params**
 
 - clazz <code>[function](#function)</code>  
-- value `*`  
+- \[value\] `*`  
 
 **Throws**
 
@@ -575,7 +575,7 @@ is.integer(10); // true
 is.integer(10.4); // false
 ```
 <a name="lessThan"></a>
-#lessThan(expected, value)
+#lessThan(expected, [value])
 Checks whether a value is less than expected number
 
 **Aliases** _less_, _lt_
@@ -583,7 +583,7 @@ Checks whether a value is less than expected number
 **Params**
 
 - expected `Number`  
-- value `Number`  
+- \[value\] `Number`  
 
 **Returns**: `Boolean` | [Predicate](#Predicate) - bool if at least two arguments provided, otherwise a predicate  
 **Example**  
@@ -597,7 +597,7 @@ isChildAge(18); // false
 isChildAge(22); // false
 ```
 <a name="lessThanOrEqual"></a>
-#lessThanOrEqual(expected, value)
+#lessThanOrEqual(expected, [value])
 Checks whether a value is less or equal to expected number
 
 **Aliases** _lessOrEqual_, _lessEq_, _ltEq_
@@ -605,7 +605,7 @@ Checks whether a value is less or equal to expected number
 **Params**
 
 - expected `Number`  
-- value `Number`  
+- \[value\] `Number`  
 
 **Returns**: `Boolean` | [Predicate](#Predicate) - bool if at least two arguments provided, otherwise a predicate  
 **Example**  
@@ -621,7 +621,7 @@ is.lessThanOrEqual(17, 10); // true
 isChildAge(18); // false
 ```
 <a name="matches"></a>
-#matches(regexp, value)
+#matches(regexp, [value])
 Checks whether a value matches a regexp
 
 **Aliases** _match_
@@ -629,7 +629,7 @@ Checks whether a value matches a regexp
 **Params**
 
 - regexp `RegExp`  
-- value `String`  
+- \[value\] `String`  
 
 **Throws**
 
@@ -683,7 +683,7 @@ is.negative(-1); // true
 is.negative(0); // false
 ```
 <a name="not"></a>
-#not(predicate, value, ...additionalArgs)
+#not(predicate, [value], [...additionalArgs])
 Negates result of a predicate
 
 **Aliases** _negate_
@@ -691,8 +691,8 @@ Negates result of a predicate
 **Params**
 
 - predicate <code>[Predicate](#Predicate)</code>  
-- value `*`  
-- ...additionalArgs `*` - additional arguments passed to the predicate  
+- \[value\] `*`  
+- \[...additionalArgs\] `*` - additional arguments passed to the predicate  
 
 **Returns**: `Boolean` | [Predicate](#Predicate) - returns bool if at least two arguments provided, otherwise a predicate  
 **Example**  
@@ -758,7 +758,7 @@ is.object({}); // true
 is.object('object'); // false
 ```
 <a name="objectOf"></a>
-#objectOf(predicate, object)
+#objectOf(predicate, [object], [...additionalArgs])
 Checks whether every enumerable property of object satisfies a predicate
 
 **Aliases** _objOf_
@@ -766,7 +766,8 @@ Checks whether every enumerable property of object satisfies a predicate
 **Params**
 
 - predicate <code>[Predicate](#Predicate)</code>  
-- object `Object`  
+- \[object\] `Object`  
+- \[...additionalArgs\] `*` - additional arguments passed to the predicate  
 
 **Returns**: `Boolean` | [Predicate](#Predicate) - returns bool if at least two arguments provided, otherwise a predicate  
 **Example**  
@@ -841,13 +842,13 @@ is.regExp(/t/); // true
 is.regexp('.*'); // false
 ```
 <a name="startsWith"></a>
-#startsWith(prefix, value)
+#startsWith(prefix, [value])
 Checks whether a string starts with a given prefix
 
 **Params**
 
 - prefix `String`  
-- value `String`  
+- \[value\] `String`  
 
 **Throws**
 
@@ -910,7 +911,7 @@ is.string('test'); // true
 is.string({}); // false
 ```
 <a name="structure"></a>
-#structure(structure, value)
+#structure(structure, [value])
 Checks whether an object satisfies predicates defined in structure
 NOTE: All predicates defined in structure must be satisfied.
 If some of the properties are optional use [undefinedOr](#undefinedOr)
@@ -918,7 +919,7 @@ If some of the properties are optional use [undefinedOr](#undefinedOr)
 **Params**
 
 - structure `Object`  
-- value `Object`  
+- \[value\] `Object`  
 
 **Returns**: `Boolean` | [Predicate](#Predicate) - returns bool if more than 1 argument provided, otherwise a predicate  
 **Example**  
@@ -988,14 +989,14 @@ is.undefined(undefined); // true
 is.undefined(0); // false
 ```
 <a name="undefinedOr"></a>
-#undefinedOr(predicate, value)
+#undefinedOr(predicate, [value])
 Checks whether a value is undefined or satisfies given predicate
 Very useful to check optional arguments of function.
 
 **Params**
 
 - predicate <code>[Predicate](#Predicate)</code>  
-- value `*`  
+- \[value\] `*`  
 
 **Returns**: `Boolean` | [Predicate](#Predicate) - returns bool if more than 1 argument provided, otherwise a predicate  
 **Example**  

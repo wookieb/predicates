@@ -21,7 +21,7 @@ var handleCurry = require('./utils/handleCurry');
  * isAdultAge(16); // false
  *
  * @param {Number} expected
- * @param {Number} value
+ * @param {Number} [value]
  * @returns {(Boolean|Predicate)} bool if at least two arguments provided, otherwise a predicate
  */
 module.exports = function greaterThanOrEqual(expected, value) {

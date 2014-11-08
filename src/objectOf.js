@@ -23,7 +23,8 @@ var isObject = require('./object'),
  * isObjectOfStrings({key: 1, key1: 'value'}); // false
  *
  * @param {Predicate} predicate
- * @param {Object} object
+ * @param {Object} [object]
+ * @param {...*} [additionalArgs] additional arguments passed to the predicate
  * @returns {(Boolean|Predicate)} returns bool if at least two arguments provided, otherwise a predicate
  */
 module.exports = function objectOf(predicate, object) {

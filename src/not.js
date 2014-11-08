@@ -20,8 +20,8 @@ var isFunction = require('./function'),
  * isNotEmpty(''); // false
  *
  * @param {Predicate} predicate
- * @param {*} value
- * @param {...*} additionalArgs additional arguments passed to the predicate
+ * @param {*} [value]
+ * @param {...*} [additionalArgs] additional arguments passed to the predicate
  * @returns {(Boolean|Predicate)} returns bool if at least two arguments provided, otherwise a predicate
  */
 module.exports = function not(predicate) {

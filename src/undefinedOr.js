@@ -24,7 +24,7 @@ var isFunction = require('./function'),
  * isUndefinedOrString({}); // false
  *
  * @param {Predicate} predicate
- * @param {*} value
+ * @param {*} [value]
  * @returns {(Boolean|Predicate)} returns bool if more than 1 argument provided, otherwise a predicate
  */
 module.exports = function undefinedOr(predicate, value) {

@@ -19,7 +19,7 @@ var handleCurry = require('./utils/handleCurry');
  * isGreaterThan0(-1); // false
  *
  * @param {Number} expected
- * @param {Number} value
+ * @param {Number} [value]
  * @returns {(Boolean|Predicate)} bool if at least two arguments provided, otherwise a predicate
  */
 module.exports = function greaterThan(expected) {

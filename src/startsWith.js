@@ -18,7 +18,7 @@ var isString = require('./string'),
  * isProfessor('Dr. Here U\' Are'); // false
  *
  * @param {String} prefix
- * @param {String} value
+ * @param {String} [value]
  * @throws {TypeError} if prefix is not a string
  * @throws {Error} if prefix is empty
  * @returns {(Boolean|Predicate)} returns bool if at least two arguments provided, otherwise a predicate
