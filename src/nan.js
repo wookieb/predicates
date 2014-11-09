@@ -1,9 +1,10 @@
 'use strict';
 
+var isNumber = require('./number');
 /**
- * Checks whether a value is NaN
+ * Checks whether a value is a NaN number
  *
- * **Aliases** _notANumber_, _nan_
+ * **Aliases** _nan_
  * @function NaN
  *
  * @example
@@ -15,4 +16,6 @@
  * @param {*} value
  * @returns {Boolean}
  */
-module.exports = Number.isNaN;
+module.exports = function(value) {
+    return isNumber(value) && isNaN(value);
+};
