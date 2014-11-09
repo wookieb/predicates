@@ -3,8 +3,9 @@ var isEmpty = require('./empty'),
     not = require('./not');
 
 /**
- * Checks whether value is not empty
- * See [empty](#empty) for list of conditions that determine whether value is empty
+ * Checks whether value is not empty.
+ *
+ * See [empty](#empty) for list of conditions that determine when a value is empty
  *
  * @function notEmpty
  *

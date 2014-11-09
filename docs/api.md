@@ -31,6 +31,7 @@
 * [NaN(value)](#NaN)
 * [negative(value)](#negative)
 * [not(predicate, [value], [...additionalArgs])](#not)
+* [notEmpty(value)](#notEmpty)
 * [null(value)](#null)
 * [number(value)](#number)
 * [object(value)](#object)
@@ -316,7 +317,7 @@ isTimmy('Franko'); // false
 ```
 <a name="false"></a>
 #false(value)
-Checks whether a value is false (using === operator).
+Checks whether a value is false a boolean false
 
 **Params**
 
@@ -705,6 +706,26 @@ isNotEmpty([1, 2]);// true
 is.not(is.empty, [1, 2]); // true
 isNotEmpty(''); // false
 ```
+<a name="notEmpty"></a>
+#notEmpty(value)
+Checks whether value is not empty.
+
+See [empty](#empty) for list of conditions that determine whether value is empty
+
+**Params**
+
+- value `*`  
+
+**Returns**: `Boolean`  
+**Example**  
+```js
+var is = require('predicates');
+
+is.notEmpty([1]); // true
+is.notEmpty('value'); // true
+is.notEmpty([]); // false
+is.notEmpty(''); // false
+```
 <a name="null"></a>
 #null(value)
 Checks whether a value is null
@@ -941,7 +962,7 @@ isPerson({name: 'Tommy'});
 ```
 <a name="true"></a>
 #true(value)
-Checks whether a value is true
+Checks whether a value is a boolean true
 
 **Params**
 
