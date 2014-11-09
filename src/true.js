@@ -1,7 +1,8 @@
 'use strict';
 
+var isBoolean = require('./boolean');
 /**
- * Checks whether a value is true (using === operator)
+ * Checks whether a value is a boolean true
  *
  * @function true
  *
@@ -15,5 +16,5 @@
  * @returns {Boolean}
  */
 module.exports = function(value) {
-    return value === true;
+    return value === true || (isBoolean(value) && value == true);
 };
