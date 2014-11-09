@@ -651,9 +651,9 @@ isWindows9x('Windows 10); // false
 ```
 <a name="NaN"></a>
 #NaN(value)
-Checks whether a value is NaN
+Checks whether a value is a NaN number
 
-**Aliases** _notANumber_, _nan_
+**Aliases** _nan_
 
 **Params**
 
@@ -710,7 +710,7 @@ isNotEmpty(''); // false
 #notEmpty(value)
 Checks whether value is not empty.
 
-See [empty](#empty) for list of conditions that determine whether value is empty
+See [empty](#empty) for list of conditions that determine when a value is empty
 
 **Params**
 
