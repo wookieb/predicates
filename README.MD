@@ -53,6 +53,9 @@ new Module(101); // Error: Name must be a string
 
 ##Changelog
 
+###0.2.1
+* Fix: instanceof renamed to instanceOf
+
 ###0.2
 * Added information how to use _predicates_ for arguments assertions
 * Added documentation with examples and design rules

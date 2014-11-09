@@ -21,7 +21,7 @@ exports.greaterThanOrEqual = exports.greaterOrEqual = exports.greaterEq = export
 exports.hasOwnProperty = exports.hasOwn = require('./src/hasOwnProperty');
 exports.hasProperty = exports.has = require('./src/hasProperty');
 exports.in = require('./src/in');
-exports.instanceof = exports.instance = require('./src/instanceOf');
+exports.instanceOf = exports.instance = require('./src/instanceOf');
 exports.integer = exports.int = require('./src/integer');
 exports.lessThan = exports.less = exports.lt = require('./src/lessThan');
 exports.lessThanOrEqual = exports.lessOrEqual = exports.lessEq = exports.ltEq = require('./src/lessThanOrEqual');
