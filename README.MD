@@ -54,6 +54,7 @@ new Module(101); // Error: Name must be a string
 ##Changelog
 
 ###0.3
+* Added _notEmpty_ predicate #9
 * Improved is.false and is.true to accept new Boolean(true/false) as well
 * Fixed behavior of is.object to accept Object.create(null) #10
 

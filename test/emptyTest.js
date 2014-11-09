@@ -3,7 +3,7 @@
 var isEmpty = requireSrc('empty');
 
 describe('empty', function() {
-    it('checks if object has enumerable properties', function() {
+    it('checks if object has no enumerable properties', function() {
         var objectWithoutEnumerableProperties = {};
 
         Object.defineProperty(objectWithoutEnumerableProperties, 'property', {
