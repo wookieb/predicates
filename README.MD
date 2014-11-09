@@ -53,7 +53,7 @@ new Module(101); // Error: Name must be a string
 
 ##Changelog
 
-###0.3
+###0.3 (not released yet)
 * Better support for is.NaN #11
 * Added _notEmpty_ predicate #9
 * Improved is.false and is.true to accept new Boolean(true/false) as well
