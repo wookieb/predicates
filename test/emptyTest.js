@@ -24,6 +24,9 @@ describe('empty', function() {
 
     it('checks if object is an empty string', function() {
         assert.ok(isEmpty(''));
+        assert.ok(new String(''));
+
+        assert.ok(!isEmpty(new String(' ')));
         assert.ok(!isEmpty('  '));
         assert.ok(!isEmpty('test'));
     });

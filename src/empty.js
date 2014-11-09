@@ -31,7 +31,7 @@ module.exports = function empty(value) {
     } else if (isObject(value)) {
         return Object.keys(value).length === 0;
     } else if (isString(value)) {
-        return value === '';
+        return value == '';
     }
     return false;
 };
