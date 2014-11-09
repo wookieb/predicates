@@ -53,6 +53,9 @@ new Module(101); // Error: Name must be a string
 
 ##Changelog
 
+###0.3
+* Fixed behavior of is.object to accept Object.create(null) #10
+
 ###0.2.1
 * Fix: instanceof renamed to instanceOf
 

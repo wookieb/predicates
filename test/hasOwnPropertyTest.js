@@ -27,7 +27,10 @@ describe('hasOwnProperty', function() {
             },
             objectWithPropertyInPrototype = Object.create({
                 property: 'value'
-            });
+            }),
+            objectWithoutPrototype = Object.create(null);
+
+        objectWithoutPrototype.property = 'value';
 
         Object.defineProperty(objectWithNotEnumerableProperty, 'property', {
             enumerable: false
@@ -41,6 +44,8 @@ describe('hasOwnProperty', function() {
         assert.ok(hasOwnProperty('property')(objectWithProperty));
         assert.ok(hasOwnProperty('property', objectWithPropertyInPrototype) === false);
         assert.ok(hasOwnProperty('property')(objectWithPropertyInPrototype) === false);
+        assert.ok(hasOwnProperty('property', objectWithoutPrototype));
+        assert.ok(hasOwnProperty('property')(objectWithoutPrototype));
         assert.ok(hasOwnProperty('property', {}) === false);
         assert.ok(hasOwnProperty('property')({}) === false);
         assert.ok(hasOwnProperty('property', null) === false);

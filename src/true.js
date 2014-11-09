@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * Checks whether a value is true
+ * Checks whether a value is true (using === operator)
  *
  * @function true
  *

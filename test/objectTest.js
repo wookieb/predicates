@@ -12,5 +12,6 @@ describe('object', function() {
         assert.ok(isObject({}));
         assert.ok(isObject([]));
         assert.ok(isObject(function() {}));
+        assert.ok(isObject(Object.create(null)));
     });
 });

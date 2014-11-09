@@ -39,6 +39,6 @@ module.exports = function hasOwnProperty(property, object) {
         throw new TypeError('Property name must be a string');
     }
     return handleCurry.call(this, arguments, function(object) {
-        return isObject(object) && object.hasOwnProperty(property);
+        return isObject(object) && Object.prototype.hasOwnProperty.call(object, property);
     });
 };

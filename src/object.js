@@ -17,5 +17,5 @@
  * @returns {Boolean}
  */
 module.exports = function object(value) {
-    return value instanceof Object;
+    return value instanceof Object || (typeof value === 'object' && value !== null);
 };
