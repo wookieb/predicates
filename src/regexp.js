@@ -11,7 +11,8 @@
  * var is = require('predicates');
  *
  * is.regExp(/t/); // true
- * is.regexp('.*'); // false
+ * is.regExp(new RegExp(/t/)); // true
+ * is.regExp('.*'); // false
  *
  * @param {*} value
  * @returns {Boolean}
