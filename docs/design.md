@@ -2,8 +2,8 @@
 
 ##Generated predicates might be called with more than one argument
 
-Most of type checking, predicates libraries force you use predicates with only one argument. 
-_Predicates_ doesn't have such limitation and additionally preserves the context of predicates which allows you to create even more powerful logic.
+Most of type checking, utility libraries force you use predicates with only one argument. 
+_Predicates_ doesn't have such limitation and additionally preserves the context function call which allows you to create even more powerful logic.
 
 
 ```js
@@ -38,7 +38,7 @@ is.in([]); // Error: Collection cannot be empty
 // always false
 ```
 
-That's why it's a good practice to create predicates at the beginning of module definition to quickly track down the mistakes.
+That's why it's a good practice to create predicates at the beginning of module definition to quickly track down any mistakes.
 
 ```js
 // some module
@@ -56,7 +56,7 @@ module.exports = Module;
 ```
 
 ##Defined and generated predicates will not throw any errors
-You don't need to check the arguments provided to predicates to make sure they won't trigger any errors - _predicates_ does it for you.
+You don't need to check the arguments provided to predicates to make sure they won't cause an error - _predicates_ does it for you.
 
 ```js
 var isDuck = is.hasProperty('quack');
@@ -64,4 +64,16 @@ var isDuck = is.hasProperty('quack');
 isDuck(undefined); // false - no error
 isDuck(1); // false - no error
 isDuck('duck'); // false - no error
+```
+
+NOTE! This rule applies only for predicates definerd in the library. Any user-defined predicate MAY throw an error but _predicates_ will not catch them.
+
+```js
+var assertName = is.all(is.string, function(value) {
+    if (value === 'admin') {
+        throw new Error('Admin is a reserved user name');
+    }
+});
+
+assertName('admin'); // Error: Admin is a reserved user name
 ```

@@ -29,9 +29,11 @@ is.undefinedOr(is.string)('timmy'); // true
 var isPerson = is.structure({
 	name: is.string,
 	surname: is.undefinedOr(is.string),
-	age: is.number,
-	
+	age: is.number
 });
+
+isPerson({name: 'Tom', age: 10}); // true
+isPerson({surname: 'Welling', age: 100}); // false, lack of name property
 ```
 Read [API reference](docs/api.md) for list of all available functions
 
