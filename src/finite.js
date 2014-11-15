@@ -14,4 +14,4 @@
  * @param {*} value
  * @returns {Boolean}
  */
-module.exports = require('./finite/native') || require('../finite/polyfill');
+module.exports = require('./finite/native') || require('./finite/polyfill');
