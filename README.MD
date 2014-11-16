@@ -55,6 +55,9 @@ new Module(101); // Error: Name must be a string
 
 ##Changelog
 
+###1.0.0-rc.1
+* Provided names for all the functions to make debugging easier #13
+
 ###0.3
 * Fixed path to finite polyfill
 * Better support for is.NaN #11
