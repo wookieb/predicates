@@ -38,6 +38,7 @@
 * [objectOf(predicate, [object], [...additionalArgs])](#objectOf)
 * [oneOf(...allowedValue)](#oneOf)
 * [positive(value)](#positive)
+* [primitive(value)](#primitive)
 * [regExp(value)](#regExp)
 * [startsWith(prefix, [value])](#startsWith)
 * [strictEqual(expected, [value])](#strictEqual)
@@ -844,6 +845,40 @@ var is = require('predicates');
 is.positive(10); // true
 is.positive(-1); // false
 ```
+<a name="primitive"></a>
+#primitive(value)
+Checks whether a value is a primitive.
+
+Helpful links:
+* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures
+* http://javascriptweblog.wordpress.com/2010/09/27/the-secret-life-of-javascript-primitives/
+
+NOTE! A primitive value wrapped by a corresponding object is not a primitive anymore
+```js
+var a = 'test' // this is a primitive
+a = new String('test'); // and this is not a primitive
+```
+
+**Params**
+
+- value `*`  
+
+**Returns**: `Boolean`  
+**Example**  
+```js
+var is = require('predicates');
+
+is.primitive('test'); // true
+is.primitive(undefined); // true
+is.primitive(10); // true
+is.primitive(null); // true
+is.primitive(false); // true
+
+is.primitive(new Number(10)); // false
+is.primitive(new String('test')); // false
+is.primitive(new Boolean(true)); // false
+is.primitive({}); // false
+```
 <a name="regExp"></a>
 #regExp(value)
 Checks whether a value is a regexp
@@ -860,7 +895,8 @@ Checks whether a value is a regexp
 var is = require('predicates');
 
 is.regExp(/t/); // true
-is.regexp('.*'); // false
+is.regExp(new RegExp(/t/)); // true
+is.regExp('.*'); // false
 ```
 <a name="startsWith"></a>
 #startsWith(prefix, [value])

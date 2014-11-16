@@ -36,6 +36,7 @@ exports.object = exports.obj = require('./src/object');
 exports.objectOf = exports.objOf = require('./src/objectOf');
 exports.oneOf = require('./src/oneOf');
 exports.positive = require('./src/positive');
+exports.primitive = require('./src/primitive');
 exports.regexp = exports.regExp = require('./src/regexp');
 exports.startsWith = require('./src/startsWith');
 exports.strictEqual = exports.strictEqualTo = require('./src/strictEqual');
