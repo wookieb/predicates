@@ -17,6 +17,6 @@ var isString = require('./string');
  * @param {String} value
  * @returns {Boolean}
  */
-module.exports = function blank(value) {
+module.exports = function isBlank(value) {
     return isString(value) && String.prototype.trim.call(value) === '';
 };

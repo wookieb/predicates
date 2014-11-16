@@ -22,8 +22,8 @@ var handleCurry = require('./utils/handleCurry');
  * @param {Number} [value]
  * @returns {(Boolean|Predicate)} bool if at least two arguments provided, otherwise a predicate
  */
-module.exports = function greaterThan(expected) {
-    return handleCurry.call(this, arguments, function(value) {
+module.exports = function isGreaterThan(expected) {
+    return handleCurry.call(this, arguments, function isGreaterThanPredicate(value) {
         return value > expected;
     });
 };

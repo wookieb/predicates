@@ -31,7 +31,7 @@ module.exports = function matches(regexp) {
         throw new TypeError('Regexp must be a RegExp object');
     }
 
-    return handleCurry.call(this, arguments, function(value) {
+    return handleCurry.call(this, arguments, function matchesPredicate(value) {
         return regexp.test(value);
     });
 };

@@ -16,6 +16,6 @@ var isNumber = require('./number');
  * @param {*} value
  * @returns {Boolean}
  */
-module.exports = function(value) {
+module.exports = function isNotANumber(value) {
     return isNumber(value) && isNaN(value);
 };

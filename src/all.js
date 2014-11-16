@@ -21,13 +21,13 @@ var assertPredicates = require('./utils/assertPredicates');
  * @throws {TypeError} if not every predicate is a function
  * @returns {Predicate}
  */
-module.exports = function all(predicate) {
+module.exports = function all() {
     var predicates = Array.prototype.slice.call(arguments);
     assertPredicates(predicates);
 
-    return function() {
+    return function allPredicate() {
         var args = Array.prototype.slice.call(arguments);
-        return predicates.every(function(predicate) {
+        return predicates.every(function allPredicateTestingPredicate(predicate) {
             return predicate.apply(this, args);
         }, this);
     };

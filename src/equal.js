@@ -1,3 +1,4 @@
+/*eslint eqeqeq: 0*/
 'use strict';
 
 var handleCurry = require('./utils/handleCurry');
@@ -23,8 +24,8 @@ var handleCurry = require('./utils/handleCurry');
  * @param {*} [value]
  * @returns {(Boolean|Predicate)} bool if at least two arguments provided, otherwise a predicate
  */
-module.exports = function equal(expected, value) {
-    return handleCurry.call(this, arguments, function(value) {
+module.exports = function isEqual(expected) {
+    return handleCurry.call(this, arguments, function isEqualPredicate(value) {
         return expected == value;
     });
 };

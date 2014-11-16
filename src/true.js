@@ -1,3 +1,4 @@
+/*eslint eqeqeq:0*/
 'use strict';
 
 var isBoolean = require('./boolean');
@@ -15,6 +16,6 @@ var isBoolean = require('./boolean');
  * @param {Boolean} value
  * @returns {Boolean}
  */
-module.exports = function(value) {
+module.exports = function isTrue(value) {
     return value === true || (isBoolean(value) && value == true);
 };

@@ -27,16 +27,16 @@ var isObject = require('./object'),
  * @param {...*} [additionalArgs] additional arguments passed to the predicate
  * @returns {(Boolean|Predicate)} returns bool if at least two arguments provided, otherwise a predicate
  */
-module.exports = function objectOf(predicate, object) {
+module.exports = function isObjectOf(predicate) {
     if (!isFunction(predicate)) {
         throw new TypeError('Predicate must be a function');
     }
 
-    return handleCurry.call(this, arguments, function(object) {
+    return handleCurry.call(this, arguments, function isObjectOfPredicate(object) {
         var args = Array.prototype.slice.call(arguments, 1);
         return isObject(object) && Object
             .keys(object)
-            .every(function(key) {
+            .every(function isObjectOfPredicateTestingProperty(key) {
                 return predicate.apply(this, [object[key]].concat(args));
             }, this);
     });

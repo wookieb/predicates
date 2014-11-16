@@ -30,11 +30,11 @@ var handleCurry = require('./utils/handleCurry'),
  * @throws {TypeError} if class is not a function
  * @returns {(Boolean|Predicate)} bool if at least two arguments provided, otherwise a predicate
  */
-module.exports = function(clazz) {
+module.exports = function isInstanceOf(clazz) {
     if (!isFunction(clazz)) {
         throw new TypeError('Class must be a function');
     }
-    return handleCurry.call(this, arguments, function(value) {
+    return handleCurry.call(this, arguments, function isInstanceOfPredicate(value) {
         return value instanceof clazz;
     });
 };

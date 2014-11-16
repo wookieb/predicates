@@ -14,6 +14,6 @@
  * @param {*} value
  * @returns {Boolean}
  */
-module.exports = function date(value) {
+module.exports = function isDate(value) {
     return Object.prototype.toString.call(value) === '[object Date]';
 };

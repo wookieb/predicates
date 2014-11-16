@@ -18,6 +18,6 @@
  * @returns {Boolean}
  *
  */
-module.exports = function falsy(value) {
+module.exports = function isFalsy(value) {
     return !value;
 };

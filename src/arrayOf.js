@@ -28,14 +28,14 @@ var isArray = require('./array'),
  * @throws {TypeError} if predicate is not a function
  * @returns {(Boolean|Predicate)} returns bool if at least two arguments provided, otherwise a predicate
  */
-module.exports = function arrayOf(predicate) {
+module.exports = function isArrayOf(predicate) {
     if (!isFunction(predicate)) {
         throw new TypeError('Predicate must be a function');
     }
-    return handleCurry.call(this, arguments, function(value) {
+    return handleCurry.call(this, arguments, function isArrayOfPredicate(value) {
         var additionalArgs = Array.prototype.slice.call(arguments, 1);
-        return isArray(value) && value.every(function(value) {
-            return predicate.apply(this, [value].concat(additionalArgs))
+        return isArray(value) && value.every(function isArrayOfPredicateTestingArrayItem(value) {
+            return predicate.apply(this, [value].concat(additionalArgs));
         }, this);
     });
 };

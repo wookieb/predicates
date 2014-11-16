@@ -16,7 +16,7 @@
  * @param {*} value
  * @returns {Boolean}
  */
-module.exports = function(value) {
+module.exports = function isFunction(value) {
     return Object.prototype.toString.call(value) === '[object Function]';
 };
 

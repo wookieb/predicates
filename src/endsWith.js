@@ -32,7 +32,7 @@ module.exports = function endsWith(suffix) {
         throw new Error('Suffix cannot be empty');
     }
 
-    return handleCurry.call(this, arguments, function(value) {
-        return isString(value) && value.indexOf(suffix) === value.length-suffix.length;
+    return handleCurry.call(this, arguments, function endsWithPredicate(value) {
+        return isString(value) && value.indexOf(suffix) === value.length - suffix.length;
     });
 };

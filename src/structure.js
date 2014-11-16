@@ -79,7 +79,7 @@ var isObjectOfPredicates = objectOf(isFunction);
  * @param {Object} [value]
  * @return {(Boolean|Predicate)} returns bool if more than 1 argument provided, otherwise a predicate
  */
-module.exports = function structure(structure, value) {
+module.exports = function isStructure(structure) {
     if (!isObject(structure)) {
         throw new TypeError('Structure must be an object');
     }
@@ -93,9 +93,9 @@ module.exports = function structure(structure, value) {
         throw new TypeError('Structure object must consist of predicates');
     }
 
-    return handleCurry.call(this, arguments, function(value) {
+    return handleCurry.call(this, arguments, function isStructurePredicate(value) {
         var args = Array.prototype.slice.call(arguments, 1);
-        return isObject(value) && keys.every(function(key) {
+        return isObject(value) && keys.every(function structurePredicateTestingProperty(key) {
             return structure[key].apply(this, [value[key]].concat(args));
         }, this);
     });

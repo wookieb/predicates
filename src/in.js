@@ -28,7 +28,7 @@ var isArray = require('./array'),
  * @throws {Error} if collection is empty
  * @returns {(Boolean|Predicate)} bool if at least two arguments provided, otherwise a predicate
  */
-module.exports = function(collection, value) {
+module.exports = function isIn(collection) {
     if (!isArray(collection)) {
         throw new TypeError('Collection must be an array');
     }
@@ -37,7 +37,7 @@ module.exports = function(collection, value) {
         throw new Error('Collection cannot be empty');
     }
 
-    return handleCurry.call(this, arguments, function(value) {
+    return handleCurry.call(this, arguments, function isInPredicate(value) {
         return collection.indexOf(value) !== -1;
     });
 };

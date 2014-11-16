@@ -19,14 +19,14 @@
  * @throws {Error} if 0 or 1 allowed value provided
  * @returns {Predicate}
  */
-module.exports = function oneOf() {
+module.exports = function isOneOf() {
     var allowedValues = Array.prototype.slice.call(arguments);
 
     if (allowedValues.length < 2) {
         throw new Error('At least 2 allowed values are required');
     }
 
-    return function(value) {
+    return function isOneOfPredicate(value) {
         return allowedValues.indexOf(value) !== -1;
-    }
+    };
 };

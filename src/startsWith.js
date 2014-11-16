@@ -31,7 +31,7 @@ module.exports = function startsWith(prefix) {
         throw new Error('Prefix cannot be empty');
     }
 
-    return handleCurry.call(this, arguments, function(value) {
+    return handleCurry.call(this, arguments, function startsWithPredicate(value) {
         return isString(value) && value.indexOf(prefix) === 0;
     });
 };

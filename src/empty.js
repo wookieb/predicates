@@ -1,3 +1,4 @@
+/*eslint eqeqeq: 0*/
 'use strict';
 
 var isArrayLike = require('./arrayLike'),
@@ -25,7 +26,7 @@ var isArrayLike = require('./arrayLike'),
  * @param {*} value
  * @returns {Boolean}
  */
-module.exports = function empty(value) {
+module.exports = function isEmpty(value) {
     if (isArrayLike(value)) {
         return value.length === 0;
     } else if (isObject(value)) {

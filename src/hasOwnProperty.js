@@ -34,11 +34,11 @@ var isObject = require('./object'),
  * @throws {TypeError} if property is not a string
  * @returns {(Boolean|Predicate)} bool if at least two arguments provided, otherwise a predicate
  */
-module.exports = function hasOwnProperty(property, object) {
+module.exports = function hasOwnProperty(property) {
     if (!isString(property)) {
         throw new TypeError('Property name must be a string');
     }
-    return handleCurry.call(this, arguments, function(object) {
+    return handleCurry.call(this, arguments, function hasOwnPropertyPredicate(object) {
         return isObject(object) && Object.prototype.hasOwnProperty.call(object, property);
     });
 };

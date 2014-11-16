@@ -16,6 +16,6 @@ var isNumber = require('./number');
  * @param {Number} value
  * @returns {Boolean}
  */
-module.exports = function negative(value) {
+module.exports = function isNegativeNumber(value) {
     return isNumber(value) && value < 0;
 };

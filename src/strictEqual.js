@@ -25,8 +25,8 @@ var handleCurry = require('./utils/handleCurry');
  * @param {*} [value]
  * @returns {(Boolean|Predicate)} bool if at least two arguments provided, otherwise a predicate
  */
-module.exports = function strictEqual(expected) {
-    return handleCurry.call(this, arguments, function(value) {
+module.exports = function isStrictEqual(expected) {
+    return handleCurry.call(this, arguments, function isStrictEqualPredicate(value) {
         return expected === value;
     });
 };

@@ -17,6 +17,6 @@
  * @param {*} value
  * @returns {Boolean}
  */
-module.exports = function regexp(value) {
+module.exports = function isRegexp(value) {
     return Object.prototype.toString.call(value) === '[object RegExp]';
 };

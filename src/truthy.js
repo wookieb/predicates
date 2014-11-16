@@ -15,6 +15,6 @@
  * @param {*} value
  * @returns {Boolean}
  */
-module.exports = function truthy(value) {
+module.exports = function isTruthy(value) {
     return !!value;
 };

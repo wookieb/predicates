@@ -17,10 +17,11 @@
     ],
     "dependencies": {},
     "devDependencies": {
-        "blanket": "^1.1.6",
-        "dmd-examples-highlight": "^0.1.1",
-        "jsdoc-to-markdown": "^0.5.9",
-        "mocha": "^2.0.1"
+        "blanket": "^1.1.x",
+        "dmd-examples-highlight": "^0.1.x",
+        "eslint": "^0.9.x",
+        "jsdoc-to-markdown": "^0.5.x",
+        "mocha": "^2.0.x"
     },
     "scripts": {
         "test": "mocha -r ./test/bootstrap --reporter spec ./test/*Test.js",

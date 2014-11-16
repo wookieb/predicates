@@ -14,6 +14,6 @@
  * @param {*} value
  * @returns {Boolean}
  */
-module.exports = function(value) {
+module.exports = function isNull(value) {
     return value === null;
 };

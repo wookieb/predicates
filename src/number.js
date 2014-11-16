@@ -15,6 +15,6 @@
  * @param {*} value
  * @returns {Boolean}
  */
-module.exports = function number(value) {
+module.exports = function isNumber(value) {
     return Object.prototype.toString.call(value) === '[object Number]';
 };

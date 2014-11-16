@@ -16,6 +16,6 @@
  * @param {*} value
  * @returns {Boolean}
  */
-module.exports = function object(value) {
+module.exports = function isObject(value) {
     return value instanceof Object || (typeof value === 'object' && value !== null);
 };

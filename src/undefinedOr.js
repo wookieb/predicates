@@ -27,12 +27,12 @@ var isFunction = require('./function'),
  * @param {*} [value]
  * @returns {(Boolean|Predicate)} returns bool if more than 1 argument provided, otherwise a predicate
  */
-module.exports = function undefinedOr(predicate, value) {
+module.exports = function isUndefinedOrSatisfiesPredicate(predicate) {
     if (!isFunction(predicate)) {
         throw new TypeError('Predicate must be a function');
     }
 
-    return handleCurry.call(this, arguments, function(value) {
+    return handleCurry.call(this, arguments, function isUndefinedOrSatisfiedPredicate(value) {
         return isUndefined(value) || predicate.apply(this, arguments);
     });
 };

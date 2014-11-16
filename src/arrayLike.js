@@ -25,6 +25,6 @@ var isObject = require('./object'),
  * @param {*} value
  * @returns {Boolean}
  */
-module.exports = function arrayLike(value) {
+module.exports = function isArrayLike(value) {
     return isObject(value) && isNumber(value.length) && value.length >= 0;
 };

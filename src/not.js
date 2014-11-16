@@ -24,12 +24,12 @@ var isFunction = require('./function'),
  * @param {...*} [additionalArgs] additional arguments passed to the predicate
  * @returns {(Boolean|Predicate)} returns bool if at least two arguments provided, otherwise a predicate
  */
-module.exports = function not(predicate) {
+module.exports = function isNot(predicate) {
     if (!isFunction(predicate)) {
         throw new TypeError('Predicate must be a function');
     }
 
-    return handleCurry.call(this, arguments, function() {
+    return handleCurry.call(this, arguments, function isNotPredicateNegation() {
         return !predicate.apply(this, arguments);
     });
 };
