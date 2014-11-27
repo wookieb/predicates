@@ -57,6 +57,8 @@ new Module(101); // Error: Name must be a string
 
 ###1.0.0-rc.1
 * Provided names for all the functions to make debugging easier #13
+* Added _primitive_ predicate #12
+* Added _plainObject_ predicate #4
 
 ###0.3
 * Fixed path to finite polyfill
