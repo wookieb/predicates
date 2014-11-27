@@ -1,6 +1,6 @@
 {
     "name": "predicates",
-    "version": "0.3.0",
+    "version": "1.0.0-rc.1",
     "description": "Set of various predicates for type checking, assertions, filtering etc",
     "main": "index.js",
     "repository": {

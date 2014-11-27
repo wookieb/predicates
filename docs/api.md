@@ -37,6 +37,7 @@
 * [object(value)](#object)
 * [objectOf(predicate, [object], [...additionalArgs])](#objectOf)
 * [oneOf(...allowedValue)](#oneOf)
+* [plainObject(value)](#plainObject)
 * [positive(value)](#positive)
 * [primitive(value)](#primitive)
 * [regExp(value)](#regExp)
@@ -828,6 +829,28 @@ var isAllowedToAccess = is.oneOf('ROLE_ADMIN', 'ROLE_USER');
 
 isAllowedToAccess('ROLE_ADMIN'); // true
 isAllowedToAccess('ROLE_ANONYMOUS'); // false
+```
+<a name="plainObject"></a>
+#plainObject(value)
+Checks whether a value is a plain object.
+Plain object is an object which prototype is Object.prototype or null
+
+**Params**
+
+- value `*`  
+
+**Returns**: `boolean`  
+**Example**  
+```js
+var is = require('predicates');
+
+is.plainObject({property: 'value'}); // true
+is.plainObject(new Object); // true
+is.plainObject(Object.create(null)); // true
+is.plainObject(new String('test')); // false
+
+var Foo = function() {};
+is.plainObject(new Foo); // false
 ```
 <a name="positive"></a>
 #positive(value)

@@ -35,6 +35,7 @@ exports.number = exports.num = require('./src/number');
 exports.object = exports.obj = require('./src/object');
 exports.objectOf = exports.objOf = require('./src/objectOf');
 exports.oneOf = require('./src/oneOf');
+exports.plainObject = require('./src/plainObject');
 exports.positive = require('./src/positive');
 exports.primitive = require('./src/primitive');
 exports.regexp = exports.regExp = require('./src/regexp');
