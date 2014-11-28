@@ -38,19 +38,26 @@ isPerson({surname: 'Welling', age: 100}); // false, lack of name property
 Read [API reference](docs/api.md) for list of all available functions
 
 ##Assertions
-[Assert-generator](https://github.com/wookieb/assert-generator) helps you to create assertions directly from predicates which is very useful for arguments assertions
+[Assert-generator](https://github.com/wookieb/assert-generator) helps create assertions directly from predicates which is very useful for arguments assertions
 
 ```js
-var is = require('predicates'),
-    createAssert = require('assert-generator');
-    
-var assertName = createAssert(is.string, 'Name must be a string');
+var assertName = createAssert(is.string, 'Name must be a string'),
+    assertSurname = createAssert(is.all(
+        is.string, is.not(is.empty)
+    ), 'Surname must be a string and cannot be empty'),
+    assertAge = createAssert(is.undefinedOr(is.positive),
+        'Age must be a number and greater than 0');
 
-var Module = function(name) {
+
+var Person = function(name, surname, age) {
     assertName(name);
+    assertSurname(surname);
+    assertAge(age);
 }
 
-new Module(101); // Error: Name must be a string
+new Person('Tom', 'Welling', 33); // OK!
+new Person('Tom', 'Welling'); // OK!
+new Person('Tom', '', 33); // Error: Surname must be a string and cannot be empty
 ```
 
 ##Changelog
