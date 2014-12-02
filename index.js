@@ -9,6 +9,8 @@ exports.blank = require('./src/blank');
 exports.boolean = exports.bool = require('./src/boolean');
 exports.date = require('./src/date');
 exports.defined = require('./src/defined');
+exports.divisible = exports.divisibleBy = exports.divBy = require('./src/divisible');
+exports.divisibleWithRemainder = exports.divisibleByWithRemainder = exports.divByWithRemainder = require('./src/divisibleWithRemainder');
 exports.empty = require('./src/empty');
 exports.endsWith = require('./src/endsWith');
 exports.equal = exports.equalTo = exports.eq = require('./src/equal');

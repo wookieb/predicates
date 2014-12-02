@@ -57,7 +57,7 @@ var Person = function(name, surname, age) {
 
 new Person('Tom', 'Welling', 33); // OK!
 new Person('Tom', 'Welling'); // OK!
-new Person('Tom', '', 33); // Error: Surname must be a string and cannot be empty
+new Person('Tom', '', 33); // Error: Surname must be a string and cannot be emptye
 ```
 
 ##Changelog
@@ -66,6 +66,7 @@ new Person('Tom', '', 33); // Error: Surname must be a string and cannot be empt
 * Provided names for all the functions to make debugging easier #13
 * Added _primitive_ predicate #12
 * Added _plainObject_ predicate #4
+* Added _divisible_ and _divisibleWithRemainder_ predicates
 
 ###0.3
 * Fixed path to finite polyfill

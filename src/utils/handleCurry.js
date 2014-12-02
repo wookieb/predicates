@@ -1,5 +1,6 @@
 'use strict';
 
-module.exports = function handleCurry(args, func) {
-    return args.length > 1 ? func.apply(this, Array.prototype.slice.call(args, 1)) : func;
+module.exports = function handleCurry(args, func, valueIndex) {
+    valueIndex = valueIndex || 1;
+    return args.length > valueIndex ? func.apply(this, Array.prototype.slice.call(args, valueIndex)) : func;
 };

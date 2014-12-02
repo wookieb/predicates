@@ -11,6 +11,8 @@
 * [boolean(value)](#boolean)
 * [date(value)](#date)
 * [defined(value)](#defined)
+* [divisible(divisor, [value])](#divisible)
+* [divisibleWithRemainder(divisor, remainder, [value])](#divisibleWithRemainder)
 * [empty(value)](#empty)
 * [endsWith(suffix, [value])](#endsWith)
 * [equal(expected, [value])](#equal)
@@ -242,6 +244,56 @@ var is = require('predicates');
 is.defined(''); // true
 is.defined(1); // true
 is.defined(undefined); // false
+```
+<a name="divisible"></a>
+#divisible(divisor, [value])
+Checks whether a value is a number and it's divisible by divisor
+
+**Aliases** _divisibleBy_, _divBy_
+
+**Params**
+
+- divisor `Number`  
+- \[value\] `Number`  
+
+**Returns**: `*`  
+**Example**  
+```js
+var is = require('predicates');
+
+is.divisible(7, 14); // true
+is.divisible(7)(14); // true
+is.divisible(7, 10); // false
+```
+<a name="divisibleWithRemainder"></a>
+#divisibleWithRemainder(divisor, remainder, [value])
+Checks whether a value is a number and it's divisible by divisor with given remainder
+In other words value % div === remainder
+
+**Aliases** _divisibleByWithRemainder_, _divByWithRemainder_
+
+**Params**
+
+- divisor `Number`  
+- remainder `Number`  
+- \[value\] `Number`  
+
+**Returns**: `*`  
+**Example**  
+```js
+var is = require('predicates');
+
+is.divisibleWithRemainder(3, 2, 5); // true since 5%3 === 2
+is.divisibleWithRemainder(3, 2)(5); // true
+is.divisibleWithRemainder(3, 1, 5); // false since 5%3 !== 1
+
+var isEven = is.divisibleWithRemainder(2, 1);
+
+isEven(1); // true
+isEven(2); // false
+isEven(3); // true
+
+*
 ```
 <a name="empty"></a>
 #empty(value)
