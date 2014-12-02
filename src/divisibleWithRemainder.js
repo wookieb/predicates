@@ -1,7 +1,7 @@
 'use strict';
 
 var handleCurry = require('./utils/handleCurry'),
-    isFinite = require('./finite'),
+    isFinitePredicate = require('./finite'),
     isNumber = require('./number');
 
 /**
@@ -29,14 +29,19 @@ var handleCurry = require('./utils/handleCurry'),
  * @param {Number} divisor
  * @param {Number} remainder
  * @param {Number} [value]
- * @returns {*}
+ * @throws {Error} if less than 2 arguments provided
+ * @throws {Error} if the divisor is 0
+ * @throws {Error} if the remainder is greater than the divisor
+ * @throws {TypeError} if the divisor is not a finite number
+ * @throws {TypeError} if the remainder is not a finite number
+ * @returns {(Boolean|Predicate)} returns bool if at least 3 arguments provided, otherwise a predicate
  */
 module.exports = function divisibleWithRemainder(divisor, remainder) {
     if (arguments.length < 2) {
-        throw new TypeError('Missing remainder');
+        throw new Error('Missing remainder');
     }
 
-    if (!isFinite(divisor)) {
+    if (!isFinitePredicate(divisor)) {
         throw new TypeError('Divisor is not a finite number');
     }
 
@@ -44,7 +49,7 @@ module.exports = function divisibleWithRemainder(divisor, remainder) {
         throw new Error('Divisor cannot be 0');
     }
 
-    if (!isFinite(remainder)) {
+    if (!isFinitePredicate(remainder)) {
         throw new TypeError('Remainder is not a finite number');
     }
 
@@ -52,7 +57,7 @@ module.exports = function divisibleWithRemainder(divisor, remainder) {
         throw new Error('Remainder cannot be greater than divisor');
     }
 
-    return handleCurry.call(this, arguments, function isDivisibleBy(value) {
-        return isNumber(value) && value%divisor === remainder;
+    return handleCurry.call(this, arguments, function isDivisibleByWithRemainderTest(value) {
+        return isNumber(value) && value % divisor === remainder;
     }, 2);
 };

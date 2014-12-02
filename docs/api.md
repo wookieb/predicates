@@ -256,7 +256,13 @@ Checks whether a value is a number and it's divisible by divisor
 - divisor `Number`  
 - \[value\] `Number`  
 
-**Returns**: `*`  
+**Throws**
+
+* `Error`  - if the divisor is 0
+
+* `TypeError`  - if the divisor is not a finite number
+
+**Returns**: `Boolean` | [Predicate](#Predicate) - returns bool if at least 2 arguments provided, otherwise a predicate  
 **Example**  
 ```js
 var is = require('predicates');
@@ -278,7 +284,19 @@ In other words value % div === remainder
 - remainder `Number`  
 - \[value\] `Number`  
 
-**Returns**: `*`  
+**Throws**
+
+* `Error`  - if less than 2 arguments provided
+
+* `Error`  - if the divisor is 0
+
+* `Error`  - if the remainder is greater than the divisor
+
+* `TypeError`  - if the divisor is not a finite number
+
+* `TypeError`  - if the remainder is not a finite number
+
+**Returns**: `Boolean` | [Predicate](#Predicate) - returns bool if at least 3 arguments provided, otherwise a predicate  
 **Example**  
 ```js
 var is = require('predicates');

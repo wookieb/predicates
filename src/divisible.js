@@ -1,7 +1,6 @@
 'use strict';
 
-var handleCurry = require('./utils/handleCurry'),
-    divisibleWithRemainder = require('./divisibleWithRemainder');
+var divisibleWithRemainder = require('./divisibleWithRemainder');
 
 /**
  * Checks whether a value is a number and it's divisible by divisor
@@ -19,9 +18,11 @@ var handleCurry = require('./utils/handleCurry'),
  *
  * @param {Number} divisor
  * @param {Number} [value]
- * @returns {*}
+ * @throws {Error} if the divisor is 0
+ * @throws {TypeError} if the divisor is not a finite number
+ * @returns {(Boolean|Predicate)} returns bool if at least 2 arguments provided, otherwise a predicate
  */
-module.exports = function divisible(divisor, value) {
+module.exports = function divisible(divisor) {
     return divisibleWithRemainder.apply(
         this,
         [divisor, 0].concat(

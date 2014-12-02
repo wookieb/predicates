@@ -23,7 +23,7 @@ describe('divisibleWithRemainder', function() {
     it('throws an error when only 1 argument provided', function() {
         assert.throws(function() {
             divisibleWithRemainder(10);
-        }, TypeError, /missing remainder/i);
+        }, Error, /missing remainder/i);
     });
 
     it('checks whether the remainder is smaller than the divisor', function() {
