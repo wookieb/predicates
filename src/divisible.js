@@ -22,7 +22,7 @@ var divisibleWithRemainder = require('./divisibleWithRemainder');
  * @throws {TypeError} if the divisor is not a finite number
  * @returns {(Boolean|Predicate)} returns bool if at least 2 arguments provided, otherwise a predicate
  */
-module.exports = function divisible(divisor) {
+module.exports = function divisible() {
     var args = Array.prototype.slice.call(arguments);
     args.splice(1, 0, 0);
     return divisibleWithRemainder.apply(this, args);
