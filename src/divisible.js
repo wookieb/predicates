@@ -23,10 +23,7 @@ var divisibleWithRemainder = require('./divisibleWithRemainder');
  * @returns {(Boolean|Predicate)} returns bool if at least 2 arguments provided, otherwise a predicate
  */
 module.exports = function divisible(divisor) {
-    return divisibleWithRemainder.apply(
-        this,
-        [divisor, 0].concat(
-            Array.prototype.slice.call(arguments, 1)
-        )
-    );
+    var args = Array.prototype.slice.call(arguments);
+    args.splice(1, 0, 0);
+    return divisibleWithRemainder.apply(this, args);
 };

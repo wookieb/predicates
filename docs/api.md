@@ -42,6 +42,7 @@
 * [plainObject(value)](#plainObject)
 * [positive(value)](#positive)
 * [primitive(value)](#primitive)
+* [property(propertyName, predicate, [value], [...additionalArgs])](#property)
 * [regExp(value)](#regExp)
 * [startsWith(prefix, [value])](#startsWith)
 * [strictEqual(expected, [value])](#strictEqual)
@@ -972,6 +973,36 @@ is.primitive(new String('test')); // false
 is.primitive(new Boolean(true)); // false
 is.primitive({}); // false
 ```
+<a name="property"></a>
+#property(propertyName, predicate, [value], [...additionalArgs])
+Checks whether a value of given property of an object satisfies a predicate
+
+If you need to check more properties at a time use [structure](#structure).
+
+**Aliases** _prop_
+
+**Params**
+
+- propertyName `*`  
+- predicate <code>[Predicate](#Predicate)</code>  
+- \[value\] `Object`  
+- \[...additionalArgs\] `*` - additional arguments passed to the predicate  
+
+**Throws**
+
+* `TypeError`  - if predicate is not a function
+
+* `Error`  - if too few arguments provided
+
+**Returns**: `Boolean` | [Predicate](#Predicate) - boolean if at least 3 arguments provided, otherwise a predicate  
+**Example**  
+```js
+var is = require('predicates');
+
+is.property('name', is.string, {name: 'Tommy'}); // true
+is.property('name', is.string)({name: 'Tommy'}); // true
+is.property('name', is.string, {}); // false
+```
 <a name="regExp"></a>
 #regExp(value)
 Checks whether a value is a regexp
@@ -1072,7 +1103,7 @@ There are few reasons for that:
 * it's just a predicate (that returns only true or false)
 * breaks [the design rule](design.md#user-content-defined-and-generated-predicates-will-not-throw-any-errors)
 
-See examples for inspiration how you can use _.structure
+See examples for inspiration how you can use _structure_
 
 **Params**
 

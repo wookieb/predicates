@@ -67,6 +67,7 @@ new Person('Tom', '', 33); // Error: Surname must be a string and cannot be empt
 * Added _primitive_ predicate #12
 * Added _plainObject_ predicate #4
 * Added _divisible_ and _divisibleWithRemainder_ predicates
+* Added _property_ predicate #14
 
 ###0.3
 * Fixed path to finite polyfill

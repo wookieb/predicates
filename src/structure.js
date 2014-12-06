@@ -18,7 +18,7 @@ var isObjectOfPredicates = objectOf(isFunction);
  * * it's just a predicate (that returns only true or false)
  * * breaks [the design rule](design.md#user-content-defined-and-generated-predicates-will-not-throw-any-errors)
  *
- * See examples for inspiration how you can use _.structure
+ * See examples for inspiration how you can use _structure_
  *
  * @function structure
  *
