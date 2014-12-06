@@ -17,6 +17,6 @@ var isUndefined = require('./undefined');
  * @param {*} value
  * @returns {Boolean}
  */
-module.exports = function isFefined(value) {
+module.exports = function isDefined(value) {
     return !isUndefined(value);
 };

@@ -16,5 +16,5 @@
  * @returns {Boolean}
  */
 module.exports = function isNumber(value) {
-    return Object.prototype.toString.call(value) === '[object Number]';
+    return typeof value === 'number' || Object.prototype.toString.call(value) === '[object Number]';
 };

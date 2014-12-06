@@ -5,3 +5,4 @@ coverage.html
 node_modules
 npm-debug.log
 test.js
+perf.js

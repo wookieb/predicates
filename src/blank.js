@@ -2,6 +2,8 @@
 
 var isString = require('./string');
 
+var CONTAINS_ONLY_WHITESPACES = /^\s*$/;
+
 /**
  * Checks whether a value is empty string or contains only whitespaces
  *
@@ -18,5 +20,5 @@ var isString = require('./string');
  * @returns {Boolean}
  */
 module.exports = function isBlank(value) {
-    return isString(value) && String.prototype.trim.call(value) === '';
+    return isString(value) && (value === '' || CONTAINS_ONLY_WHITESPACES.test(value));
 };

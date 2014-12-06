@@ -14,6 +14,9 @@ describe('blank', function() {
         assert.ok(blank("\n     "));
         assert.ok(blank(new String('   ')));
 
+        assert.ok(!blank({
+            toString: function() { return 'test'; }
+        }));
         assert.ok(!blank('a'));
         assert.ok(!blank(new String('aa')));
         assert.ok(!blank('0'));

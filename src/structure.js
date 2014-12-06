@@ -77,6 +77,7 @@ var isObjectOfPredicates = objectOf(isFunction);
  *
  * @param {Object} structure
  * @param {Object} [value]
+ * @param {...*} [additionalArgs] additional arguments passed to the predicates
  * @return {(Boolean|Predicate)} returns bool if more than 1 argument provided, otherwise a predicate
  */
 module.exports = function isStructure(structure) {

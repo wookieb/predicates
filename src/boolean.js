@@ -18,5 +18,5 @@
  * @returns {Boolean}
  */
 module.exports = function isBoolean(value) {
-    return Object.prototype.toString.call(value) === '[object Boolean]';
+    return typeof value === 'boolean' || Object.prototype.toString.call(value) === '[object Boolean]';
 };

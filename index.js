@@ -31,6 +31,7 @@ exports.matches = exports.match = require('./src/matches');
 exports.notANumber = exports.nan = exports.NaN = require('./src/nan');
 exports.negative = require('./src/negative');
 exports.not = exports.negate = require('./src/not');
+exports.notBlank = require('./src/notBlank');
 exports.notEmpty = require('./src/notEmpty');
 exports.null = require('./src/null');
 exports.number = exports.num = require('./src/number');
