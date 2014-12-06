@@ -33,6 +33,7 @@
 * [NaN(value)](#NaN)
 * [negative(value)](#negative)
 * [not(predicate, [value], [...additionalArgs])](#not)
+* [notBlank(value)](#notBlank)
 * [notEmpty(value)](#notEmpty)
 * [null(value)](#null)
 * [number(value)](#number)
@@ -47,7 +48,7 @@
 * [startsWith(prefix, [value])](#startsWith)
 * [strictEqual(expected, [value])](#strictEqual)
 * [string(value)](#string)
-* [structure(structure, [value])](#structure)
+* [structure(structure, [value], [...additionalArgs])](#structure)
 * [true(value)](#true)
 * [truthy(value)](#truthy)
 * [undefined(value)](#undefined)
@@ -779,6 +780,24 @@ isNotEmpty([1, 2]);// true
 is.not(is.empty, [1, 2]); // true
 isNotEmpty(''); // false
 ```
+<a name="notBlank"></a>
+#notBlank(value)
+Checks whether a value is a string and contains at least one non-whitespace character
+
+**Params**
+
+- value `String`  
+
+**Returns**: `Boolean`  
+**Example**  
+```js
+var is = require('predicates');
+
+is.notBlank(''); // false
+is.notBlank('    '); // false
+is.notBlank('test'); // true
+is.notBlank({toString: function() { return 'test'; }}); // false - since it's not a string
+```
 <a name="notEmpty"></a>
 #notEmpty(value)
 Checks whether value is not empty.
@@ -979,6 +998,8 @@ Checks whether a value of given property of an object satisfies a predicate
 
 If you need to check more properties at a time use [structure](#structure).
 
+NOTE! Provided predicate will be called ALWAYS if a provided value is an object.
+
 **Aliases** _prop_
 
 **Params**
@@ -1001,7 +1022,8 @@ var is = require('predicates');
 
 is.property('name', is.string, {name: 'Tommy'}); // true
 is.property('name', is.string)({name: 'Tommy'}); // true
-is.property('name', is.string, {}); // false
+is.property('name', is.string, {name: 2}); // false - since 2 is not a string
+is.property('name', is.string, {}); // false - since undefined is not a string
 ```
 <a name="regExp"></a>
 #regExp(value)
@@ -1092,7 +1114,7 @@ is.string('test'); // true
 is.string({}); // false
 ```
 <a name="structure"></a>
-#structure(structure, [value])
+#structure(structure, [value], [...additionalArgs])
 Checks whether an object satisfies predicates defined in structure
 
 NOTE: All predicates defined in structure must be satisfied.
@@ -1109,6 +1131,7 @@ See examples for inspiration how you can use _structure_
 
 - structure `Object`  
 - \[value\] `Object`  
+- \[...additionalArgs\] `*` - additional arguments passed to the predicates  
 
 **Returns**: `Boolean` | [Predicate](#Predicate) - returns bool if more than 1 argument provided, otherwise a predicate  
 **Example**  
