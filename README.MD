@@ -62,7 +62,7 @@ new Person('Tom', '', 33); // Error: Surname must be a string and cannot be empt
 
 ##Changelog
 
-###1.0.0-rc.1 (not released)
+###1.0.0-rc.1
 * Provided names for all the functions to make debugging easier #13
 * Added _primitive_ predicate #12
 * Added _plainObject_ predicate #4
