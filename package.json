@@ -24,10 +24,10 @@
         "mocha": "^2.0.x"
     },
     "scripts": {
-        "test": "mocha -r ./test/bootstrap --reporter spec ./test/*Test.js",
-        "coverage": "mocha -r ./test/bootstrap -R html-cov ./test/*Test.js > coverage.html",
-        "docs": "jsdoc2md -v src/*.js --plugin dmd-examples-highlight --partial jsdoc2md/name-prefix.hbs jsdoc2md/fields.hbs jsdoc2md/throws.hbs > docs/api.md",
-        "lint": "eslint -c .config/eslint.yaml src"
+        "test": "./node_modules/.bin/mocha -r ./test/bootstrap --reporter spec ./test/*Test.js",
+        "coverage": "./node_modules/.bin/mocha -r ./test/bootstrap -R html-cov ./test/*Test.js > coverage.html",
+        "docs": "./node_modules/.bin/jsdoc2md -v src/*.js --plugin dmd-examples-highlight --partial jsdoc2md/name-prefix.hbs jsdoc2md/fields.hbs jsdoc2md/throws.hbs > docs/api.md",
+        "lint": "./node_modules/.bin/eslint -c .config/eslint.yaml src"
     },
     "author": "Łukasz Kużyński",
     "license": "MIT"

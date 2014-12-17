@@ -1,19 +1,21 @@
-#Predicates
+# Predicates
 [![Build Status](https://travis-ci.org/wookieb/predicates.svg)](https://travis-ci.org/wookieb/predicates)
+[![NPM version](https://badge.fury.io/js/predicates.png)](http://badge.fury.io/js/predicates)
+[![Bower version](https://badge.fury.io/bo/predicates.js.png)](http://badge.fury.io/bo/predicates.js)
 
 Set of various predicates for type checking, assertions, filtering etc.
 
-##Install
+## Install
 ```
 npm install predicates
 ```
 
-##Documentation
+## Documentation
 For list of all available functions see [API reference](docs/api.md)
 
 If you wonder why _predicates_ is different, read [API design principles](docs/design.md)
 
-##Example
+## Example
 
 ```js
 var is = require('predicates');
@@ -37,7 +39,7 @@ isPerson({surname: 'Welling', age: 100}); // false, lack of name property
 ```
 Read [API reference](docs/api.md) for list of all available functions
 
-##Assertions
+## Assertions
 [Assert-generator](https://github.com/wookieb/assert-generator) helps create assertions directly from predicates which is very useful for arguments assertions
 
 ```js
@@ -60,9 +62,21 @@ new Person('Tom', 'Welling'); // OK!
 new Person('Tom', '', 33); // Error: Surname must be a string and cannot be emptye
 ```
 
-##Changelog
+## Contributing
+* clone repo
+* ensure your editor is decent and pick up the `.editorconfig` files
+* `npm install`
+* `npm test`
+* add tests, add features
+* `npm test`
+* `npm run lint` --> there should be no errors
+* `npm run coverage` and inspect `coverage.html` to ensure it still has 100% coverage
+* eventually, `npm run docs` and send a PR
 
-###1.0.0-rc.1
+
+## Changelog
+
+### 1.0.0-rc.1
 * Provided names for all the functions to make debugging easier #13
 * Added _primitive_ predicate #12
 * Added _plainObject_ predicate #4
@@ -71,17 +85,17 @@ new Person('Tom', '', 33); // Error: Surname must be a string and cannot be empt
 * Added _notBlank_ predicate
 * Improved performance
 
-###0.3
+### 0.3
 * Fixed path to finite polyfill
 * Better support for is.NaN #11
 * Added _notEmpty_ predicate #9
 * Improved is.false and is.true to accept new Boolean(true/false) as well
 * Fixed behavior of is.object to accept Object.create(null) #10
 
-###0.2.1
+### 0.2.1
 * Fix: instanceof renamed to instanceOf
 
-###0.2
+### 0.2
 * Added information how to use _predicates_ for arguments assertions
 * Added documentation with examples and design rules
 * Added "startsWith" and "endsWith" functions
