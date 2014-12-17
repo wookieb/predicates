@@ -64,7 +64,7 @@ new Person('Tom', '', 33); // Error: Surname must be a string and cannot be empt
 
 ## Contributing
 * clone repo
-* ensure your editor is decent and pick up the `.editorconfig` and `.jshintrc` files
+* ensure your editor is decent and pick up the `.editorconfig` files
 * `npm install`
 * `npm test`
 * add tests, add features
