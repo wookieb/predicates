@@ -1,6 +1,7 @@
 'use strict';
 
-var isDefined = requireSrc('defined');
+var isDefined = require('../src/defined'),
+    assert = require('assert');
 
 describe('defined', function() {
     it('checks whether value is not undefined', function() {

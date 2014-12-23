@@ -1,6 +1,7 @@
 'use strict';
 
-var isArrayLike = requireSrc('arrayLike');
+var isArrayLike = require('../src/arrayLike'),
+    assert = require('assert');
 
 describe('arrayLike', function() {
     it('checks whether is a array like object', function() {

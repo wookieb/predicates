@@ -1,6 +1,7 @@
 'use strict';
 
-var isEmpty = requireSrc('empty');
+var isEmpty = require('../src/empty'),
+    assert = require('assert');
 
 describe('empty', function() {
     it('checks if object has no enumerable properties', function() {

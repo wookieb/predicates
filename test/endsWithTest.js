@@ -1,6 +1,7 @@
 'use strict';
 
-var endsWith = requireSrc('endsWith');
+var endsWith = require('../src/endsWith'),
+    assert = require('assert');
 
 
 describe('endsWith', function() {

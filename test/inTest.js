@@ -1,6 +1,7 @@
 'use strict';
 
-var isIn = requireSrc('in');
+var isIn = require('../src/in'),
+    assert = require('assert');
 
 describe('in', function() {
     var COLLECTION = [1, '2', 'test'],

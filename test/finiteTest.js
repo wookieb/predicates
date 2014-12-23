@@ -1,8 +1,9 @@
 'use strict';
 
-var nativeIsFinite = requireSrc('finite/native'),
-    polyfillIsFinite = requireSrc('finite/polyfill'),
-    isFinite = requireSrc('finite');
+var nativeIsFinite = require('../src/finite/native'),
+    polyfillIsFinite = require('../src/finite/polyfill'),
+    isFinite = require('../src/finite'),
+    assert = require('assert');
 
 describe('finite', function() {
     it('picks native or polyfill function', function() {

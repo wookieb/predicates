@@ -1,6 +1,7 @@
 'use strict';
 
-var isObject = requireSrc('object');
+var isObject = require('../src/object'),
+    assert = require('assert');
 
 describe('object', function() {
     it('checks whether value is an object', function() {

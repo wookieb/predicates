@@ -1,6 +1,7 @@
 'use strict';
 
-var any = requireSrc('any');
+var any = require('../src/any'),
+    assert = require('assert');
 
 describe('any', function() {
     var TRUE_PREDICATE = function() {

@@ -1,6 +1,7 @@
 'use strict';
 
-var isLessThanOrEqual = requireSrc('lessThanOrEqual');
+var isLessThanOrEqual = require('../src/lessThanOrEqual'),
+    assert = require('assert');
 
 describe('lessThanOrEqual', function() {
     it('returns another function if only one argument provided', function() {

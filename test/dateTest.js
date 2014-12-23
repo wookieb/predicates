@@ -1,6 +1,7 @@
 'use strict';
 
-var isDate = requireSrc('date');
+var isDate = require('../src/date'),
+    assert = require('assert');
 
 describe('date', function() {
     it('returns true if value is an instance of Date', function() {

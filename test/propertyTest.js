@@ -1,6 +1,7 @@
 'use strict';
 
-var isProperty = requireSrc('property');
+var isProperty = require('../src/property'),
+    assert = require('assert');
 
 describe('property', function() {
     var PREDICATE = function(value) {

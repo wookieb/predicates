@@ -1,6 +1,7 @@
 'use strict';
 
-var hasOwnProperty = requireSrc('hasOwnProperty');
+var hasOwnProperty = require('../src/hasOwnProperty'),
+    assert = require('assert');
 
 describe('hasOwnProperty', function() {
     it('returns a function if only property provided', function() {

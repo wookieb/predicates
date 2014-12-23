@@ -1,6 +1,7 @@
 'use strict';
 
-var isOneOf = requireSrc('oneOf');
+var isOneOf = require('../src/oneOf'),
+    assert = require('assert');
 
 describe('oneOf', function() {
     var ALLOWED_VALUES = [1, '2', 'test'],

@@ -1,5 +1,6 @@
 'use strict';
-var divisibleWithRemainder = requireSrc('divisibleWithRemainder');
+var divisibleWithRemainder = require('../src/divisibleWithRemainder'),
+    assert = require('assert');
 
 describe('divisibleWithRemainder', function() {
     it('checks whether the divisor is a finite number', function() {

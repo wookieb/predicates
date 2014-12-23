@@ -1,6 +1,7 @@
 'use strict';
 
-var isNull = requireSrc('null');
+var isNull = require('../src/null'),
+    assert = require('assert');
 
 describe('null', function() {
     it('checks whether a value is null', function() {

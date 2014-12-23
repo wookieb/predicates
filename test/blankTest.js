@@ -1,6 +1,7 @@
 'use strict';
 
-var blank = requireSrc('blank');
+var blank = require('../src/blank'),
+    assert = require('assert');
 
 describe('blank', function() {
     it('return false if a value is not a string', function() {

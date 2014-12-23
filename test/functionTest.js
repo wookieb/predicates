@@ -1,6 +1,7 @@
 'use strict';
 
-var isFunction = requireSrc('function');
+var isFunction = require('../src/function'),
+    assert = require('assert');
 
 describe('function', function() {
     it('returns false if value is not a function', function() {

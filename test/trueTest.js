@@ -1,6 +1,7 @@
 'use strict';
 
-var isTrue = requireSrc('true');
+var isTrue = require('../src/true'),
+    assert = require('assert');
 
 describe('true', function() {
     it('checks whether value is strictly true', function() {

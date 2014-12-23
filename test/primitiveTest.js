@@ -1,6 +1,7 @@
 'use strict';
 
-var isPrimitive = requireSrc('primitive');
+var isPrimitive = require('../src/primitive'),
+    assert = require('assert');
 
 describe('primitive', function() {
     it('checks whether value is a primitive string', function() {

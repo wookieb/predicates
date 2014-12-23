@@ -1,6 +1,7 @@
 'use strict';
 
-var isArray = requireSrc('array');
+var isArray = require('../src/array'),
+    assert = require('assert');
 
 describe('array', function() {
     it('checks whether a value is an array', function() {

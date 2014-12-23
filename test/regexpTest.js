@@ -1,6 +1,7 @@
 'use strict';
 
-var isRegexp = requireSrc('regexp');
+var isRegexp = require('../src/regexp'),
+    assert = require('assert');
 
 describe('regexp', function() {
     it('checks whether a value is a regexp', function() {

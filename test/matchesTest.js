@@ -1,6 +1,7 @@
 'use strict';
 
-var matches = requireSrc('matches');
+var matches = require('../src/matches'),
+    assert = require('assert');
 
 describe('matches', function() {
     it('throws an error if regexp is not valid regexp', function() {

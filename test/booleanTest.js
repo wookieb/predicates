@@ -1,6 +1,7 @@
 'use strict';
 
-var isBoolean = requireSrc('boolean');
+var isBoolean = require('../src/boolean'),
+    assert = require('assert');
 
 describe('boolean', function() {
     it('returns true if value is a boolean', function() {

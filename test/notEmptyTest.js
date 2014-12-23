@@ -1,6 +1,7 @@
 'use strict';
 
-var isNotEmpty = requireSrc('notEmpty');
+var isNotEmpty = require('../src/notEmpty'),
+    assert = require('assert');
 
 describe('notEmpty', function() {
 

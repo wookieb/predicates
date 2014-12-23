@@ -1,6 +1,7 @@
 'use strict';
 
-var isEqual = requireSrc('equal');
+var isEqual = require('../src/equal'),
+    assert = require('assert');
 
 describe('equal', function() {
     it('returns a function if only one argument provided', function() {

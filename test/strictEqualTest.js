@@ -1,6 +1,7 @@
 'use strict';
 
-var isStrictEqual = requireSrc('strictEqual');
+var isStrictEqual = require('../src/strictEqual'),
+    assert = require('assert');
 
 describe('strictEqual', function() {
     var OBJECT = {};

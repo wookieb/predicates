@@ -1,6 +1,7 @@
 'use strict';
 
-var undefinedOr = requireSrc('undefinedOr');
+var undefinedOr = require('../src/undefinedOr'),
+    assert = require('assert');
 
 describe('undefinedOr', function() {
     var PREDICATE = function(value) {

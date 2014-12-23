@@ -1,6 +1,7 @@
 'use strict';
 
-var isInstanceOf = requireSrc('instanceOf');
+var isInstanceOf = require('../src/instanceOf'),
+    assert = require('assert');
 
 describe('instanceOf', function() {
     var CLAZZ = function() {};

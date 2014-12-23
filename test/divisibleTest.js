@@ -1,5 +1,6 @@
 'use strict';
-var divisible = requireSrc('divisible');
+var divisible = require('../src/divisible'),
+    assert = require('assert');
 
 describe('divisible', function() {
     it('checks whether divisor is a finite number', function() {

@@ -1,6 +1,7 @@
 'use strict';
 
-var objectOf = requireSrc('objectOf');
+var objectOf = require('../src/objectOf'),
+    assert = require('assert');
 
 describe('objectOf', function() {
     var TRUE_PREDICATE = function() {

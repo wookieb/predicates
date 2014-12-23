@@ -1,6 +1,7 @@
 'use strict';
 
-var not = requireSrc('not');
+var not = require('../src/not'),
+    assert = require('assert');
 
 describe('not', function() {
     var TRUE_FUNCTION = function() { return true; },

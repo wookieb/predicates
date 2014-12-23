@@ -1,6 +1,7 @@
 'use strict';
 
-var startsWith = requireSrc('startsWith');
+var startsWith = require('../src/startsWith'),
+    assert = require('assert');
 
 describe('startsWith', function() {
     it('returns a function if only one argument provided', function() {

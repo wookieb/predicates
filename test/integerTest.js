@@ -1,8 +1,9 @@
 'use strict';
 
-var nativeIsInteger = requireSrc('integer/native'),
-    polyfillIsInteger = requireSrc('integer/polyfill'),
-    isInteger = requireSrc('integer');
+var nativeIsInteger = require('../src/integer/native'),
+    polyfillIsInteger = require('../src/integer/polyfill'),
+    isInteger = require('../src/integer'),
+    assert = require('assert');
 
 describe('integer', function() {
     it('picks native or polyfill function', function() {

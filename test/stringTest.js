@@ -1,6 +1,7 @@
 'use strict';
 
-var isString = requireSrc('string');
+var isString = require('../src/string'),
+    assert = require('assert');
 
 describe('string', function() {
     var OBJECT_WITH_TO_STRING = {

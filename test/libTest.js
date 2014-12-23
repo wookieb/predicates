@@ -1,7 +1,8 @@
 'use strict';
 
 var lib = require('../'),
-    fs = require('fs');
+    fs = require('fs'),
+    assert = require('assert');
 
 var testFunction = function(funcName, func) {
     return function() {
@@ -23,7 +24,7 @@ describe('Tests whether all functions are included', function() {
             var functionName = file.replace(/\.js$/, '');
             return {
                 name: functionName,
-                function: requireSrc(functionName)
+                function: require('../src/'+functionName)
             };
         })
         .forEach(function(functionDescriptor) {

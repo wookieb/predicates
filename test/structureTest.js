@@ -1,6 +1,7 @@
 'use strict';
 
-var isValidStructure = requireSrc('structure');
+var isValidStructure = require('../src/structure'),
+    assert = require('assert');
 
 describe('structure', function() {
     var STRUCTURE = {

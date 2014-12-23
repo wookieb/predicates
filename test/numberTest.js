@@ -1,6 +1,7 @@
 'use strict';
 
-var isNumber = requireSrc('number');
+var isNumber = require('../src/number'),
+    assert = require('assert');
 
 describe('number', function() {
     it('checks whether value is a number', function() {

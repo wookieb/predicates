@@ -1,6 +1,7 @@
 'use strict';
 
-var isNaN = requireSrc('nan');
+var isNaN = require('../src/nan'),
+    assert = require('assert');
 
 describe('NaN', function() {
     it('returns true if value is NaN', function() {

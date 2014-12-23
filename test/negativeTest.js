@@ -1,6 +1,7 @@
 'use strict';
 
-var isNegative = requireSrc('negative');
+var isNegative = require('../src/negative'),
+    assert = require('assert');
 
 describe('negative', function() {
     it('returns true if value is lower than 0', function() {

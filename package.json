@@ -18,13 +18,17 @@
     "dependencies": {},
     "devDependencies": {
         "blanket": "^1.1.x",
+        "browserify": "^7.0.x",
         "dmd-examples-highlight": "^0.1.x",
         "eslint": "^0.9.x",
+        "glob": "^4.3.x",
+        "gulp": "^3.8.x",
         "jsdoc-to-markdown": "^0.5.x",
-        "mocha": "^2.0.x"
+        "mocha": "^2.0.x",
+        "vinyl-source-stream": "^1.0.0"
     },
     "scripts": {
-        "test": "./node_modules/.bin/mocha -r ./test/bootstrap --reporter spec ./test/*Test.js",
+        "test": "./node_modules/.bin/mocha --reporter spec ./test/*Test.js",
         "coverage": "./node_modules/.bin/mocha -r ./test/bootstrap -R html-cov ./test/*Test.js > coverage.html",
         "docs": "./node_modules/.bin/jsdoc2md -v src/*.js --plugin dmd-examples-highlight --partial jsdoc2md/name-prefix.hbs jsdoc2md/fields.hbs jsdoc2md/throws.hbs > docs/api.md",
         "lint": "./node_modules/.bin/eslint -c .config/eslint.yaml src"

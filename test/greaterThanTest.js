@@ -1,6 +1,7 @@
 'use strict';
 
-var isGreaterThan = requireSrc('greaterThan');
+var isGreaterThan = require('../src/greaterThan'),
+    assert = require('assert');
 
 describe('greaterThan', function() {
     it('returns a function if only one argument provided', function() {

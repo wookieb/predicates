@@ -1,6 +1,7 @@
 'use strict';
 
-var isArrayOf = requireSrc('arrayOf');
+var isArrayOf = require('../src/arrayOf'),
+    assert = require('assert');
 
 describe('arrayOf', function() {
     var IS_STRING = function(value) {
