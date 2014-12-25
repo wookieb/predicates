@@ -72,13 +72,8 @@ new Person('Tom', '', 33); // Error: Surname must be a string and cannot be empt
 * clone repo
 * ensure your editor is decent and pick up the `.editorconfig` files
 * `npm install`
-* `npm test`
 * add tests, add features
-* `npm test`
-* `npm run lint` --> there should be no errors
-* `npm run coverage` and inspect `coverage.html` to ensure it still has 100% coverage
-* eventually, `npm run docs` and send a PR
-
+* `gulp` --> there should be no errors
 
 ## Changelog
 

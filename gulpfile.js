@@ -87,3 +87,5 @@ gulp.task('lint', function() {
         .pipe(eslint('./.config/eslint.yaml'))
         .pipe(eslint.format());
 });
+
+gulp.task('default', ['test', 'lint', 'docs', 'browser-build', 'build-mocha-tests']);
