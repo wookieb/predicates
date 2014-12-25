@@ -1,7 +1,7 @@
 'use strict';
 
 var isProperty = require('../src/property'),
-    assert = require('assert');
+    assert = require('chai').assert;
 
 describe('property', function() {
     var PREDICATE = function(value) {
@@ -31,8 +31,8 @@ describe('property', function() {
                 assert.fail('Predicate should not be called since given value is not an object');
             };
 
-        assert.ok(isProperty(PROPERTY, PREDICATE, NOT_AN_OBJECT) === false);
-        assert.ok(isProperty(PROPERTY, PREDICATE)(NOT_AN_OBJECT) === false);
+        assert.notOk(isProperty(PROPERTY, PREDICATE, NOT_AN_OBJECT));
+        assert.notOk(isProperty(PROPERTY, PREDICATE)(NOT_AN_OBJECT));
     });
 
     it('calls predicate in the same context', function() {

@@ -1,7 +1,7 @@
 'use strict';
 
 var isFalsy = require('../src/falsy'),
-    assert = require('assert');
+    assert = require('chai').assert;
 
 describe('falsy', function() {
     it('checks whether a value is falsy', function() {

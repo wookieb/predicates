@@ -1,7 +1,7 @@
 'use strict';
 
 var isGreaterThanOrEqual = require('../src/greaterThanOrEqual'),
-    assert = require('assert');
+    assert = require('chai').assert;
 
 describe('greaterThanOrEqual', function() {
     it('returns a function if only one argument provided', function() {

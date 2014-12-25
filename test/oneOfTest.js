@@ -1,7 +1,7 @@
 'use strict';
 
 var isOneOf = require('../src/oneOf'),
-    assert = require('assert');
+    assert = require('chai').assert;
 
 describe('oneOf', function() {
     var ALLOWED_VALUES = [1, '2', 'test'],

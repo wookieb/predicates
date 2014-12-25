@@ -1,7 +1,7 @@
 'use strict';
 
 var isDate = require('../src/date'),
-    assert = require('assert');
+    assert = require('chai').assert;
 
 describe('date', function() {
     it('returns true if value is an instance of Date', function() {

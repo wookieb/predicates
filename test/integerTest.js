@@ -3,7 +3,7 @@
 var nativeIsInteger = require('../src/integer/native'),
     polyfillIsInteger = require('../src/integer/polyfill'),
     isInteger = require('../src/integer'),
-    assert = require('assert');
+    assert = require('chai').assert;
 
 describe('integer', function() {
     it('picks native or polyfill function', function() {

@@ -1,7 +1,7 @@
 'use strict';
 
 var isPositive = require('../src/positive'),
-    assert = require('assert');
+    assert = require('chai').assert;
 
 describe('positive', function() {
     it('checks whether value is greater than 0', function() {

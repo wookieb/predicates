@@ -7,3 +7,5 @@ npm-debug.log
 test.js
 perf.js
 test/mochaTests.js
+.coverrun
+.coverdata

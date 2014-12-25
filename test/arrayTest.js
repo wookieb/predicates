@@ -1,7 +1,7 @@
 'use strict';
 
 var isArray = require('../src/array'),
-    assert = require('assert');
+    assert = require('chai').assert;
 
 describe('array', function() {
     it('checks whether a value is an array', function() {

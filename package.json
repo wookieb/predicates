@@ -18,10 +18,14 @@
   "dependencies": {},
   "devDependencies": {
     "browserify": "^8.x.x",
+    "chai": "^1.10.0",
     "dmd-examples-highlight": "^0.1.x",
     "eslint": "^0.10.x",
     "glob": "^4.3.x",
     "gulp": "^3.8.x",
+    "gulp-coverage": "^0.3.32",
+    "gulp-eslint": "^0.2.0",
+    "gulp-mocha": "^2.0.0",
     "gulp-rename": "^1.2.0",
     "gulp-size": "^1.1.0",
     "gulp-uglify": "^1.0.2",
@@ -32,8 +36,7 @@
   },
   "testling": {
     "harness": "mocha",
-    "files": "test/mochaTests.js",
-    "preProcess": "gulp build-mocha-tests",
+    "files": "test/*Test.js",
     "browsers": [
       "ie/8..latest",
       "chrome/25..latest",
@@ -44,12 +47,6 @@
       "ipad/6",
       "android-browser/latest"
     ]
-  },
-  "scripts": {
-    "test": "./node_modules/.bin/mocha --reporter spec ./test/*Test.js",
-    "coverage": "./node_modules/.bin/mocha -r ./test/bootstrap -R html-cov ./test/*Test.js > coverage.html",
-    "docs": "./node_modules/.bin/jsdoc2md -v src/*.js --plugin dmd-examples-highlight --partial jsdoc2md/name-prefix.hbs jsdoc2md/fields.hbs jsdoc2md/throws.hbs > docs/api.md",
-    "lint": "./node_modules/.bin/eslint -c .config/eslint.yaml src"
   },
   "author": "Łukasz Kużyński",
   "license": "MIT"

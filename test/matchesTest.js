@@ -1,7 +1,7 @@
 'use strict';
 
 var matches = require('../src/matches'),
-    assert = require('assert');
+    assert = require('chai').assert;
 
 describe('matches', function() {
     it('throws an error if regexp is not valid regexp', function() {

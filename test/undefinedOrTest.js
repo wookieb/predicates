@@ -1,7 +1,7 @@
 'use strict';
 
 var undefinedOr = require('../src/undefinedOr'),
-    assert = require('assert');
+    assert = require('chai').assert;
 
 describe('undefinedOr', function() {
     var PREDICATE = function(value) {

@@ -1,7 +1,7 @@
 'use strict';
 
 var isNull = require('../src/null'),
-    assert = require('assert');
+    assert = require('chai').assert;
 
 describe('null', function() {
     it('checks whether a value is null', function() {

@@ -1,7 +1,7 @@
 'use strict';
 
 var all = require('../src/all'),
-    assert = require('assert');
+    assert = require('chai').assert;
 
 describe('all', function() {
     var TRUE_PREDICATE = function() {

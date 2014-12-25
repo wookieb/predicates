@@ -1,7 +1,7 @@
 'use strict';
 
 var endsWith = require('../src/endsWith'),
-    assert = require('assert');
+    assert = require('chai').assert;
 
 
 describe('endsWith', function() {

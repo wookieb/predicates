@@ -3,7 +3,7 @@
 var nativeIsFinite = require('../src/finite/native'),
     polyfillIsFinite = require('../src/finite/polyfill'),
     isFinite = require('../src/finite'),
-    assert = require('assert');
+    assert = require('chai').assert;
 
 describe('finite', function() {
     it('picks native or polyfill function', function() {

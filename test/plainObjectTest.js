@@ -1,7 +1,7 @@
 'use strict';
 
 var isPlainObject = require('../src/plainObject'),
-    assert = require('assert');
+    assert = require('chai').assert;
 
 describe('plainObject', function() {
     var Foo = function() {};

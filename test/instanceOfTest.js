@@ -1,7 +1,7 @@
 'use strict';
 
 var isInstanceOf = require('../src/instanceOf'),
-    assert = require('assert');
+    assert = require('chai').assert;
 
 describe('instanceOf', function() {
     var CLAZZ = function() {};

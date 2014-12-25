@@ -1,7 +1,7 @@
 'use strict';
 
 var isValidStructure = require('../src/structure'),
-    assert = require('assert');
+    assert = require('chai').assert;
 
 describe('structure', function() {
     var STRUCTURE = {

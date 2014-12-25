@@ -1,6 +1,6 @@
 'use strict';
 var divisible = require('../src/divisible'),
-    assert = require('assert');
+    assert = require('chai').assert;
 
 describe('divisible', function() {
     it('checks whether divisor is a finite number', function() {

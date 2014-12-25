@@ -1,7 +1,7 @@
 'use strict';
 
 var isObject = require('../src/object'),
-    assert = require('assert');
+    assert = require('chai').assert;
 
 describe('object', function() {
     it('checks whether value is an object', function() {

@@ -1,7 +1,7 @@
 'use strict';
 
 var hasProperty = require('../src/hasProperty'),
-    assert = require('assert');
+    assert = require('chai').assert;
 
 describe('hasProperty', function() {
     it('returns a function if only property provided', function() {

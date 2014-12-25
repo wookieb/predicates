@@ -1,7 +1,7 @@
 'use strict';
 
 var isArrayOf = require('../src/arrayOf'),
-    assert = require('assert');
+    assert = require('chai').assert;
 
 describe('arrayOf', function() {
     var IS_STRING = function(value) {

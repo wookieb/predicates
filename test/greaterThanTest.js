@@ -1,7 +1,7 @@
 'use strict';
 
 var isGreaterThan = require('../src/greaterThan'),
-    assert = require('assert');
+    assert = require('chai').assert;
 
 describe('greaterThan', function() {
     it('returns a function if only one argument provided', function() {

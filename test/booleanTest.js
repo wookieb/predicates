@@ -1,7 +1,7 @@
 'use strict';
 
 var isBoolean = require('../src/boolean'),
-    assert = require('assert');
+    assert = require('chai').assert;
 
 describe('boolean', function() {
     it('returns true if value is a boolean', function() {

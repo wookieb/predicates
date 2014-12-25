@@ -1,7 +1,7 @@
 'use strict';
 
 var not = require('../src/not'),
-    assert = require('assert');
+    assert = require('chai').assert;
 
 describe('not', function() {
     var TRUE_FUNCTION = function() { return true; },

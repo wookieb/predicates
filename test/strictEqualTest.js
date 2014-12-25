@@ -1,7 +1,7 @@
 'use strict';
 
 var isStrictEqual = require('../src/strictEqual'),
-    assert = require('assert');
+    assert = require('chai').assert;
 
 describe('strictEqual', function() {
     var OBJECT = {};

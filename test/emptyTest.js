@@ -1,7 +1,7 @@
 'use strict';
 
 var isEmpty = require('../src/empty'),
-    assert = require('assert');
+    assert = require('chai').assert;
 
 describe('empty', function() {
     it('checks if object has no enumerable properties', function() {

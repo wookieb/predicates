@@ -1,7 +1,7 @@
 'use strict';
 
 var isNotEmpty = require('../src/notEmpty'),
-    assert = require('assert');
+    assert = require('chai').assert;
 
 describe('notEmpty', function() {
 

@@ -1,6 +1,6 @@
 'use strict';
 var divisibleWithRemainder = require('../src/divisibleWithRemainder'),
-    assert = require('assert');
+    assert = require('chai').assert;
 
 describe('divisibleWithRemainder', function() {
     it('checks whether the divisor is a finite number', function() {

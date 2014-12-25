@@ -1,7 +1,7 @@
 'use strict';
 
 var isString = require('../src/string'),
-    assert = require('assert');
+    assert = require('chai').assert;
 
 describe('string', function() {
     var OBJECT_WITH_TO_STRING = {

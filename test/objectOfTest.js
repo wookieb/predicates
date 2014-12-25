@@ -1,7 +1,7 @@
 'use strict';
 
 var objectOf = require('../src/objectOf'),
-    assert = require('assert');
+    assert = require('chai').assert;
 
 describe('objectOf', function() {
     var TRUE_PREDICATE = function() {

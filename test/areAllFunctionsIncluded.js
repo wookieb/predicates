@@ -2,7 +2,7 @@
 
 var lib = require('../'),
     fs = require('fs'),
-    assert = require('assert');
+    assert = require('chai').assert;
 
 var testFunction = function(funcName, func) {
     return function() {

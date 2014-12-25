@@ -1,7 +1,7 @@
 'use strict';
 
 var isFunction = require('../src/function'),
-    assert = require('assert');
+    assert = require('chai').assert;
 
 describe('function', function() {
     it('returns false if value is not a function', function() {

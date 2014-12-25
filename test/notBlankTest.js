@@ -1,7 +1,7 @@
 'use strict';
 
 var notBlank = require('../src/notBlank'),
-    assert = require('assert');
+    assert = require('chai').assert;
 
 describe('blank', function() {
     it('return false if a value is not a string', function() {

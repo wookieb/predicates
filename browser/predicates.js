@@ -1414,12 +1414,12 @@ var isObject = require('./object'),
  * @return {(Boolean|Predicate)} boolean if at least 3 arguments provided, otherwise a predicate
  */
 module.exports = function property(propertyName, predicate) {
-    if (!isFunction(predicate)) {
-        throw new TypeError('Predicate is not a function');
-    }
-
     if (arguments.length < 2) {
         throw new Error('Too few arguments - 2 required');
+    }
+
+    if (!isFunction(predicate)) {
+        throw new TypeError('Predicate is not a function');
     }
 
     return handleCurry.call(this, arguments, function isPropertySatisfiesPredicateTest(value) {

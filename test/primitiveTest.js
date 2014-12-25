@@ -1,7 +1,7 @@
 'use strict';
 
 var isPrimitive = require('../src/primitive'),
-    assert = require('assert');
+    assert = require('chai').assert;
 
 describe('primitive', function() {
     it('checks whether value is a primitive string', function() {

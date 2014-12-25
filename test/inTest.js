@@ -1,7 +1,7 @@
 'use strict';
 
 var isIn = require('../src/in'),
-    assert = require('assert');
+    assert = require('chai').assert;
 
 describe('in', function() {
     var COLLECTION = [1, '2', 'test'],

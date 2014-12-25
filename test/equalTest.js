@@ -1,7 +1,7 @@
 'use strict';
 
 var isEqual = require('../src/equal'),
-    assert = require('assert');
+    assert = require('chai').assert;
 
 describe('equal', function() {
     it('returns a function if only one argument provided', function() {

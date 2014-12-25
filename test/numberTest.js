@@ -1,7 +1,7 @@
 'use strict';
 
 var isNumber = require('../src/number'),
-    assert = require('assert');
+    assert = require('chai').assert;
 
 describe('number', function() {
     it('checks whether value is a number', function() {
