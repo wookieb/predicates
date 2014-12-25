@@ -1,6 +1,6 @@
 {
     "name": "predicates.js",
-    "version": "1.0.0-rc.1",
+    "version": "1.0.0-rc.2",
     "description": "Set of various predicates for type checking, assertions, filtering etc",
     "keywords": [
         "predicates",
