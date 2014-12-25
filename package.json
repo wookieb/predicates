@@ -1,38 +1,42 @@
 {
-    "name": "predicates",
-    "version": "1.0.0-rc.1",
-    "description": "Set of various predicates for type checking, assertions, filtering etc",
-    "main": "index.js",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/wookieb/predicates"
-    },
-    "keywords": [
-        "predicates",
-        "predicate",
-        "type",
-        "check",
-        "assert",
-        "filter"
-    ],
-    "dependencies": {},
-    "devDependencies": {
-        "blanket": "^1.1.x",
-        "browserify": "^7.0.x",
-        "dmd-examples-highlight": "^0.1.x",
-        "eslint": "^0.9.x",
-        "glob": "^4.3.x",
-        "gulp": "^3.8.x",
-        "jsdoc-to-markdown": "^0.5.x",
-        "mocha": "^2.0.x",
-        "vinyl-source-stream": "^1.0.0"
-    },
-    "scripts": {
-        "test": "./node_modules/.bin/mocha --reporter spec ./test/*Test.js",
-        "coverage": "./node_modules/.bin/mocha -r ./test/bootstrap -R html-cov ./test/*Test.js > coverage.html",
-        "docs": "./node_modules/.bin/jsdoc2md -v src/*.js --plugin dmd-examples-highlight --partial jsdoc2md/name-prefix.hbs jsdoc2md/fields.hbs jsdoc2md/throws.hbs > docs/api.md",
-        "lint": "./node_modules/.bin/eslint -c .config/eslint.yaml src"
-    },
-    "author": "Łukasz Kużyński",
-    "license": "MIT"
+  "name": "predicates",
+  "version": "1.0.0-rc.1",
+  "description": "Set of various predicates for type checking, assertions, filtering etc",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wookieb/predicates"
+  },
+  "keywords": [
+    "predicates",
+    "predicate",
+    "type",
+    "check",
+    "assert",
+    "filter"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "blanket": "^1.1.x",
+    "browserify": "^7.0.x",
+    "dmd-examples-highlight": "^0.1.x",
+    "eslint": "^0.9.x",
+    "glob": "^4.3.x",
+    "gulp": "^3.8.x",
+    "gulp-rename": "^1.2.0",
+    "gulp-size": "^1.1.0",
+    "gulp-uglify": "^1.0.2",
+    "jsdoc-to-markdown": "^0.5.x",
+    "mocha": "^2.0.x",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.0.0"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --reporter spec ./test/*Test.js",
+    "coverage": "./node_modules/.bin/mocha -r ./test/bootstrap -R html-cov ./test/*Test.js > coverage.html",
+    "docs": "./node_modules/.bin/jsdoc2md -v src/*.js --plugin dmd-examples-highlight --partial jsdoc2md/name-prefix.hbs jsdoc2md/fields.hbs jsdoc2md/throws.hbs > docs/api.md",
+    "lint": "./node_modules/.bin/eslint -c .config/eslint.yaml src"
+  },
+  "author": "Łukasz Kużyński",
+  "license": "MIT"
 }
