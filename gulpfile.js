@@ -13,9 +13,14 @@ gulp.task('build-mocha-tests', function() {
     var testFiles = glob.sync('./test/*Test.js')
         .filter(function(file) {
             return !/libTest\.js$/.test(file);
-        });
+        }),
+        pack = browserify();
 
-    return browserify(testFiles)
+    testFiles.forEach(function(file) {
+        pack.add(file);
+    });
+
+    return pack
         .bundle()
         .pipe(source('mochaTests.js'))
         .pipe(gulp.dest('test'));

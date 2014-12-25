@@ -6,8 +6,14 @@
 Set of various predicates for type checking, assertions, filtering etc.
 
 ## Install
+### NPM
 ```
 npm install predicates
+```
+
+### Bower
+```
+bower install predicates.js
 ```
 
 ## Documentation

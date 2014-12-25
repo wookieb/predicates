@@ -17,10 +17,9 @@
   ],
   "dependencies": {},
   "devDependencies": {
-    "blanket": "^1.1.x",
-    "browserify": "^7.0.x",
+    "browserify": "^8.x.x",
     "dmd-examples-highlight": "^0.1.x",
-    "eslint": "^0.9.x",
+    "eslint": "^0.10.x",
     "glob": "^4.3.x",
     "gulp": "^3.8.x",
     "gulp-rename": "^1.2.0",
@@ -30,6 +29,21 @@
     "mocha": "^2.0.x",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.0.0"
+  },
+  "testling": {
+    "harness": "mocha",
+    "files": "test/mochaTests.js",
+    "preProcess": "gulp build-mocha-tests",
+    "browsers": [
+      "ie/8..latest",
+      "chrome/28..latest",
+      "firefox/20..latest",
+      "safari/5..latest",
+      "opera/11.0..latest",
+      "iphone/6",
+      "ipad/6",
+      "android-browser/latest"
+    ]
   },
   "scripts": {
     "test": "./node_modules/.bin/mocha --reporter spec ./test/*Test.js",
