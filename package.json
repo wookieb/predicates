@@ -36,7 +36,7 @@
     "preProcess": "gulp build-mocha-tests",
     "browsers": [
       "ie/8..latest",
-      "chrome/28..latest",
+      "chrome/25..latest",
       "firefox/20..latest",
       "safari/5..latest",
       "opera/11.0..latest",
