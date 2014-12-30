@@ -31,8 +31,8 @@ describe('property', function() {
                 assert.fail('Predicate should not be called since given value is not an object');
             };
 
-        assert.notOk(isProperty(PROPERTY, PREDICATE, NOT_AN_OBJECT));
-        assert.notOk(isProperty(PROPERTY, PREDICATE)(NOT_AN_OBJECT));
+        assert.ok(isProperty(PROPERTY, PREDICATE, NOT_AN_OBJECT) === false);
+        assert.ok(isProperty(PROPERTY, PREDICATE)(NOT_AN_OBJECT) === false);
     });
 
     it('calls predicate in the same context', function() {

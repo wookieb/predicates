@@ -68,6 +68,10 @@ new Person('Tom', 'Welling'); // OK!
 new Person('Tom', '', 33); // Error: Surname must be a string and cannot be emptye
 ```
 
+## Supported browsers
+Supported by all major browsers including IE >=9.
+IE8 is supported as well but you need to include https://github.com/es-shims/es5-shim and es5-sham.
+
 ## Contributing
 * clone repo
 * ensure your editor is decent and pick up the `.editorconfig` files
@@ -76,6 +80,9 @@ new Person('Tom', '', 33); // Error: Surname must be a string and cannot be empt
 * `gulp` --> there should be no errors
 
 ## Changelog
+
+### 1.0.0-rc.2
+* Added bower support #16
 
 ### 1.0.0-rc.1
 * Provided names for all the functions to make debugging easier #13

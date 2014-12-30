@@ -3,7 +3,19 @@
 var isEmpty = require('../src/empty'),
     assert = require('chai').assert;
 
+
 describe('empty', function() {
+
+    var supportsNonEnumerableProperties = (function() {
+        var o = {};
+        Object.defineProperty(o, 'test', {
+            enumerable: false,
+            value: 10
+        });
+
+        return Object.getOwnPropertyDescriptor(o, 'test').enumerable === false;
+    })();
+
     it('checks if object has no enumerable properties', function() {
         var objectWithoutEnumerableProperties = {};
 
@@ -12,8 +24,11 @@ describe('empty', function() {
             value: 'yo'
         });
 
+        if (supportsNonEnumerableProperties) {
+            assert.ok(isEmpty(objectWithoutEnumerableProperties));
+        }
+
         assert.ok(isEmpty({}));
-        assert.ok(isEmpty(objectWithoutEnumerableProperties));
         assert.ok(!isEmpty({some: 'property'}));
     });
 

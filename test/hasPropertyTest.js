@@ -34,7 +34,8 @@ describe('hasProperty', function() {
         objectWithoutPrototype.property = 'value';
 
         Object.defineProperty(objectWithNotEnumerableProperty, 'property', {
-            enumerable: false
+            enumerable: false,
+            value: 10
         });
 
         assert.ok(hasProperty('property'), objectWithUndefinedProperty);
