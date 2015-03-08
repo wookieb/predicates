@@ -27,12 +27,17 @@ describe('property', function() {
 
     it('automatically fails if provided value is not an object', function() {
         var NOT_AN_OBJECT = 'test',
+            NOT_AN_OBJECT_2 = undefined,
             PREDICATE = function() {
                 assert.fail('Predicate should not be called since given value is not an object');
             };
 
         assert.ok(isProperty(PROPERTY, PREDICATE, NOT_AN_OBJECT) === false);
         assert.ok(isProperty(PROPERTY, PREDICATE)(NOT_AN_OBJECT) === false);
+
+        // Covers #21
+        assert.ok(isProperty(PROPERTY, PREDICATE, NOT_AN_OBJECT_2) === false);
+        assert.ok(isProperty(PROPERTY, PREDICATE)(NOT_AN_OBJECT_2) === false);
     });
 
     it('calls predicate in the same context', function() {

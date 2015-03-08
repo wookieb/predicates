@@ -42,7 +42,7 @@ module.exports = function property(propertyName, predicate) {
 
     return handleCurry.call(this, arguments, function isPropertySatisfiesPredicateTest(value) {
         var args = Array.prototype.slice.call(arguments);
-        args.splice(0, 1, value[propertyName]);
+        args.splice(0, 1, isObject(value) ? value[propertyName] : undefined);
         return isObject(value) && predicate.apply(this, args);
     }, 2);
 };

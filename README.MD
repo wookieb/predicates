@@ -81,6 +81,9 @@ IE8 is supported as well but you need to include https://github.com/es-shims/es5
 
 ## Changelog
 
+### 1.0.1
+* Fixed #21
+
 ### 1.0.0-rc.2
 * Added bower support #16
 
