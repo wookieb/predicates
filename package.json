@@ -1,6 +1,6 @@
 {
   "name": "predicates",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Set of various predicates for type checking, assertions, filtering etc",
   "main": "index.js",
   "repository": {
@@ -33,20 +33,6 @@
     "mocha": "^2.0.x",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.0.0"
-  },
-  "testling": {
-    "harness": "mocha",
-    "files": "test/*Test.js",
-    "browsers": [
-      "ie/8..latest",
-      "chrome/25..latest",
-      "firefox/20..latest",
-      "safari/5..latest",
-      "opera/11.0..latest",
-      "iphone/6",
-      "ipad/6",
-      "android-browser/latest"
-    ]
   },
   "author": "Łukasz Kużyński",
   "license": "MIT"
