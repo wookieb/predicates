@@ -41,7 +41,7 @@ gulp.task('browser-build', function() {
 });
 
 gulp.task('test', function() {
-    return gulp.src(['test/*Test.js', 'test/areAllFunctionsIncluded.js'])
+    return gulp.src(['test/*Test.js', 'test/areAllFunctionsIncluded.ts'])
         .pipe(mocha({
             ui: 'bdd'
         }));
@@ -51,7 +51,7 @@ gulp.task('coverage', function() {
     require('blanket')({
         pattern: 'src'
     });
-    return gulp.src(['test/*Test.js', 'test/areAllFunctionsIncluded.js'], {read: false})
+    return gulp.src(['test/*Test.js', 'test/areAllFunctionsIncluded.ts'], {read: false})
         .pipe(cover.instrument({
             pattern: 'src/**/*.js'
         }))

@@ -1,0 +1,20 @@
+import isEqual = require('../src/equal');
+import {assert} from 'chai';
+
+describe('equal', function () {
+    it('returns a function if only one argument provided', function () {
+        assert.isFunction(isEqual(5));
+    });
+
+    it('returns false is value is not equal to expected one', function () {
+        assert.isFalse(isEqual(5, '4'));
+        assert.isFalse(isEqual(5)('4'));
+    });
+
+    it('returns true is value is equal to expected one', function () {
+        assert.isTrue(isEqual(5, '5'));
+        assert.isTrue(isEqual(5, 5));
+        assert.isTrue(isEqual(5)('5'));
+        assert.isTrue(isEqual(5)(5));
+    });
+});

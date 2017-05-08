@@ -9,3 +9,4 @@ perf.js
 test/mochaTests.js
 .coverrun
 .coverdata
+!/src/undefinedOr.ts

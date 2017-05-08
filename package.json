@@ -1,11 +1,16 @@
 {
   "name": "predicates",
-  "version": "1.0.1",
+  "version": "2.0.0-rc2",
   "description": "Set of various predicates for type checking, assertions, filtering etc",
   "main": "index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/wookieb/predicates"
+  },
+  "scripts": {
+    "compile": "rm -rf compiled && ./node_modules/.bin/tsc -p ./.config/tsconfig.json",
+    "lint": "./node_modules/.bin/tslint --config ./.config/tslint.json src/*.ts",
+    "test": "./node_modules/.bin/jest --config ./.config/jest.json"
   },
   "keywords": [
     "predicates",
@@ -17,22 +22,18 @@
   ],
   "dependencies": {},
   "devDependencies": {
-    "browserify": "^8.x.x",
+    "@types/chai": "^3.5.2",
+    "@types/jest": "^19.2.3",
+    "@types/sinon": "^2.2.1",
     "chai": "^1.10.0",
     "dmd-examples-highlight": "^0.1.x",
-    "eslint": "^0.10.x",
-    "glob": "^4.3.x",
-    "gulp": "^3.8.x",
-    "gulp-coverage": "^0.3.32",
-    "gulp-eslint": "^0.2.0",
-    "gulp-mocha": "^2.0.0",
-    "gulp-rename": "^1.2.0",
-    "gulp-size": "^1.1.0",
-    "gulp-uglify": "^1.0.2",
-    "jsdoc-to-markdown": "^0.5.x",
-    "mocha": "^2.0.x",
-    "vinyl-buffer": "^1.0.0",
-    "vinyl-source-stream": "^1.0.0"
+    "esdoc": "^0.5.2",
+    "jest": "^20.0.0",
+    "jsdoc-to-markdown": "^3.0.0",
+    "sinon": "^2.2.0",
+    "ts-jest": "^20.0.0",
+    "tslint": "^5.2.0",
+    "typescript": "^2.3.2"
   },
   "author": "Łukasz Kużyński",
   "license": "MIT"

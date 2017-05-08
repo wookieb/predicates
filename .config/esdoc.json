@@ -1,0 +1,4 @@
+{
+    "source": "./compiled",
+    "destination": "./docs"
+}

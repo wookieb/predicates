@@ -1,0 +1,15 @@
+{
+    "rules": {
+        "quotemark": [
+            true,
+            "single",
+            "avoid-escape"
+        ],
+        "semicolon": [
+            true,
+            "always",
+            "ignore-interfaces"
+        ],
+        "adjacent-overload-signatures": true
+    }
+}
