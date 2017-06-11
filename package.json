@@ -3,6 +3,7 @@
     "version": "2.0.0-rc1",
     "description": "Set of various predicates for type checking, assertions, filtering etc",
     "main": "index.js",
+    "types": "index.d.ts",
     "repository": {
         "type": "git",
         "url": "https://github.com/wookieb/predicates"
@@ -26,6 +27,10 @@
         "check",
         "assert",
         "filter"
+    ],
+    "files": [
+        "**/*.d.ts",
+        "**/*.js"
     ],
     "dependencies": {},
     "devDependencies": {
