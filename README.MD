@@ -11,11 +11,6 @@ Set of various predicates for type checking, assertions, filtering etc.
 npm install predicates
 ```
 
-### Bower
-```
-bower install predicates.js
-```
-
 ## Documentation
 For list of all available functions see [API reference](docs/api.md)
 
@@ -43,7 +38,6 @@ var isPerson = is.structure({
 isPerson({name: 'Tom', age: 10}); // true
 isPerson({surname: 'Welling', age: 100}); // false, lack of name property
 ```
-Read [API reference](docs/api.md) for list of all available functions
 
 ## Assertions
 [Assert-generator](https://github.com/wookieb/assert-generator) helps create assertions directly from predicates which is very useful for arguments assertions
@@ -67,13 +61,6 @@ new Person('Tom', 'Welling', 33); // OK!
 new Person('Tom', 'Welling'); // OK!
 new Person('Tom', '', 33); // Error: Surname must be a string and cannot be emptye
 ```
-
-## Contributing
-* clone repo
-* ensure your editor is decent and pick up the `.editorconfig` files
-* `npm install`
-* add tests, add features
-* `gulp` --> there should be no errors
 
 ## Changelog
 
