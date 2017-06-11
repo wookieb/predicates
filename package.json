@@ -9,7 +9,9 @@
     },
     "scripts": {
         "compile": "rm -rf compiled && ./node_modules/.bin/tsc -p ./.config/tsconfig.json",
-        "prepublish": "npm run compile && mv -r ./compiled/* .",
+        "prepublish": "npm run compile",
+        "prepack": "cp -r ./compiled/* .",
+        "postpack": "rm -f *.d.ts && rm -f *.js && rm -rf integer && rm -rf utils",
         "lint": "./node_modules/.bin/tslint --config ./.config/tslint.json src/*.ts",
         "test": "__TS_CONFIG__=./config/tsconfig-test.json ./node_modules/.bin/jest --config ./.config/jest.json",
         "test:ci": "./node_modules/.bin/jest --config ./.config/jest.json --testResultsProcessor ./node_modules/jest-junit"
