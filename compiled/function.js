@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * Checks whether a value is a function
  *
@@ -17,4 +18,4 @@
 function isFunction(value) {
     return typeof value === 'function';
 }
-module.exports = isFunction;
+exports.default = isFunction;

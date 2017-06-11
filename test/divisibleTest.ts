@@ -1,4 +1,4 @@
-import divisible = require('../src/divisible');
+import divisible from '../src/divisible';
 import {assert} from 'chai';
 
 describe('divisible', function () {

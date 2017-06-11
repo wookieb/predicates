@@ -1,2 +1,2 @@
-declare var _default: any;
-export = _default;
+declare const isFinite: any;
+export default isFinite;

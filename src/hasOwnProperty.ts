@@ -1,6 +1,6 @@
-import isObject = require('./object');
-import isString = require('./string');
-import handleCurry = require('./utils/handleCurry');
+import isObject from './object';
+import isString from './string';
+import handleCurry from './utils/handleCurry';
 import {Predicate} from './types';
 
 /**
@@ -31,7 +31,7 @@ import {Predicate} from './types';
  * @param {String} property
  * @param {Object} [object]
  * @throws {TypeError} if property is not a string
- * @returns {(Boolean|Predicate)} bool if at least two arguments provided, otherwise a predicate
+ * @returns {(boolean|Predicate)} bool if at least two arguments provided, otherwise a predicate
  */
 function hasOwnProperty(property: string): Predicate ;
 function hasOwnProperty(property: string, object: Object): boolean;
@@ -44,4 +44,4 @@ function hasOwnProperty(property: string, object?: Object): boolean | Predicate 
     });
 }
 
-export = hasOwnProperty;
+export default hasOwnProperty;

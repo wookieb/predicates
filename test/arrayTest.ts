@@ -1,4 +1,4 @@
-import isArray = require('../src/array');
+import isArray from '../src/array';
 import {assert} from 'chai';
 
 describe('array', function () {

@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * Checks whether a value is undefined
  *
@@ -11,4 +12,4 @@
 function isUndefined(value) {
     return typeof value === 'undefined';
 }
-module.exports = isUndefined;
+exports.default = isUndefined;

@@ -11,4 +11,4 @@ function isString(value: any): boolean {
     return typeof value === 'string' || Object.prototype.toString.call(value) === '[object String]';
 }
 
-export = isString;
+export default isString;

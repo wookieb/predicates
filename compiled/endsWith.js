@@ -1,15 +1,16 @@
 "use strict";
-var isString = require("./string");
-var handleCurry = require("./utils/handleCurry");
+Object.defineProperty(exports, "__esModule", { value: true });
+const string_1 = require("./string");
+const handleCurry_1 = require("./utils/handleCurry");
 function endsWith(suffix, value) {
-    if (!isString(suffix)) {
+    if (!string_1.default(suffix)) {
         throw new TypeError('Suffix must be a string');
     }
     if (suffix === '') {
         throw new Error('Suffix cannot be empty');
     }
-    return handleCurry.call(this, arguments, function (value) {
-        return isString(value) && value.indexOf(suffix) === value.length - suffix.length;
+    return handleCurry_1.default.call(this, arguments, (value) => {
+        return string_1.default(value) && value.indexOf(suffix) === value.length - suffix.length;
     });
 }
-module.exports = endsWith;
+exports.default = endsWith;

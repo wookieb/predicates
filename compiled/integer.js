@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * Checks whether a value is an integer
  *
@@ -15,6 +16,6 @@
  * @param {*} value
  * @returns {Boolean}
  */
-var native = require("./integer/native");
-var polyfill = require("./integer/polyfill");
-module.exports = native || polyfill;
+const native_1 = require("./integer/native");
+const polyfill_1 = require("./integer/polyfill");
+exports.default = native_1.default || polyfill_1.default;

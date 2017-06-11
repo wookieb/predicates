@@ -15,4 +15,4 @@ import { Predicate } from './types';
  */
 declare function isStrictEqual(expected: any): Predicate;
 declare function isStrictEqual(expected: any, value: any): boolean;
-export = isStrictEqual;
+export default isStrictEqual;

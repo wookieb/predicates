@@ -1,4 +1,4 @@
-import isTrue = require('../src/true');
+import isTrue from '../src/true';
 import {assert} from 'chai';
 
 describe('true', function () {

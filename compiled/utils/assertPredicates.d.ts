@@ -1,3 +1,2 @@
 import { Predicate } from "../types";
-declare function assertPredicates(predicates: Predicate[]): void;
-export = assertPredicates;
+export default function assertPredicates(predicates: Predicate[]): void;

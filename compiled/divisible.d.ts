@@ -21,4 +21,4 @@ import { Predicate } from './types';
  */
 declare function divisible(divisor: number): Predicate;
 declare function divisible(divisor: number, value: number): boolean;
-export = divisible;
+export default divisible;

@@ -1,7 +1,8 @@
 "use strict";
-var isObject = require("./object");
-var isString = require("./string");
-var isArrayLike = require("./arrayLike");
+Object.defineProperty(exports, "__esModule", { value: true });
+const object_1 = require("./object");
+const string_1 = require("./string");
+const arrayLike_1 = require("./arrayLike");
 /**
  * Checks whether a value is empty
  * Value is empty when:
@@ -24,15 +25,15 @@ var isArrayLike = require("./arrayLike");
  * @returns {boolean}
  */
 function isEmpty(value) {
-    if (isArrayLike(value)) {
+    if (arrayLike_1.default(value)) {
         return value.length === 0;
     }
-    else if (isObject(value)) {
+    else if (object_1.default(value)) {
         return Object.keys(value).length === 0;
     }
-    else if (isString(value)) {
+    else if (string_1.default(value)) {
         return value == '';
     }
     return value === void 0;
 }
-module.exports = isEmpty;
+exports.default = isEmpty;

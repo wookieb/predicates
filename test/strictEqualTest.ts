@@ -1,4 +1,4 @@
-import isStrictEqual = require('../src/strictEqual');
+import isStrictEqual from '../src/strictEqual';
 import {assert} from 'chai';
 
 describe('strictEqual', function () {

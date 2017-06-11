@@ -1,5 +1,6 @@
 "use strict";
-var isNumber = require("./number");
+Object.defineProperty(exports, "__esModule", { value: true });
+const number_1 = require("./number");
 /**
  * Checks whether a value is a number and it's finite
  *
@@ -15,6 +16,8 @@ var isNumber = require("./number");
  * @returns {Boolean}
  */
 function isFinitePolyfill(value) {
-    return isNumber(value) && value !== Infinity && value !== -Infinity && !isNaN(value);
+    return number_1.default(value) && value !== Infinity && value !== -Infinity && !isNaN(value);
 }
-module.exports = ('isFinite' in Number) ? Number.isFinite : isFinitePolyfill;
+const isFinite = ('isFinite' in Number) ? Number.isFinite : isFinitePolyfill;
+console.log('finite', isFinite);
+exports.default = isFinite;

@@ -17,4 +17,4 @@ function isObject(value: any) {
     return value instanceof Object || (typeof value === 'object' && value !== null);
 }
 
-export = isObject;
+export default isObject;

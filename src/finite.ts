@@ -1,4 +1,4 @@
-import isNumber = require('./number');
+import isNumber from './number';
 
 /**
  * Checks whether a value is a number and it's finite
@@ -12,10 +12,12 @@ import isNumber = require('./number');
  * is.finite(Infinity); // false
  *
  * @param {*} value
- * @returns {Boolean}
+ * @returns {boolean}
  */
 function isFinitePolyfill(value: any): boolean {
     return isNumber(value) && value !== Infinity && value !== -Infinity && !isNaN(value);
 }
 
-export = ('isFinite' in Number) ? (<any>Number).isFinite : isFinitePolyfill;
+const isFinite = ('isFinite' in Number) ? (<any>Number).isFinite : isFinitePolyfill;
+
+export default isFinite;

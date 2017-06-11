@@ -33,4 +33,4 @@ import { Predicate } from './types';
  */
 declare function divisibleWithRemainder(divisor: number, remainder: number): Predicate;
 declare function divisibleWithRemainder(divisor: number, remainder: number, value: number): boolean;
-export = divisibleWithRemainder;
+export default divisibleWithRemainder;

@@ -1,4 +1,4 @@
-import divisibleWithRemainder = require('../src/divisibleWithRemainder');
+import divisibleWithRemainder from '../src/divisibleWithRemainder';
 import {assert} from 'chai';
 
 describe('divisibleWithRemainder', function () {

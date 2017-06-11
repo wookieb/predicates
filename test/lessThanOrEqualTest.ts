@@ -1,4 +1,4 @@
-import isLessThanOrEqual = require('../src/lessThanOrEqual');
+import isLessThanOrEqual from '../src/lessThanOrEqual';
 import {assert} from 'chai';
 
 describe('lessThanOrEqual', () => {

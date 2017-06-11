@@ -1,4 +1,4 @@
-import isPlainObject = require('../src/plainObject');
+import isPlainObject from '../src/plainObject';
 import {assert} from 'chai';
 
 describe('plainObject', function () {

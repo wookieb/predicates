@@ -1,4 +1,4 @@
-import isUndefined = require('../src/undefined');
+import isUndefined from '../src/undefined';
 import {assert} from 'chai';
 
 

@@ -13,11 +13,11 @@
  * is.falsy(1); // false
  *
  * @param {*} value
- * @returns {Boolean}
+ * @returns {boolean}
  *
  */
 function isFalsy(value: any): boolean {
     return !value;
 }
 
-export = isFalsy;
+export default isFalsy;

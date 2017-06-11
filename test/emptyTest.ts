@@ -1,4 +1,4 @@
-import isEmpty = require('../src/empty');
+import isEmpty from '../src/empty';
 import {assert} from 'chai';
 
 describe('empty', function () {

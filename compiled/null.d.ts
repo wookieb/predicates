@@ -13,4 +13,4 @@
  * @returns {boolean}
  */
 declare function isNull(value: any): boolean;
-export = isNull;
+export default isNull;

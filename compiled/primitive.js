@@ -1,10 +1,11 @@
 "use strict";
-var isString = require("./string");
-var isNumber = require("./number");
-var isBoolean = require("./boolean");
-var isUndefined = require("./undefined");
-var isNull = require("./null");
-var isObject = require("./object");
+Object.defineProperty(exports, "__esModule", { value: true });
+const string_1 = require("./string");
+const number_1 = require("./number");
+const boolean_1 = require("./boolean");
+const undefined_1 = require("./undefined");
+const null_1 = require("./null");
+const object_1 = require("./object");
 /**
  * Checks whether a value is a primitive.
  *
@@ -38,6 +39,6 @@ var isObject = require("./object");
  * @returns {Boolean}
  */
 function isPrimitive(value) {
-    return !isObject(value) && (isString(value) || isNumber(value) || isBoolean(value) || isUndefined(value) || isNull(value));
+    return !object_1.default(value) && (string_1.default(value) || number_1.default(value) || boolean_1.default(value) || undefined_1.default(value) || null_1.default(value));
 }
-module.exports = isPrimitive;
+exports.default = isPrimitive;

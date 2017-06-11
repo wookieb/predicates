@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * Returns a function that checks whether a value is equal to one of allowed values
  * Function compares values using === operator
@@ -19,11 +20,7 @@
  * @throws {Error} if 0 or 1 allowed value provided
  * @returns {Predicate}
  */
-function isOneOf() {
-    var allowedValues = [];
-    for (var _i = 0; _i < arguments.length; _i++) {
-        allowedValues[_i] = arguments[_i];
-    }
+function isOneOf(...allowedValues) {
     if (allowedValues.length < 2) {
         throw new Error('At least 2 allowed values are required');
     }
@@ -31,4 +28,4 @@ function isOneOf() {
         return allowedValues.indexOf(value) !== -1;
     };
 }
-module.exports = isOneOf;
+exports.default = isOneOf;

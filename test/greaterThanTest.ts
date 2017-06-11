@@ -1,4 +1,4 @@
-import isGreaterThan = require('../src/greaterThan');
+import isGreaterThan from '../src/greaterThan';
 import {assert} from 'chai';
 
 describe('greaterThan', function () {

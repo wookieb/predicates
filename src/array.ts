@@ -12,6 +12,6 @@
  * is.array({}); // false
  *
  * @param {*} value
- * @returns {Boolean}
+ * @returns {boolean}
  */
-export = (<any>Array).isArray;
+export default Array.isArray;

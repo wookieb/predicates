@@ -1,5 +1,6 @@
 "use strict";
-var isUndefined = require("./undefined");
+Object.defineProperty(exports, "__esModule", { value: true });
+const undefined_1 = require("./undefined");
 /**
  * Checks whether a value is not undefined - in other words, is defined
  *
@@ -15,6 +16,6 @@ var isUndefined = require("./undefined");
  * @param value
  */
 function isDefined(value) {
-    return !isUndefined(value);
+    return !undefined_1.default(value);
 }
-module.exports = isDefined;
+exports.default = isDefined;

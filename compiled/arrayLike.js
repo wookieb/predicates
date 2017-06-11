@@ -1,6 +1,7 @@
 "use strict";
-var isObject = require("./object");
-var isNumber = require("./number");
+Object.defineProperty(exports, "__esModule", { value: true });
+const object_1 = require("./object");
+const number_1 = require("./number");
 /**
  * Checks whether a value looks like an array
  * That means:
@@ -24,6 +25,6 @@ var isNumber = require("./number");
  * @returns {boolean}
  */
 function isArrayLike(value) {
-    return isObject(value) && isNumber(value.length) && value.length >= 0;
+    return object_1.default(value) && number_1.default(value.length) && value.length >= 0;
 }
-module.exports = isArrayLike;
+exports.default = isArrayLike;

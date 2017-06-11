@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * Checks whether a value is truthy
  *
@@ -12,4 +13,4 @@
 function isTruthy(value) {
     return !!value;
 }
-module.exports = isTruthy;
+exports.default = isTruthy;

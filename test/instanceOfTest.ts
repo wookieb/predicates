@@ -1,4 +1,4 @@
-import isInstanceOf = require('../src/instanceOf');
+import isInstanceOf from '../src/instanceOf';
 import {assert} from 'chai';
 
 describe('instanceOf', function () {

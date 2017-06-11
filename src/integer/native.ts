@@ -1,1 +1,1 @@
-export = (<any>Number).isInteger;
+export default (<any>Number).isInteger;

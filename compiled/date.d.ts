@@ -11,5 +11,4 @@
  *
  * @param value
  */
-declare function isDate(value: any): boolean;
-export = isDate;
+export default function isDate(value: any): boolean;

@@ -29,4 +29,4 @@ function isOneOf(...allowedValues: any[]): Predicate {
     };
 }
 
-export = isOneOf;
+export default isOneOf;

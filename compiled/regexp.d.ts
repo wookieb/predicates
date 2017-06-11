@@ -9,4 +9,4 @@
  * is.regExp('.*'); // false
  */
 declare function isRegexp(value: any): boolean;
-export = isRegexp;
+export default isRegexp;

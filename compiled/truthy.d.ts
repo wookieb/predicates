@@ -9,4 +9,4 @@
  * is.truthy(0); // false
  */
 declare function isTruthy(value: any): boolean;
-export = isTruthy;
+export default isTruthy;

@@ -1,7 +1,6 @@
 import {Predicate} from './types';
-import handleCurry = require('./utils/handleCurry');
-import isFunction = require('./function');
-
+import isFunction from './function';
+import handleCurry from './utils/handleCurry';
 
 /**
  * Negates result of a predicate
@@ -19,14 +18,9 @@ import isFunction = require('./function');
  * is.not(is.empty, [1, 2]); // true
  * isNotEmpty(''); // false
  *
- * @param {Predicate} predicate
- * @param {*} [value]
- * @param {...*} [extraArgs] additional arguments passed to the predicate
- * @returns {(boolean|Predicate)} returns bool if at least two arguments provided, otherwise a predicate
+ * @param predicate
  */
-function isNot(predicate: Predicate): Predicate;
-function isNot(predicate: Predicate, value: any): boolean;
-function isNot(predicate: Predicate, value?: any, ...extraArgs: any[]): boolean | Predicate {
+export default function isNot(predicate: Predicate): Predicate {
     if (!isFunction(predicate)) {
         throw new TypeError('Predicate must be a function');
     }
@@ -35,5 +29,3 @@ function isNot(predicate: Predicate, value?: any, ...extraArgs: any[]): boolean 
         return !predicate.apply(this, arguments);
     });
 }
-
-export = isNot;

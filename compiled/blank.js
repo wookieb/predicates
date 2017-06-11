@@ -1,6 +1,7 @@
 "use strict";
-var isString = require("./string");
-var CONTAINS_ONLY_WHITESPACES = /^\s*$/;
+Object.defineProperty(exports, "__esModule", { value: true });
+const string_1 = require("./string");
+const CONTAINS_ONLY_WHITESPACES = /^\s*$/;
 /**
  * Checks whether a value is empty string or contains only whitespaces
  *
@@ -17,6 +18,6 @@ var CONTAINS_ONLY_WHITESPACES = /^\s*$/;
  * @returns {boolean}
  */
 function isBlank(value) {
-    return isString(value) && (value === '' || CONTAINS_ONLY_WHITESPACES.test(value));
+    return string_1.default(value) && (value === '' || CONTAINS_ONLY_WHITESPACES.test(value));
 }
-module.exports = isBlank;
+exports.default = isBlank;

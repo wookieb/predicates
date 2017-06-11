@@ -1,5 +1,5 @@
 import {Predicate} from './types';
-import handleCurry = require('./utils/handleCurry');
+import handleCurry from './utils/handleCurry';
 
 
 /**
@@ -22,4 +22,4 @@ function isStrictEqual(expected: any, value?: any): Predicate | boolean {
     return handleCurry.call(this, arguments, (value: any) => expected === value);
 }
 
-export = isStrictEqual;
+export default isStrictEqual;

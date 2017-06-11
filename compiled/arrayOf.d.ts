@@ -25,4 +25,4 @@ import { Predicate } from './types';
  */
 declare function isArrayOf(predicate: Predicate): Predicate;
 declare function isArrayOf(predicate: Predicate, value: any[]): boolean;
-export = isArrayOf;
+export default isArrayOf;

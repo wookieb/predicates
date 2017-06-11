@@ -1,6 +1,7 @@
 "use strict";
-var isString = require("./string");
-var CONTAINS_AT_LEAST_ONE_NON_WHITESPACE = /\S/;
+Object.defineProperty(exports, "__esModule", { value: true });
+const string_1 = require("./string");
+const CONTAINS_AT_LEAST_ONE_NON_WHITESPACE = /\S/;
 /**
  * Checks whether a value is a string and contains at least one non-whitespace character
  *
@@ -18,6 +19,6 @@ var CONTAINS_AT_LEAST_ONE_NON_WHITESPACE = /\S/;
  * @returns {boolean}
  */
 function notBlank(value) {
-    return isString(value) && CONTAINS_AT_LEAST_ONE_NON_WHITESPACE.test(value);
+    return string_1.default(value) && CONTAINS_AT_LEAST_ONE_NON_WHITESPACE.test(value);
 }
-module.exports = notBlank;
+exports.default = notBlank;

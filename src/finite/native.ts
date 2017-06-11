@@ -1,1 +1,1 @@
-export = (<any>Number).isFinite;
+export default (<any>Number).isFinite;

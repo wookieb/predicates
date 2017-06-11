@@ -1,6 +1,6 @@
 import {Predicate} from './types';
-import handleCurry = require('./utils/handleCurry');
-import isFunction = require('./function');
+import handleCurry from './utils/handleCurry';
+import isFunction from './function';
 
 
 /**
@@ -38,4 +38,4 @@ function isInstanceOf(clazz: Function, value?: any): boolean | Predicate {
     }
     return handleCurry.call(this, arguments, (value: Function) => value instanceof clazz);
 }
-export = isInstanceOf;
+export default isInstanceOf;

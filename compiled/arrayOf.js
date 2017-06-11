@@ -1,19 +1,15 @@
 "use strict";
-var isArray = require("./array");
-var isFunction = require("./function");
-var handleCurry = require("./utils/handleCurry");
-function isArrayOf(predicate, value) {
-    var extraArgs = [];
-    for (var _i = 2; _i < arguments.length; _i++) {
-        extraArgs[_i - 2] = arguments[_i];
-    }
-    if (!isFunction(predicate)) {
+Object.defineProperty(exports, "__esModule", { value: true });
+const array_1 = require("./array");
+const function_1 = require("./function");
+const handleCurry_1 = require("./utils/handleCurry");
+function isArrayOf(predicate, value, ...extraArgs) {
+    if (!function_1.default(predicate)) {
         throw new TypeError('Predicate must be a function');
     }
-    return handleCurry.call(this, arguments, function (value) {
-        var _this = this;
-        var match = function (value) { return predicate.apply(_this, [value].concat(extraArgs)); };
-        return isArray(value) && value.every(match);
+    return handleCurry_1.default.call(this, arguments, function (value) {
+        const match = (value) => predicate.apply(this, [value].concat(extraArgs));
+        return array_1.default(value) && value.every(match);
     });
 }
-module.exports = isArrayOf;
+exports.default = isArrayOf;

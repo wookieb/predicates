@@ -1,6 +1,6 @@
 import {Predicate} from './types';
 
-import handleCurry = require('./utils/handleCurry');
+import handleCurry from './utils/handleCurry';
 
 /**
  * Checks whether values are equal (using == operator)
@@ -21,7 +21,7 @@ import handleCurry = require('./utils/handleCurry');
  *
  * @param {*} expected
  * @param {*} [value]
- * @returns {(Boolean|Predicate)} bool if at least two arguments provided, otherwise a predicate
+ * @returns {(boolean|Predicate)} bool if at least two arguments provided, otherwise a predicate
  */
 function isEqual(expected: any): Predicate;
 function isEqual(expected: any, value: any): boolean;
@@ -29,4 +29,4 @@ function isEqual(expected: any, value?: any): boolean | Predicate {
     return handleCurry.call(this, arguments, (value: any) => expected == value);
 }
 
-export = isEqual;
+export default isEqual;

@@ -18,5 +18,4 @@ import { Predicate } from './types';
  * @throws {TypeError} if not every predicate is a function
  * @returns {Predicate}
  */
-declare function all(...predicates: Predicate[]): Predicate;
-export = all;
+export default function all(...predicates: Predicate[]): Predicate;

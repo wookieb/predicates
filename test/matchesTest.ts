@@ -1,4 +1,4 @@
-import matches = require('../src/matches');
+import matches from '../src/matches';
 import {assert} from 'chai';
 
 describe('matches', function () {

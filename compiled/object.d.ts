@@ -1,5 +1,5 @@
 /**
- * Checks whether a value is an object
+ * Checks whether a value is an object and ignores null
  *
  * **Aliases** _obj_
  *
@@ -14,4 +14,4 @@
  * @param value
  */
 declare function isObject(value: any): boolean;
-export = isObject;
+export default isObject;

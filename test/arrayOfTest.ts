@@ -1,4 +1,4 @@
-import isArrayOf = require('../src/arrayOf');
+import isArrayOf from '../src/arrayOf';
 import {assert} from 'chai'
 import * as sinon from 'sinon';
 

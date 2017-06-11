@@ -1,5 +1,5 @@
-import isArray = require('./array');
-import handleCurry = require('./utils/handleCurry');
+import isArray from './array';
+import handleCurry from './utils/handleCurry';
 import {Predicate} from './types';
 
 /**
@@ -25,7 +25,7 @@ import {Predicate} from './types';
  * @param {*} [value]
  * @throws {TypeError} if collection is not an array
  * @throws {Error} if collection is empty
- * @returns {(Boolean|Predicate)} bool if at least two arguments provided, otherwise a predicate
+ * @returns {(boolean|Predicate)} bool if at least two arguments provided, otherwise a predicate
  */
 function isIn(collection: any[]): Predicate;
 function isIn(collection: any[], value: any): boolean;
@@ -41,4 +41,4 @@ function isIn(collection: any[], value?: any): boolean | Predicate {
     return handleCurry.call(this, arguments, (value: any) => collection.indexOf(value) !== -1);
 }
 
-export = isIn;
+export default isIn;

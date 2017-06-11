@@ -13,5 +13,4 @@
  * @param {string} value
  * @returns {boolean}
  */
-declare function isBlank(value: any): boolean;
-export = isBlank;
+export default function isBlank(value: any): boolean;

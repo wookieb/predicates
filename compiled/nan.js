@@ -1,5 +1,6 @@
 "use strict";
-var isNumber = require("./number");
+Object.defineProperty(exports, "__esModule", { value: true });
+const number_1 = require("./number");
 /**
  * Checks whether a value is a NaN number
  *
@@ -16,6 +17,6 @@ var isNumber = require("./number");
  * @returns {boolean}
  */
 function isNotANumber(value) {
-    return isNumber(value) && isNaN(value);
+    return number_1.default(value) && isNaN(value);
 }
-module.exports = isNotANumber;
+exports.default = isNotANumber;

@@ -3,6 +3,6 @@
  *
  * @typedef {Function} Predicate
  * @param {...*} arg
- * @return {Boolean}
+ * @return {boolean}
  */
-export type Predicate = (value: any, ...extraArgs: any[]) => boolean;
+export type Predicate<T = any> = (value: T, ...extraArgs: any[]) => boolean;

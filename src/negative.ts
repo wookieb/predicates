@@ -1,5 +1,5 @@
 
-import isNumber = require('./number');
+import isNumber from './number';
 
 /**
  * Checks whether a value is a negative number
@@ -19,4 +19,4 @@ function isNegativeNumber(value: any): boolean {
     return isNumber(value) && value < 0;
 }
 
-export = isNegativeNumber;
+export default isNegativeNumber;

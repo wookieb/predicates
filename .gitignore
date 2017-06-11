@@ -1,12 +1,6 @@
 .idea
 coverage
-.DS_Store
-coverage.html
+**/.DS_Store
 node_modules
 npm-debug.log
-test.js
-perf.js
-test/mochaTests.js
-.coverrun
-.coverdata
-!/src/undefinedOr.ts
+junit.xml

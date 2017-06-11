@@ -28,4 +28,4 @@ import { Predicate } from './types';
  */
 declare function property(propertyName: string, predicate: Predicate): Predicate;
 declare function property(propertyName: string, predicate: Predicate, object: Object, ...extraParams: any[]): boolean;
-export = property;
+export default property;

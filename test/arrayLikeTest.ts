@@ -1,4 +1,4 @@
-import isArrayLike = require('../src/arrayLike');
+import isArrayLike from '../src/arrayLike';
 import {assert} from 'chai';
 
 describe('arrayLike', function () {

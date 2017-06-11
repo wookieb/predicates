@@ -8,4 +8,4 @@
  * is.undefined(0); // false
  */
 declare function isUndefined(value: any): boolean;
-export = isUndefined;
+export default isUndefined;

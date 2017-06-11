@@ -21,4 +21,4 @@ import { Predicate } from './types';
  */
 declare function isGreaterThan(expected: number): Predicate;
 declare function isGreaterThan(expected: number, value: number): boolean;
-export = isGreaterThan;
+export default isGreaterThan;

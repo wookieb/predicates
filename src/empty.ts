@@ -1,6 +1,6 @@
-import isObject = require('./object');
-import isString = require('./string');
-import isArrayLike = require('./arrayLike');
+import isObject from './object';
+import isString from './string';
+import isArrayLike from './arrayLike';
 
 /**
  * Checks whether a value is empty
@@ -34,4 +34,4 @@ function isEmpty(value: any): boolean {
     return value === void 0;
 }
 
-export = isEmpty;
+export default isEmpty;

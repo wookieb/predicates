@@ -15,11 +15,6 @@ import { Predicate } from './types';
  * is.not(is.empty, [1, 2]); // true
  * isNotEmpty(''); // false
  *
- * @param {Predicate} predicate
- * @param {*} [value]
- * @param {...*} [extraArgs] additional arguments passed to the predicate
- * @returns {(boolean|Predicate)} returns bool if at least two arguments provided, otherwise a predicate
+ * @param predicate
  */
-declare function isNot(predicate: Predicate): Predicate;
-declare function isNot(predicate: Predicate, value: any): boolean;
-export = isNot;
+export default function isNot(predicate: Predicate): Predicate;

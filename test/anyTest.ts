@@ -1,4 +1,4 @@
-import any = require('../src/any');
+import any from '../src/any';
 import {assert} from 'chai';
 import * as sinon from 'sinon';
 import {falsePredicate, truePredicate} from "./common";

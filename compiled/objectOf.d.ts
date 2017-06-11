@@ -24,4 +24,4 @@ import { Predicate } from './types';
  */
 declare function isObjectOf(predicate: Predicate): Predicate;
 declare function isObjectOf(predicate: Predicate, value: Object): boolean;
-export = isObjectOf;
+export default isObjectOf;

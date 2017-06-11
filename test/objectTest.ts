@@ -1,4 +1,4 @@
-import isObject = require('../src/object');
+import isObject from '../src/object';
 import {assert} from 'chai';
 
 describe('object', function () {

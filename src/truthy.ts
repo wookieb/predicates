@@ -12,4 +12,4 @@ function isTruthy(value: any): boolean {
     return !!value;
 }
 
-export = isTruthy;
+export default isTruthy;

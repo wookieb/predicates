@@ -1,2 +1,2 @@
 declare function isIntegerPolyfill(value: any): boolean;
-export = isIntegerPolyfill;
+export default isIntegerPolyfill;

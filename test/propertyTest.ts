@@ -1,4 +1,4 @@
-import isProperty = require('../src/property');
+import isProperty from '../src/property';
 import {assert} from 'chai';
 import * as sinon from 'sinon';
 describe('property', function () {

@@ -1,4 +1,4 @@
-import hasOwnProperty = require('../src/hasOwnProperty');
+import hasOwnProperty from '../src/hasOwnProperty';
 import {assert} from 'chai';
 
 describe('hasOwnProperty', function () {

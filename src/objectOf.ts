@@ -1,6 +1,6 @@
-import isObject = require('./object');
-import isFunction = require('./function');
-import handleCurry = require('./utils/handleCurry');
+import isObject from './object';
+import isFunction from './function';
+import handleCurry from './utils/handleCurry';
 import {Predicate} from './types';
 
 /**
@@ -24,7 +24,7 @@ import {Predicate} from './types';
  * @param {Predicate} predicate
  * @param {Object} [object]
  * @param {...*} [additionalArgs] additional arguments passed to the predicate
- * @returns {(Boolean|Predicate)} returns bool if at least two arguments provided, otherwise a predicate
+ * @returns {(boolean|Predicate)} returns bool if at least two arguments provided, otherwise a predicate
  */
 function isObjectOf(predicate: Predicate): Predicate;
 function isObjectOf(predicate: Predicate, value: Object): boolean;
@@ -41,4 +41,4 @@ function isObjectOf(predicate: Predicate, value?: Object, ...extraArgs: any[]): 
     });
 }
 
-export = isObjectOf;
+export default isObjectOf;

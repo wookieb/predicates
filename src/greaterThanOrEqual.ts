@@ -1,4 +1,4 @@
-import handleCurry = require('./utils/handleCurry');
+import handleCurry from './utils/handleCurry';
 import {Predicate} from './types';
 
 /**
@@ -21,7 +21,7 @@ import {Predicate} from './types';
  *
  * @param {Number} expected
  * @param {Number} [value]
- * @returns {(Boolean|Predicate)} bool if at least two arguments provided, otherwise a predicate
+ * @returns {(boolean|Predicate)} bool if at least two arguments provided, otherwise a predicate
  */
 
 function isGreaterThanOrEqual(expected: number): Predicate;
@@ -30,4 +30,4 @@ function isGreaterThanOrEqual(expected: number, value?: number): boolean | Predi
     return handleCurry.call(this, arguments, (value: number) => value >= expected);
 }
 
-export = isGreaterThanOrEqual;
+export default isGreaterThanOrEqual;

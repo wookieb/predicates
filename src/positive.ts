@@ -1,4 +1,4 @@
-import isNumber = require('./number');
+import isNumber from './number';
 
 /**
  * Checks whether a value is a positive number
@@ -12,10 +12,10 @@ import isNumber = require('./number');
  * is.positive(-1); // false
  *
  * @param {Number} value
- * @returns {Boolean}
+ * @returns {boolean}
  */
 function isPositiveNumber(value: number): boolean {
     return isNumber(value) && value > 0;
 }
 
-export = isPositiveNumber;
+export default isPositiveNumber;

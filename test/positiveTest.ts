@@ -1,4 +1,4 @@
-import isPositive = require('../src/positive');
+import isPositive from '../src/positive';
 import {assert} from 'chai';
 
 describe('positive', function () {

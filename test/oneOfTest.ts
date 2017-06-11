@@ -1,4 +1,4 @@
-import isOneOf = require('../src/oneOf');
+import isOneOf from '../src/oneOf';
 import {assert} from 'chai';
 
 describe('oneOf', function () {

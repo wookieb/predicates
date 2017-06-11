@@ -1,10 +1,11 @@
 "use strict";
-var handleCurry = require("./utils/handleCurry");
-var isFunction = require("./function");
+Object.defineProperty(exports, "__esModule", { value: true });
+const handleCurry_1 = require("./utils/handleCurry");
+const function_1 = require("./function");
 function isInstanceOf(clazz, value) {
-    if (!isFunction(clazz)) {
+    if (!function_1.default(clazz)) {
         throw new TypeError('Class must be a function');
     }
-    return handleCurry.call(this, arguments, function (value) { return value instanceof clazz; });
+    return handleCurry_1.default.call(this, arguments, (value) => value instanceof clazz);
 }
-module.exports = isInstanceOf;
+exports.default = isInstanceOf;

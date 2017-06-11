@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * Checks whether a value is a number
  *
@@ -17,4 +18,4 @@
 function isNumber(value) {
     return typeof value === 'number' || Object.prototype.toString.call(value) === '[object Number]';
 }
-module.exports = isNumber;
+exports.default = isNumber;

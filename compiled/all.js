@@ -1,5 +1,6 @@
 "use strict";
-var assertPredicates = require("./utils/assertPredicates");
+Object.defineProperty(exports, "__esModule", { value: true });
+const assertPredicates_1 = require("./utils/assertPredicates");
 /**
  * Returns a function that calls predicates and returns true if all of them are satisfied, otherwise returns false
  *
@@ -19,16 +20,11 @@ var assertPredicates = require("./utils/assertPredicates");
  * @throws {TypeError} if not every predicate is a function
  * @returns {Predicate}
  */
-function all() {
-    var predicates = [];
-    for (var _i = 0; _i < arguments.length; _i++) {
-        predicates[_i] = arguments[_i];
-    }
-    assertPredicates(predicates);
+function all(...predicates) {
+    assertPredicates_1.default(predicates);
     return function () {
-        var _this = this;
-        var args = arguments;
-        return predicates.every(function (predicate) { return predicate.apply(_this, args); });
+        const args = arguments;
+        return predicates.every(predicate => predicate.apply(this, args));
     };
 }
-module.exports = all;
+exports.default = all;

@@ -1,5 +1,5 @@
 import {Predicate} from './types';
-import divisibleWithRemainder = require('./divisibleWithRemainder');
+import divisibleWithRemainder from './divisibleWithRemainder';
 
 /**
  * Checks whether a value is a number and it's divisible by a divisor
@@ -19,7 +19,7 @@ import divisibleWithRemainder = require('./divisibleWithRemainder');
  * @param {Number} [value]
  * @throws {Error} if divisor is 0
  * @throws {TypeError} if divisor is not a finite number
- * @returns {(Boolean|Predicate)} returns bool if at least 2 arguments provided, otherwise a predicate
+ * @returns {(boolean|Predicate)} returns bool if at least 2 arguments provided, otherwise a predicate
  */
 function divisible(divisor: number): Predicate;
 function divisible(divisor: number, value: number): boolean;
@@ -28,4 +28,5 @@ function divisible(divisor: number, value?: number): boolean | Predicate {
     args.splice(1, 0, 0);
     return divisibleWithRemainder.apply(this, args);
 }
-export = divisible;
+
+export default divisible;

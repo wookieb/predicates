@@ -1,4 +1,4 @@
-import endsWith = require('../src/endsWith');
+import endsWith from '../src/endsWith';
 import {assert} from 'chai';
 
 describe('endsWith', function () {

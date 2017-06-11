@@ -1,5 +1,6 @@
 "use strict";
-var isBoolean = require("./boolean");
+Object.defineProperty(exports, "__esModule", { value: true });
+const boolean_1 = require("./boolean");
 /**
  * Checks whether a value is false a boolean false
  *
@@ -16,6 +17,6 @@ var isBoolean = require("./boolean");
  * @name false
  */
 function isFalse(value) {
-    return value === false || (isBoolean(value) && value.valueOf() === false);
+    return value === false || (boolean_1.default(value) && value.valueOf() === false);
 }
-module.exports = isFalse;
+exports.default = isFalse;

@@ -1,4 +1,4 @@
-import isDate = require('../src/date');
+import isDate from '../src/date';
 import {assert} from 'chai';
 
 describe('date', function () {

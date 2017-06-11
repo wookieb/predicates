@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * Checks whether a value is null
  *
@@ -16,4 +17,4 @@
 function isNull(value) {
     return value === null;
 }
-module.exports = isNull;
+exports.default = isNull;

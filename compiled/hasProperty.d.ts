@@ -24,4 +24,4 @@ import { Predicate } from './types';
  */
 declare function hasProperty(property: string): Predicate;
 declare function hasProperty(property: string, object: Object): boolean;
-export = hasProperty;
+export default hasProperty;

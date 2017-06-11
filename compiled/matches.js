@@ -1,6 +1,7 @@
 "use strict";
-var handleCurry = require("./utils/handleCurry");
-var isRegexp = require("./regexp");
+Object.defineProperty(exports, "__esModule", { value: true });
+const handleCurry_1 = require("./utils/handleCurry");
+const regexp_1 = require("./regexp");
 /**
  * Checks whether a value matches a regexp
  *
@@ -25,9 +26,9 @@ var isRegexp = require("./regexp");
  * @returns {(boolean|Predicate)} bool if at least two arguments provided, otherwise a predicate
  */
 function matches(regexp, value) {
-    if (!isRegexp(regexp)) {
+    if (!regexp_1.default(regexp)) {
         throw new TypeError('Regexp must be a RegExp object');
     }
-    return handleCurry.call(this, arguments, function (value) { return regexp.test(value); });
+    return handleCurry_1.default.call(this, arguments, (value) => regexp.test(value));
 }
-module.exports = matches;
+exports.default = matches;

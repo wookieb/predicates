@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * Checks whether a value is falsy
  *
@@ -20,4 +21,4 @@
 function isFalsy(value) {
     return !value;
 }
-module.exports = isFalsy;
+exports.default = isFalsy;

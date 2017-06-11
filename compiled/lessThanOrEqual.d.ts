@@ -23,4 +23,4 @@ import { Predicate } from './types';
  */
 declare function isLessThanOrEqual(expected: number): Predicate;
 declare function isLessThanOrEqual(expected: number, value: number): boolean;
-export = isLessThanOrEqual;
+export default isLessThanOrEqual;

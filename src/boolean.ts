@@ -9,13 +9,11 @@
  * var is = require('predicates');
  *
  * is.boolean(true); // true
- * is.boolean(false);; // true
+ * is.boolean(false); // true
  * is.boolean(0); // false
  *
  * @param value
  */
-function isBoolean(value: any): boolean {
+export default function isBoolean(value: any): boolean {
     return typeof value === 'boolean' || Object.prototype.toString.call(value) === '[object Boolean]';
 }
-
-export = isBoolean;

@@ -14,4 +14,4 @@
  * @returns {boolean}
  */
 declare function isNotANumber(value: any): boolean;
-export = isNotANumber;
+export default isNotANumber;

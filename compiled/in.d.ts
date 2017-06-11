@@ -26,4 +26,4 @@ import { Predicate } from './types';
  */
 declare function isIn(collection: any[]): Predicate;
 declare function isIn(collection: any[], value: any): boolean;
-export = isIn;
+export default isIn;

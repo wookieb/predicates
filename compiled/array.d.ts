@@ -1,2 +1,2 @@
-declare var _default: any;
-export = _default;
+declare var _default: (arg: any) => arg is any[];
+export default _default;

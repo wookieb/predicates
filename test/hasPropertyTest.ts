@@ -1,4 +1,4 @@
-import hasProperty = require('../src/hasProperty');
+import hasProperty from '../src/hasProperty';
 import {assert} from 'chai';
 
 describe('hasProperty', () => {

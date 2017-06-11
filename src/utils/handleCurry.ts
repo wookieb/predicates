@@ -3,4 +3,4 @@ function handleCurry(args: any[], fn: Function, valueIndex: number) {
     return args.length > valueIndex ? fn.apply(this, Array.prototype.slice.call(args, valueIndex)) : fn;
 }
 
-export = handleCurry;
+export default handleCurry;

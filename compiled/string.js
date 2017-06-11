@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * Checks whether a value is a function
  *
@@ -11,4 +12,4 @@
 function isString(value) {
     return typeof value === 'string' || Object.prototype.toString.call(value) === '[object String]';
 }
-module.exports = isString;
+exports.default = isString;

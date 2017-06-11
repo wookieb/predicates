@@ -1,6 +1,6 @@
 import {Predicate} from './types';
-import isString = require('./string');
-import handleCurry = require('./utils/handleCurry');
+import isString from './string';
+import handleCurry from './utils/handleCurry';
 
 /**
  * Checks whether a string ends with a given suffix
@@ -21,7 +21,7 @@ import handleCurry = require('./utils/handleCurry');
  * @param {String} [value]
  * @throws {TypeError} if suffix is not a string
  * @throws {Error} if suffix is empty
- * @returns {(Boolean|Predicate)} returns bool if at least two arguments provided, otherwise a predicate
+ * @returns {(boolean|Predicate)} returns bool if at least two arguments provided, otherwise a predicate
  */
 function endsWith(suffix: string): Predicate;
 function endsWith(suffix: string, value: string): boolean;
@@ -38,4 +38,4 @@ function endsWith(suffix: string, value?: string): boolean | Predicate {
     });
 }
 
-export = endsWith;
+export default endsWith;

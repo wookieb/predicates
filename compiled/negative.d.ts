@@ -13,4 +13,4 @@
  * @returns {boolean}
  */
 declare function isNegativeNumber(value: any): boolean;
-export = isNegativeNumber;
+export default isNegativeNumber;

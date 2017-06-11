@@ -18,4 +18,4 @@ import { Predicate } from './types';
  */
 declare function isUndefinedOr(predicate: Predicate): Predicate;
 declare function isUndefinedOr(predicate: Predicate, value: any): boolean;
-export = isUndefinedOr;
+export default isUndefinedOr;

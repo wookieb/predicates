@@ -14,4 +14,4 @@
  * @param value
  */
 declare function isFunction(value: any): boolean;
-export = isFunction;
+export default isFunction;

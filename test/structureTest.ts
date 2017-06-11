@@ -1,4 +1,4 @@
-import isValidStructure = require('../src/structure');
+import isValidStructure from '../src/structure';
 import {assert} from 'chai';
 import * as sinon from 'sinon';
 

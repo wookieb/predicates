@@ -1,4 +1,4 @@
-import not = require('../src/not');
+import not from '../src/not';
 import {assert} from 'chai';
 import * as sinon from 'sinon';
 import {falsePredicate, truePredicate} from "./common";
@@ -8,6 +8,7 @@ describe('not', function () {
     const EXAMPLE_CONTEXT = {some: 'value'};
 
     it('negates function result', function () {
+        assert.isFalse(not(truePredicate)(1));
         assert.isFalse(not(truePredicate)(1));
         assert.isTrue(not(falsePredicate)(1))
     });

@@ -1,4 +1,4 @@
-import isPrimitive = require('../src/primitive');
+import isPrimitive from '../src/primitive';
 import {assert} from 'chai';
 
 describe('primitive', function () {

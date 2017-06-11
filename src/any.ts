@@ -1,5 +1,5 @@
 import {Predicate} from './types';
-import assertPredicates = require('./utils/assertPredicates');
+import assertPredicates from './utils/assertPredicates';
 
 /**
  * Returns a function that calls predicates in the order until one of them will be satisfied, otherwise returns false.
@@ -21,7 +21,7 @@ import assertPredicates = require('./utils/assertPredicates');
  * @throws {TypeError} if not every predicate is a function
  * @returns {Predicate}
  */
-function any(...predicates: Predicate[]): Predicate {
+export default function any(...predicates: Predicate[]): Predicate {
     assertPredicates(predicates);
 
     return function anyPredicate() {
@@ -29,5 +29,3 @@ function any(...predicates: Predicate[]): Predicate {
         return predicates.some(predicate => predicate.apply(this, args));
     };
 }
-
-export = any;

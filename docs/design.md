@@ -7,9 +7,9 @@ _Predicates_ doesn't have such a limitation and additionally preserves the conte
 
 
 ```js
-var is = require('predicates');
+const is = require('predicates');
 
-var isOkToModifyTags = is.all(
+const isOkToModifyTags = is.all(
     is.arrayOf(is.string), 
     function(tags, previousTags) {
         // no need to save them again if they are the same as previous ones
@@ -42,12 +42,12 @@ That's why it's a good practice to create predicates at the beginning of a modul
 
 ```js
 // some module
-var is = require('predicates'),
+const is = require('predicates'),
     
-var isImage = is.in([]); // Error: Collection cannot be empty
+const isImage = is.in([]); // Error: Collection cannot be empty
 
-// You don't need to run the whole application to get the error that your is wrong
-var Module = function(options) {
+// You don't need to run the whole application to get the error that your predicate is wrong
+const Module = function(options) {
     // assert options
     ...
 };
@@ -59,7 +59,7 @@ module.exports = Module;
 You don't need to check the arguments provided to predicates to make sure they won't cause an error - _predicates_ does it for you.
 
 ```js
-var isDuck = is.hasProperty('quack');
+const isDuck = is.hasProperty('quack');
 
 isDuck(undefined); // false - no error
 isDuck(1); // false - no error
@@ -69,7 +69,7 @@ isDuck('duck'); // false - no error
 NOTE! This rule applies only for predicates defined in the library. Any user-defined predicate MAY throw errors but _predicates_ will not catch them.
 
 ```js
-var assertName = is.all(is.string, function(value) {
+const assertName = is.all(is.string, function(value) {
     if (value === 'admin') {
         throw new Error('Admin is a reserved user name');
     }

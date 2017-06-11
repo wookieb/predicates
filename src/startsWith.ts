@@ -1,6 +1,6 @@
 import {Predicate} from './types';
-import isString = require('./string');
-import handleCurry = require('./utils/handleCurry');
+import isString from './string';
+import handleCurry from './utils/handleCurry';
 
 /**
  * Checks whether a string starts with a given prefix
@@ -35,4 +35,4 @@ function startsWith(prefix: string, value?: string): boolean | Predicate {
     });
 }
 
-export = startsWith;
+export default startsWith;

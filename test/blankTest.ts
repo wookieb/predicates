@@ -1,4 +1,4 @@
-import blank = require('../src/blank');
+import blank from '../src/blank';
 import {assert} from 'chai';
 
 describe('blank', function () {

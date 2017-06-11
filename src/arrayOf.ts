@@ -1,8 +1,8 @@
 import {Predicate} from './types';
 
-import isArray = require('./array');
-import isFunction = require('./function');
-import handleCurry = require('./utils/handleCurry');
+import isArray from './array';
+import isFunction from './function';
+import handleCurry from './utils/handleCurry';
 
 /**
  * Checks whether every element of an array passes the predicate
@@ -26,7 +26,7 @@ import handleCurry = require('./utils/handleCurry');
  * @param {Array} [value]
  * @param {...*} [extraArgs] additional arguments passed to the predicate
  * @throws {TypeError} if predicate is not a function
- * @returns {(Boolean|Predicate)} returns bool if at least two arguments provided, otherwise a predicate
+ * @returns {(boolean|Predicate)} returns bool if at least two arguments provided, otherwise a predicate
  */
 function isArrayOf(predicate: Predicate): Predicate;
 function isArrayOf(predicate: Predicate, value: any[]): boolean;
@@ -41,4 +41,4 @@ function isArrayOf(predicate: Predicate, value?: any[], ...extraArgs: any[]): bo
     });
 }
 
-export = isArrayOf;
+export default isArrayOf;

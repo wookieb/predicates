@@ -1,6 +1,6 @@
 import {Predicate} from './types';
-import handleCurry = require('./utils/handleCurry');
-import isRegexp = require('./regexp');
+import handleCurry from './utils/handleCurry';
+import isRegexp from './regexp';
 
 function matches(regexp: RegExp): Predicate;
 function matches(regexp: RegExp, value: any): boolean;
@@ -36,4 +36,4 @@ function matches(regexp: RegExp, value?: any): boolean | Predicate {
     return handleCurry.call(this, arguments, (value: any) => regexp.test(value));
 }
 
-export = matches;
+export default matches;

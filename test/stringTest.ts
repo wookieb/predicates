@@ -1,4 +1,4 @@
-import isString = require('../src/string');
+import isString from '../src/string';
 import {assert} from 'chai';
 
 describe('string', function () {

@@ -17,4 +17,4 @@
  *
  */
 declare function isFalsy(value: any): boolean;
-export = isFalsy;
+export default isFalsy;

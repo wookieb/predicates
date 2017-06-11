@@ -1,8 +1,8 @@
 import {Predicate} from './types';
-import isObject = require('./object');
-import handleCurry = require('./utils/handleCurry');
-import objectOf = require('./objectOf');
-import isFunction = require('./function');
+import isObject from './object';
+import handleCurry from './utils/handleCurry';
+import objectOf from './objectOf';
+import isFunction from './function';
 
 const isObjectOfPredicates = objectOf(isFunction);
 
@@ -77,7 +77,7 @@ const isObjectOfPredicates = objectOf(isFunction);
  * @param {Object} structure
  * @param {Object} [value]
  * @param {...*} [extraArgs] additional arguments passed to the predicates
- * @return {(Boolean|Predicate)} returns bool if more than 1 argument provided, otherwise a predicate
+ * @return {(boolean|Predicate)} returns bool if more than 1 argument provided, otherwise a predicate
  */
 function isStructure(structure: { [name: string]: Predicate }): Predicate;
 function isStructure(structure: { [name: string]: Predicate }, value: Object): boolean;
@@ -101,4 +101,4 @@ function isStructure(structure: { [name: string]: Predicate }, value?: Object, .
     });
 }
 
-export = isStructure;
+export default isStructure;

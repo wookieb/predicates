@@ -12,5 +12,4 @@
  *
  * @param value
  */
-declare function isDefined(value: any): boolean;
-export = isDefined;
+export default function isDefined(value: any): boolean;

@@ -19,4 +19,4 @@ import { Predicate } from './types';
  */
 declare function startsWith(prefix: string): Predicate;
 declare function startsWith(prefix: string, value: string): boolean;
-export = startsWith;
+export default startsWith;

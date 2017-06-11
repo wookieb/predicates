@@ -22,4 +22,4 @@ import { Predicate } from './types';
  */
 declare function isEqual(expected: any): Predicate;
 declare function isEqual(expected: any, value: any): boolean;
-export = isEqual;
+export default isEqual;

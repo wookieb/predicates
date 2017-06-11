@@ -1,9 +1,9 @@
-import isString = require('./string');
-import isNumber = require('./number');
-import isBoolean = require('./boolean');
-import isUndefined = require('./undefined');
-import isNull = require('./null');
-import isObject = require('./object');
+import isString from './string';
+import isNumber from './number';
+import isBoolean from './boolean';
+import isUndefined from './undefined';
+import isNull from './null';
+import isObject from './object';
 
 /**
  * Checks whether a value is a primitive.
@@ -35,10 +35,10 @@ import isObject = require('./object');
  * is.primitive({}); // false
  *
  * @param {*} value
- * @returns {Boolean}
+ * @returns {boolean}
  */
 function isPrimitive(value: any): boolean {
     return !isObject(value) && (isString(value) || isNumber(value) || isBoolean(value) || isUndefined(value) || isNull(value));
 }
 
-export = isPrimitive;
+export default isPrimitive;

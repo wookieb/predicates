@@ -1,4 +1,4 @@
-import isBoolean = require('./boolean');
+import isBoolean from './boolean';
 /**
  * Checks whether a value is a boolean true
  *
@@ -12,4 +12,4 @@ function isTrue(value: any): boolean {
     return value === true || (isBoolean(value) && value == true);
 }
 
-export = isTrue;
+export default isTrue;

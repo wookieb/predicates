@@ -1,4 +1,4 @@
-import notBlank = require('../src/notBlank');
+import notBlank from '../src/notBlank';
 import {assert} from 'chai';
 
 describe('blank', () => {

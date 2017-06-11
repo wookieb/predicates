@@ -1,4 +1,4 @@
-import isString = require('./string');
+import isString from './string';
 const CONTAINS_ONLY_WHITESPACES = /^\s*$/;
 
 /**
@@ -16,8 +16,6 @@ const CONTAINS_ONLY_WHITESPACES = /^\s*$/;
  * @param {string} value
  * @returns {boolean}
  */
-function isBlank(value: any): boolean {
+export default function isBlank(value: any): boolean {
     return isString(value) && (value === '' || CONTAINS_ONLY_WHITESPACES.test(value));
 }
-
-export = isBlank;

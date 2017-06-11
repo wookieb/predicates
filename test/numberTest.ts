@@ -1,4 +1,4 @@
-import isNumber = require('../src/number');
+import isNumber from '../src/number';
 import {assert} from 'chai';
 
 describe('number', () => {

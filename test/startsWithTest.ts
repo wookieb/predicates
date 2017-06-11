@@ -1,4 +1,4 @@
-import startsWith = require('../src/startsWith');
+import startsWith from '../src/startsWith';
 import {assert} from 'chai';
 
 describe('startsWith', function () {

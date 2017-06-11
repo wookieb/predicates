@@ -13,4 +13,4 @@
  * @returns {Boolean}
  */
 declare function isPositiveNumber(value: number): boolean;
-export = isPositiveNumber;
+export default isPositiveNumber;

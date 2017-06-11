@@ -1,5 +1,5 @@
-import isObject = require('./object');
-import isNumber = require('./number');
+import isObject from './object';
+import isNumber from './number';
 
 /**
  * Checks whether a value looks like an array
@@ -23,8 +23,6 @@ import isNumber = require('./number');
  * @param {*} value
  * @returns {boolean}
  */
-function isArrayLike(value: any): boolean {
+export default function isArrayLike(value: any): boolean {
     return isObject(value) && isNumber(value.length) && value.length >= 0;
 }
-
-export = isArrayLike;

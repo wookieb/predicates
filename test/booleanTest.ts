@@ -1,4 +1,4 @@
-import isBoolean = require('../src/boolean');
+import isBoolean from '../src/boolean';
 import {assert} from 'chai';
 
 describe('boolean', function () {

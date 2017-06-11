@@ -1,6 +1,7 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
- * Checks whether a value is an object
+ * Checks whether a value is an object and ignores null
  *
  * **Aliases** _obj_
  *
@@ -17,4 +18,4 @@
 function isObject(value) {
     return value instanceof Object || (typeof value === 'object' && value !== null);
 }
-module.exports = isObject;
+exports.default = isObject;

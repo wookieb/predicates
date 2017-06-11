@@ -1,2 +1,2 @@
 declare var _default: any;
-export = _default;
+export default _default;

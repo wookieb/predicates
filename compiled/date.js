@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * Checks whether a value is a Date object
  *
@@ -15,4 +16,4 @@
 function isDate(value) {
     return Object.prototype.toString.call(value) === '[object Date]';
 }
-module.exports = isDate;
+exports.default = isDate;

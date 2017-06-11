@@ -1,4 +1,4 @@
-import isFunction = require('../src/function');
+import isFunction from '../src/function';
 import {assert} from 'chai';
 
 describe('function', function () {

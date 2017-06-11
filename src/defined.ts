@@ -1,4 +1,4 @@
-import isUndefined = require('./undefined');
+import isUndefined from './undefined';
 
 /**
  * Checks whether a value is not undefined - in other words, is defined
@@ -14,8 +14,6 @@ import isUndefined = require('./undefined');
  *
  * @param value
  */
-function isDefined(value: any): boolean {
+export default function isDefined(value: any): boolean {
     return !isUndefined(value);
 }
-
-export = isDefined;

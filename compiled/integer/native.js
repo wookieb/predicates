@@ -1,2 +1,3 @@
 "use strict";
-module.exports = Number.isInteger;
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = Number.isInteger;

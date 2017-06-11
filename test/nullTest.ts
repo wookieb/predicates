@@ -1,4 +1,4 @@
-import isNull = require('../src/null');
+import isNull from '../src/null';
 import {assert} from 'chai';
 
 describe('null', () => {

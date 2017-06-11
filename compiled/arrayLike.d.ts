@@ -20,5 +20,4 @@
  * @param {*} value
  * @returns {boolean}
  */
-declare function isArrayLike(value: any): boolean;
-export = isArrayLike;
+export default function isArrayLike(value: any): boolean;

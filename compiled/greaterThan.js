@@ -1,6 +1,7 @@
 "use strict";
-var handleCurry = require("./utils/handleCurry");
+Object.defineProperty(exports, "__esModule", { value: true });
+const handleCurry_1 = require("./utils/handleCurry");
 function isGreaterThan(expected, value) {
-    return handleCurry.call(this, arguments, function (value) { return value > expected; });
+    return handleCurry_1.default.call(this, arguments, (value) => value > expected);
 }
-module.exports = isGreaterThan;
+exports.default = isGreaterThan;

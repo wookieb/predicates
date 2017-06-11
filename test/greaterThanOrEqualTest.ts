@@ -1,4 +1,4 @@
-import isGreaterThanOrEqual = require('../src/greaterThanOrEqual');
+import isGreaterThanOrEqual from '../src/greaterThanOrEqual';
 import {assert} from 'chai';
 
 describe('greaterThanOrEqual', function () {

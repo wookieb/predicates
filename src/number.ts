@@ -17,4 +17,4 @@ function isNumber(value: any): boolean {
     return typeof value === 'number' || Object.prototype.toString.call(value) === '[object Number]';
 }
 
-export = isNumber;
+export default isNumber;

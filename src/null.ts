@@ -16,4 +16,4 @@ function isNull(value: any): boolean {
     return value === null;
 }
 
-export = isNull;
+export default isNull;

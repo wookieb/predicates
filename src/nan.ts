@@ -1,5 +1,5 @@
 
-import isNumber = require('./number');
+import isNumber from './number';
 
 /**
  * Checks whether a value is a NaN number
@@ -20,4 +20,4 @@ function isNotANumber(value: any): boolean {
     return isNumber(value) && isNaN(value);
 }
 
-export = isNotANumber;
+export default isNotANumber;

@@ -1,7 +1,7 @@
 import {assert} from 'chai';
 import * as sinon from 'sinon';
 
-import all = require('../src/all');
+import all from '../src/all';
 import {falsePredicate, truePredicate} from "./common";
 
 describe('all', function () {

@@ -28,4 +28,4 @@ import { Predicate } from './types';
  */
 declare function isInstanceOf(clazz: Function): Predicate;
 declare function isInstanceOf(clazz: Function, value: any): boolean;
-export = isInstanceOf;
+export default isInstanceOf;

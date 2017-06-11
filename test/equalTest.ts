@@ -1,4 +1,4 @@
-import isEqual = require('../src/equal');
+import isEqual from '../src/equal';
 import {assert} from 'chai';
 
 describe('equal', function () {

@@ -15,4 +15,4 @@
  * @returns {boolean}
  */
 declare function notBlank(value: any): boolean;
-export = notBlank;
+export default notBlank;

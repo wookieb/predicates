@@ -1,4 +1,4 @@
-import isObject = require('./object');
+import isObject from './object';
 
 /**
  * Checks whether a value is a plain object.
@@ -28,4 +28,4 @@ function isPlainObject(value: any) {
     return proto === Object.prototype || proto === null;
 }
 
-export = isPlainObject;
+export default isPlainObject;

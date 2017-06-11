@@ -20,4 +20,4 @@ import { Predicate } from './types';
  * @returns {Predicate}
  */
 declare function isOneOf(...allowedValues: any[]): Predicate;
-export = isOneOf;
+export default isOneOf;

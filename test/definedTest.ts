@@ -1,4 +1,4 @@
-import isDefined = require('../src/defined');
+import isDefined from '../src/defined';
 import {assert} from 'chai';
 
 describe('defined', function () {

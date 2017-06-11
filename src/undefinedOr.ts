@@ -1,8 +1,8 @@
 import {Predicate} from './types';
 
-import handleCurry = require('./utils/handleCurry');
-import isUndefined = require('./undefined');
-import isFunction = require('./function');
+import handleCurry from './utils/handleCurry';
+import isUndefined from './undefined';
+import isFunction from './function';
 
 
 /**
@@ -33,4 +33,4 @@ function isUndefinedOr(predicate: Predicate, value?: any): boolean | Predicate {
         return isUndefined(value) || predicate.apply(this, arguments);
     });
 }
-export = isUndefinedOr;
+export default isUndefinedOr;

@@ -5,4 +5,4 @@
  * @param {...*} arg
  * @return {Boolean}
  */
-export declare type Predicate = (value: any, ...extraArgs: any[]) => boolean;
+export declare type Predicate<T = any> = (value: T, ...extraArgs: any[]) => boolean;

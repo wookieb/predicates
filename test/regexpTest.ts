@@ -1,4 +1,4 @@
-import isRegexp = require('../src/regexp');
+import isRegexp from '../src/regexp';
 import {assert} from 'chai';
 
 describe('regexp', function () {

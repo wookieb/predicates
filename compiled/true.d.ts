@@ -8,4 +8,4 @@
  * is.true('true'); // false
  */
 declare function isTrue(value: any): boolean;
-export = isTrue;
+export default isTrue;

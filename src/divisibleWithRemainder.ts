@@ -1,6 +1,6 @@
-import handleCurry = require('./utils/handleCurry');
-import isFinitePredicate = require('./finite');
-import isNumber = require('./number');
+import handleCurry from './utils/handleCurry';
+import isFinitePredicate from './finite';
+import isNumber from './number';
 import {Predicate} from './types';
 
 /**
@@ -33,7 +33,7 @@ import {Predicate} from './types';
  * @throws {Error} if the remainder is greater than the divisor
  * @throws {TypeError} if the divisor is not a finite number
  * @throws {TypeError} if the remainder is not a finite number
- * @returns {(Boolean|Predicate)} returns bool if at least 3 arguments provided, otherwise a predicate
+ * @returns {(boolean|Predicate)} returns bool if at least 3 arguments provided, otherwise a predicate
  */
 function divisibleWithRemainder(divisor: number, remainder: number): Predicate;
 function divisibleWithRemainder(divisor: number, remainder: number, value: number): boolean;
@@ -63,4 +63,4 @@ function divisibleWithRemainder(divisor: number, remainder: number, value?: numb
     }, 2);
 }
 
-export = divisibleWithRemainder;
+export default divisibleWithRemainder;

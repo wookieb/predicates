@@ -78,4 +78,4 @@ declare function isStructure(structure: {
 declare function isStructure(structure: {
     [name: string]: Predicate;
 }, value: Object): boolean;
-export = isStructure;
+export default isStructure;

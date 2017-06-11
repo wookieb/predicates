@@ -1,7 +1,7 @@
 import {Predicate} from './types';
-import handleCurry = require('./utils/handleCurry');
-import isObject = require('./object');
-import isFunction = require('./function');
+import handleCurry from './utils/handleCurry';
+import isObject from './object';
+import isFunction from './function';
 
 
 /**
@@ -48,4 +48,4 @@ function property(propertyName: string, predicate: Predicate, object?: Object): 
         return isObject(value) && predicate.apply(this, args);
     }, 2);
 }
-export = property;
+export default property;

@@ -19,4 +19,4 @@
  * @returns {boolean}
  */
 declare function isPlainObject(value: any): boolean;
-export = isPlainObject;
+export default isPlainObject;

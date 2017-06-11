@@ -1,4 +1,4 @@
-import isLessThan = require('../src/lessThan');
+import isLessThan from '../src/lessThan';
 import {assert} from 'chai';
 
 describe('lessThan', () => {

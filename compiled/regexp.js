@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * Checks whether a value is a regexp
  *
@@ -12,4 +13,4 @@
 function isRegexp(value) {
     return Object.prototype.toString.call(value) === '[object RegExp]';
 }
-module.exports = isRegexp;
+exports.default = isRegexp;

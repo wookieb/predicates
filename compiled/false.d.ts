@@ -14,4 +14,4 @@
  * @name false
  */
 declare function isFalse(value: boolean): boolean;
-export = isFalse;
+export default isFalse;

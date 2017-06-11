@@ -1,6 +1,6 @@
-import nativeIsInteger = require('../src/integer/native');
-import polyfillIsInteger = require('../src/integer/polyfill');
-import isInteger = require('../src/integer');
+import nativeIsInteger from '../src/integer/native';
+import polyfillIsInteger from '../src/integer/polyfill';
+import isInteger from '../src/integer';
 import {assert} from 'chai';
 
 describe('integer', function () {

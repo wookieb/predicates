@@ -1,5 +1,6 @@
 "use strict";
-var isNumber = require("./number");
+Object.defineProperty(exports, "__esModule", { value: true });
+const number_1 = require("./number");
 /**
  * Checks whether a value is a negative number
  *
@@ -15,6 +16,6 @@ var isNumber = require("./number");
  * @returns {boolean}
  */
 function isNegativeNumber(value) {
-    return isNumber(value) && value < 0;
+    return number_1.default(value) && value < 0;
 }
-module.exports = isNegativeNumber;
+exports.default = isNegativeNumber;

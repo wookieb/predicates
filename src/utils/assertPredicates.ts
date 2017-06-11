@@ -1,8 +1,8 @@
 import {Predicate} from "../types";
-import isFunction = require('../function');
-import isArrayOf = require('../arrayOf');
+import isFunction from '../function';
+import isArrayOf from '../arrayOf';
 
-function assertPredicates(predicates: Predicate[]) {
+export default function assertPredicates(predicates: Predicate[]) {
     if (!isArrayOf(isFunction, predicates)) {
         throw new TypeError('Every predicate must be a function');
     }
@@ -11,4 +11,3 @@ function assertPredicates(predicates: Predicate[]) {
     }
 }
 
-export = assertPredicates;

@@ -1,6 +1,6 @@
 {
   "name": "predicates",
-  "version": "2.0.0-rc2",
+  "version": "2.0.0-rc1",
   "description": "Set of various predicates for type checking, assertions, filtering etc",
   "main": "index.js",
   "repository": {
@@ -10,7 +10,8 @@
   "scripts": {
     "compile": "rm -rf compiled && ./node_modules/.bin/tsc -p ./.config/tsconfig.json",
     "lint": "./node_modules/.bin/tslint --config ./.config/tslint.json src/*.ts",
-    "test": "./node_modules/.bin/jest --config ./.config/jest.json"
+    "test": "./node_modules/.bin/jest --config ./.config/jest.json",
+    "test:ci": "./node_modules/.bin/jest --config ./.config/jest.json --testResultsProcessor ./node_modules/jest-junit"
   },
   "keywords": [
     "predicates",
@@ -29,6 +30,7 @@
     "dmd-examples-highlight": "^0.1.x",
     "esdoc": "^0.5.2",
     "jest": "^20.0.0",
+    "jest-junit": "^1.5.1",
     "jsdoc-to-markdown": "^3.0.0",
     "sinon": "^2.2.0",
     "ts-jest": "^20.0.0",

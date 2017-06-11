@@ -22,4 +22,4 @@ import { Predicate } from './types';
  */
 declare function endsWith(suffix: string): Predicate;
 declare function endsWith(suffix: string, value: string): boolean;
-export = endsWith;
+export default endsWith;

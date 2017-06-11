@@ -1,5 +1,5 @@
-import objectOf = require('../src/objectOf');
-import isNumber = require('../src/number');
+import objectOf from '../src/objectOf';
+import isNumber from '../src/number';
 import {assert} from 'chai';
 import {truePredicate} from "./common";
 import * as sinon from 'sinon';

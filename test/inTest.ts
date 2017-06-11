@@ -1,4 +1,4 @@
-import isIn = require('../src/in');
+import isIn from '../src/in';
 import {assert} from 'chai';
 
 describe('in', function () {

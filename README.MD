@@ -68,10 +68,6 @@ new Person('Tom', 'Welling'); // OK!
 new Person('Tom', '', 33); // Error: Surname must be a string and cannot be emptye
 ```
 
-## Supported browsers
-Supported by all major browsers including IE >=9.
-IE8 is supported as well but you need to include https://github.com/es-shims/es5-shim and es5-sham.
-
 ## Contributing
 * clone repo
 * ensure your editor is decent and pick up the `.editorconfig` files
@@ -80,6 +76,12 @@ IE8 is supported as well but you need to include https://github.com/es-shims/es5
 * `gulp` --> there should be no errors
 
 ## Changelog
+
+### 2.0.0-rc1
+* Removes support for bower, use webpack or any other module bundler
+* Rewritten in typescript for much better code completion and function signature detection
+* Added _asyncFunction_, _generator_, _map_, _set_, _symbol_, _thenable_, _weakMap_, _weakSet_, _emptyArray_, _notEmptyArray_ (#22) predicates
+* Fixed #23
 
 ### 1.0.1
 * Fixed #21

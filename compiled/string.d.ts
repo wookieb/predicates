@@ -8,4 +8,4 @@
  * is.string({}); // false
  */
 declare function isString(value: any): boolean;
-export = isString;
+export default isString;

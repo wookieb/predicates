@@ -1,5 +1,5 @@
-import isNumber = require('../number');
+import isNumber from '../number';
 
-export = function isFinitePolyfill(value: any): boolean {
+export default function isFinitePolyfill(value: any): boolean {
     return isNumber(value) && value !== Infinity && value !== -Infinity && !isNaN(value);
 }

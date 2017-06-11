@@ -1,9 +1,11 @@
+import native from './integer/native';
+import polyfill from './integer/polyfill';
+
 /**
  * Checks whether a value is an integer
  *
- * **Aliases** _int_
- *
  * @function integer
+ * @function int
  *
  * @example
  * var is = require('predicates');
@@ -12,9 +14,6 @@
  * is.integer(10.4); // false
  *
  * @param {*} value
- * @returns {Boolean}
+ * @returns {boolean}
  */
-import native = require('./integer/native');
-import polyfill = require('./integer/polyfill');
-
-export = native || polyfill;
+export default native || polyfill;

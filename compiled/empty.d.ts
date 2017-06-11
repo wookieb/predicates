@@ -20,4 +20,4 @@
  * @returns {boolean}
  */
 declare function isEmpty(value: any): boolean;
-export = isEmpty;
+export default isEmpty;

@@ -31,4 +31,4 @@
  * @returns {Boolean}
  */
 declare function isPrimitive(value: any): boolean;
-export = isPrimitive;
+export default isPrimitive;
