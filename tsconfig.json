@@ -4,14 +4,12 @@
         "target": "es5",
         "noImplicitAny": true,
         "moduleResolution": "node",
-        "outDir": "../compiled/",
+        "outDir": "./",
         "declaration": true,
-        "lib": [
-            "es6"
-        ]
+        "lib": ["es6"]
     },
     "include": [
-        "../src/*.ts"
+        "./src/*.ts"
     ],
-    "rootDir": "../src"
+    "rootDir": "./src"
 }

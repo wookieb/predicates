@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es5",
+        "noImplicitAny": false,
+        "moduleResolution": "node",
+        "lib": ["es6"]
+    },
+    "include": [
+        "../test/*.ts"
+    ],
+    "rootDir": "../test"
+}

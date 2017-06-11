@@ -74,7 +74,7 @@ export {divisibleWithRemainder, divisible as divisibleByWithRemainder, divisible
 export {empty};
 export {emptyArray, emptyArray as emptyArr};
 export {endsWith};
-export {equal, equal as equalTo, equal as eq}
+export {equal, equal as equalTo, equal as eq};
 
 export {isFalse as false};
 export {falsy, falsy as falsey};
