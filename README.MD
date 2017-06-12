@@ -2,7 +2,7 @@
 [![Build Status](https://travis-ci.org/wookieb/predicates.svg)](https://travis-ci.org/wookieb/predicates)
 [![NPM version](https://badge.fury.io/js/predicates.png)](http://badge.fury.io/js/predicates)
 
-Set of various predicates for type checking, assertions, filtering etc.
+Set of various predicates for type checking, simple assertions, filtering etc.
 
 ## Install
 ### NPM
@@ -11,7 +11,6 @@ npm install predicates
 ```
 
 ## Documentation
-For list of all available functions see [API reference](docs/api.md)
 
 If you wonder why _predicates_ is different, read [API design principles](docs/design.md)
 
@@ -39,7 +38,9 @@ isPerson({surname: 'Welling', age: 100}); // false, lack of name property
 ```
 
 ## Assertions
-[Assert-generator](https://github.com/wookieb/assert-generator) helps create assertions directly from predicates which is very useful for arguments assertions
+[Assert-generator](https://github.com/wookieb/assert-generator) helps create assertions directly from predicates which is very useful for arguments assertions.
+
+NOTE! This is not suppose to replace such powerful tools like "chai" or "should.js" which are designed mostly for testing and producing user readable input in case of failure. 
 
 ```js
 var assertName = createAssert(is.string, 'Name must be a string'),
