@@ -3,7 +3,7 @@
 ## Generated predicates might be called with more than one argument
 
 Most of type checking, utility libraries force you use predicates with only one argument. 
-_Predicates_ doesn't have such a limitation and additionally preserves the context function call which allows you to create even more powerful logic.
+_Predicates_ doesn't have such a limitation and additionally preserves the context of function call which allows you to create even more powerful logic.
 
 
 ```js
