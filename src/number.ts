@@ -1,3 +1,4 @@
+import {setDescription} from "./utils/description";
 /**
  * Checks whether a value is a number
  *
@@ -17,4 +18,5 @@ function isNumber(value: any): boolean {
     return typeof value === 'number' || Object.prototype.toString.call(value) === '[object Number]';
 }
 
+setDescription(isNumber, 'a number');
 export default isNumber;

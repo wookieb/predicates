@@ -1,5 +1,6 @@
 import matches from '../src/matches';
 import {assert} from 'chai';
+import {assertDescription} from "./common";
 
 describe('matches', function () {
     it('throws an error if regexp is not valid regexp', function () {
@@ -21,4 +22,8 @@ describe('matches', function () {
         assert.isTrue(matches(/wookieb/)('i am wookieb'));
         assert.isFalse(matches(/wookieb/)('i am groot'));
     });
+
+    it('description', () => {
+        assertDescription(matches(/wookieb/), 'matches regexp /wookieb/')
+    })
 });

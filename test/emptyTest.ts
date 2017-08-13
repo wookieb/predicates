@@ -1,5 +1,6 @@
-import isEmpty from '../src/empty';
+import isEmpty, {default as isEmpty} from '../src/empty';
 import {assert} from 'chai';
+import {assertDescription} from "./common";
 
 describe('empty', function () {
 
@@ -53,4 +54,8 @@ describe('empty', function () {
         assert.isFalse(isEmpty(0));
         assert.isFalse(isEmpty(false));
     });
+
+    it('description', () => {
+        assertDescription(isEmpty, 'an empty value');
+    })
 });

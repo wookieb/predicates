@@ -1,6 +1,9 @@
 import isProperty from '../src/property';
 import {assert} from 'chai';
 import * as sinon from 'sinon';
+import {assertDescription} from "./common";
+import isString from '../src/string';
+
 describe('property', function () {
     const PREDICATE = function (value: any) {
         return value === 2;
@@ -75,4 +78,11 @@ describe('property', function () {
         assert.isFalse(isProperty(PROPERTY, PREDICATE, INVALID_OBJECT2));
         assert.isFalse(isProperty(PROPERTY, PREDICATE)(INVALID_OBJECT2));
     });
+
+    it('description', () => {
+        assertDescription(
+            isProperty(PROPERTY, isString),
+            `an object with property "${PROPERTY}" of type: a string`
+        )
+    })
 });

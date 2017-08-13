@@ -1,5 +1,6 @@
 import endsWith from '../src/endsWith';
 import {assert} from 'chai';
+import {assertDescription} from "./common";
 
 describe('endsWith', function () {
     it('returns a function if only one argument provided', function () {
@@ -36,5 +37,9 @@ describe('endsWith', function () {
         assert.isFalse(endsWith(suffix)('I am woobmaster'));
         assert.isFalse(endsWith(suffix, ''));
         assert.isFalse(endsWith(suffix)(''));
+    });
+
+    it('description', () => {
+        assertDescription(endsWith('woo'), 'a string that ends with "woo"');
     });
 });

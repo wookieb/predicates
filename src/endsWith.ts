@@ -1,6 +1,7 @@
 import {Predicate} from './types';
 import isString from './string';
 import handleCurry from './utils/handleCurry';
+import {setDescription} from "./utils/description";
 
 /**
  * Checks whether a string ends with a given suffix
@@ -33,9 +34,14 @@ function endsWith(suffix: string, value?: string): boolean | Predicate {
         throw new Error('Suffix cannot be empty');
     }
 
-    return handleCurry.call(this, arguments, (value: string) => {
-        return isString(value) && value.indexOf(suffix) === value.length - suffix.length;
-    });
+    return handleCurry.call(this, arguments,
+        setDescription(
+            (value: string) => {
+                return isString(value) && value.indexOf(suffix) === value.length - suffix.length;
+            },
+            'a string that ends with "' + suffix + '"'
+        )
+    );
 }
 
 export default endsWith;

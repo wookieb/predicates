@@ -1,5 +1,6 @@
 import isIn from '../src/in';
 import {assert} from 'chai';
+import {assertDescription} from "./common";
 
 describe('in', function () {
     const COLLECTION = [1, '2', 'test'];
@@ -34,5 +35,9 @@ describe('in', function () {
         assert.isTrue(isIn(COLLECTION)(1));
         assert.isFalse(isIn(COLLECTION, '1'));
         assert.isFalse(isIn(COLLECTION)('1'));
+    });
+
+    it('description', () => {
+        assertDescription(isIn([1, 2, 3]), 'one of values: 1, 2, 3');
     });
 });

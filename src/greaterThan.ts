@@ -1,5 +1,7 @@
 import handleCurry from './utils/handleCurry';
 import {Predicate} from './types';
+import {setDescription} from "./utils/description";
+
 /**
  * Checks whether a value is greater than expected number
  *
@@ -23,7 +25,12 @@ import {Predicate} from './types';
 function isGreaterThan(expected: number): Predicate;
 function isGreaterThan(expected: number, value: number): boolean;
 function isGreaterThan(expected: number, value?: number): boolean | Predicate {
-    return handleCurry.call(this, arguments, (value: number) => value > expected);
+    return handleCurry.call(this, arguments,
+        setDescription(
+            (value: number) => value > expected,
+            'greater than ' + expected
+        )
+    );
 }
 
 export default isGreaterThan;

@@ -1,5 +1,6 @@
 import isWeakSet from '../src/weakSet';
 import {assert} from 'chai';
+import {assertDescription} from "./common";
 
 (typeof WeakSet === 'function' ? describe : describe.skip)('weakSet', () => {
     it('detects WeakSet', () => {
@@ -12,4 +13,8 @@ import {assert} from 'chai';
     it('Set is not WeakSet', () => {
         assert.isFalse(isWeakSet(new Set()));
     });
+
+    it('description', () => {
+        assertDescription(isWeakSet, 'a WeakSet');
+    })
 });

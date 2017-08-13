@@ -1,5 +1,6 @@
 import isFalse from '../src/false';
 import {assert} from 'chai';
+import {assertDescription} from "./common";
 
 describe('false', function () {
     it('returns true if value is false', function () {
@@ -12,4 +13,8 @@ describe('false', function () {
         assert.isFalse(isFalse(true));
         assert.isFalse(isFalse(<any>''));
     });
+
+    it('description', () => {
+        assertDescription(isFalse, 'false');
+    })
 });

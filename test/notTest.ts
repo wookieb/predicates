@@ -1,7 +1,8 @@
 import not from '../src/not';
 import {assert} from 'chai';
 import * as sinon from 'sinon';
-import {falsePredicate, truePredicate} from "./common";
+import {assertDescription, falsePredicate, truePredicate} from "./common";
+import isString from "../src/string";
 
 describe('not', function () {
 
@@ -30,4 +31,8 @@ describe('not', function () {
         sinon.assert.alwaysCalledOn(stub, EXAMPLE_CONTEXT);
         sinon.assert.alwaysCalledWith(stub, ...args);
     });
+
+    it('description', () => {
+        assertDescription(not(isString), 'not a string');
+    })
 });

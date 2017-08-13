@@ -1,3 +1,5 @@
+import {setDescription} from "./utils/description";
+
 /**
  * Check whether value is Map
  *
@@ -7,3 +9,5 @@
 export default function isMap(value: any): boolean {
     return typeof Map !== 'undefined' && value instanceof Map;
 }
+
+setDescription(isMap, 'a Map');

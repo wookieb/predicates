@@ -1,5 +1,6 @@
 import {Predicate} from './types';
 import handleCurry from './utils/handleCurry';
+import {setDescription} from "./utils/description";
 
 
 /**
@@ -19,7 +20,12 @@ import handleCurry from './utils/handleCurry';
 function isStrictEqual(expected: any): Predicate;
 function isStrictEqual(expected: any, value: any): boolean;
 function isStrictEqual(expected: any, value?: any): Predicate | boolean {
-    return handleCurry.call(this, arguments, (value: any) => expected === value);
+    return handleCurry.call(this, arguments,
+        setDescription(
+            (value: any) => expected === value,
+            'strictly equal to ' + JSON.stringify(expected)
+        )
+    );
 }
 
 export default isStrictEqual;

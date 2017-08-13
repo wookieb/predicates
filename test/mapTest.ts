@@ -1,5 +1,6 @@
 import isMap from '../src/map';
 import {assert} from 'chai';
+import {assertDescription} from "./common";
 
 (typeof Map === 'function' ? describe : describe.skip)('Map', () => {
     it('detects Map', () => {
@@ -12,4 +13,8 @@ import {assert} from 'chai';
     it('WeakMap is not Map', () => {
         assert.isFalse(isMap(new WeakMap()));
     });
+
+    it('description', () => {
+        assertDescription(isMap, 'a Map');
+    })
 });

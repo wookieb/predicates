@@ -1,5 +1,6 @@
 import notBlank from '../src/notBlank';
 import {assert} from 'chai';
+import {assertDescription} from "./common";
 
 describe('blank', () => {
     it('return false if a value is not a string', () => {
@@ -29,4 +30,8 @@ describe('blank', () => {
         assert.isFalse(notBlank(''));
         assert.isFalse(notBlank(new String('')));
     });
+
+    it('description', () => {
+        assertDescription(notBlank, 'not blank string');
+    })
 });

@@ -4,6 +4,7 @@ import isBoolean from './boolean';
 import isUndefined from './undefined';
 import isNull from './null';
 import isObject from './object';
+import {setDescription} from "./utils/description";
 
 /**
  * Checks whether a value is a primitive.
@@ -41,4 +42,5 @@ function isPrimitive(value: any): boolean {
     return !isObject(value) && (isString(value) || isNumber(value) || isBoolean(value) || isUndefined(value) || isNull(value));
 }
 
+setDescription(isPrimitive, 'a primitive');
 export default isPrimitive;

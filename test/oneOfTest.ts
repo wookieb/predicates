@@ -1,5 +1,6 @@
 import isOneOf from '../src/oneOf';
 import {assert} from 'chai';
+import {assertDescription} from "./common";
 
 describe('oneOf', function () {
     const ALLOWED_VALUES = [1, '2', 'test'];
@@ -27,4 +28,8 @@ describe('oneOf', function () {
         assert.isFalse(predicate());
     });
 
+    it('description', () => {
+        assertDescription(isOneOf(1, 2), 'one of values: 1, 2');
+        assertDescription(isOneOf('test', 'string'), 'one of values: test, string');
+    });
 });

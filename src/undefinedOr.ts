@@ -3,6 +3,7 @@ import {Predicate} from './types';
 import handleCurry from './utils/handleCurry';
 import isUndefined from './undefined';
 import isFunction from './function';
+import {getDescription, setDescription} from "./utils/description";
 
 
 /**
@@ -29,8 +30,14 @@ function isUndefinedOr(predicate: Predicate, value?: any): boolean | Predicate {
         throw new TypeError('Predicate must be a function');
     }
 
-    return handleCurry.call(this, arguments, function (value: any) {
-        return isUndefined(value) || predicate.apply(this, arguments);
-    });
+    return handleCurry.call(this, arguments,
+        setDescription(
+            function (value: any) {
+                return isUndefined(value) || predicate.apply(this, arguments);
+            },
+            'undefined or ' + getDescription(predicate)
+        )
+    );
 }
+
 export default isUndefinedOr;

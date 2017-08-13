@@ -1,6 +1,7 @@
 import {Predicate} from './types';
 import handleCurry from './utils/handleCurry';
 import isFunction from './function';
+import {setDescription} from "./utils/description";
 
 
 /**
@@ -36,6 +37,12 @@ function isInstanceOf(clazz: Function, value?: any): boolean | Predicate {
     if (!isFunction(clazz)) {
         throw new TypeError('Class must be a function');
     }
-    return handleCurry.call(this, arguments, (value: Function) => value instanceof clazz);
+    return handleCurry.call(this, arguments,
+        setDescription(
+            (value: Function) => value instanceof clazz,
+            'an instance of ' + clazz.name
+        )
+    );
 }
+
 export default isInstanceOf;

@@ -1,4 +1,5 @@
 import isObject from './object';
+import {setDescription} from "./utils/description";
 
 /**
  * Checks whether a value is a plain object.
@@ -28,4 +29,5 @@ function isPlainObject(value: any) {
     return proto === Object.prototype || proto === null;
 }
 
+setDescription(isPlainObject, 'a plain object');
 export default isPlainObject;

@@ -1,5 +1,6 @@
 import {assert} from 'chai';
 import isFinite from '../src/finite';
+import {assertDescription} from "./common";
 
 describe('finite', function () {
 
@@ -18,4 +19,8 @@ describe('finite', function () {
         assert.isTrue(isFinite(1));
         assert.isTrue(isFinite(10.234));
     });
+
+    it('description', () => {
+        assertDescription(isFinite, 'a finite number');
+    })
 });

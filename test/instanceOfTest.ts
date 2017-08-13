@@ -1,5 +1,6 @@
 import isInstanceOf from '../src/instanceOf';
 import {assert} from 'chai';
+import {assertDescription} from "./common";
 
 describe('instanceOf', function () {
     class CLAZZ {
@@ -30,4 +31,8 @@ describe('instanceOf', function () {
         assert.isFalse(isInstanceOf(CLAZZ, {}));
         assert.isFalse(isInstanceOf(CLAZZ)({}));
     });
+
+    it('description', () => {
+        assertDescription(isInstanceOf(CLAZZ), 'an instance of CLAZZ');
+    })
 });

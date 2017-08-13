@@ -1,4 +1,5 @@
 import {asyncFunctionConstructor} from './utils/asyncFunctionConstructor';
+import {setDescription} from "./utils/description";
 
 /**
  * Checks whether value is async function.
@@ -13,3 +14,5 @@ import {asyncFunctionConstructor} from './utils/asyncFunctionConstructor';
 export default function isAsyncFunction(value: any): boolean {
     return !!asyncFunctionConstructor && value instanceof asyncFunctionConstructor;
 }
+
+setDescription(isAsyncFunction, 'an async function');

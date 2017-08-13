@@ -1,3 +1,5 @@
+import {setDescription} from "./utils/description";
+
 /**
  * Checks whether a value is an object and ignores null
  *
@@ -17,4 +19,5 @@ function isObject(value: any) {
     return value instanceof Object || (typeof value === 'object' && value !== null);
 }
 
+setDescription(isObject, 'an object');
 export default isObject;

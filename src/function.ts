@@ -1,3 +1,5 @@
+import {setDescription} from "./utils/description";
+
 /**
  * Checks whether a value is a function
  *
@@ -17,4 +19,5 @@ function isFunction(value: any): boolean {
     return typeof value === 'function';
 }
 
+setDescription(isFunction, 'a function');
 export default isFunction;

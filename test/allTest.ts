@@ -2,7 +2,9 @@ import {assert} from 'chai';
 import * as sinon from 'sinon';
 
 import all from '../src/all';
-import {falsePredicate, truePredicate} from "./common";
+import {assertDescription, falsePredicate, truePredicate} from "./common";
+import isString from "../src/string";
+import isNumber from "../src/number";
 
 describe('all', function () {
 
@@ -73,5 +75,12 @@ describe('all', function () {
         assert.isFalse(all(falsePredicate, spy)('value'));
 
         sinon.assert.notCalled(spy);
+    });
+
+    it('description', () => {
+        assertDescription(
+            all(isString, isNumber),
+            'satisfies all predicates: a string, a number'
+        )
     });
 });

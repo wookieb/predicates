@@ -2,6 +2,7 @@ import handleCurry from './utils/handleCurry';
 import isFinitePredicate from './finite';
 import isNumber from './number';
 import {Predicate} from './types';
+import {setDescription} from "./utils/description";
 
 /**
  * Checks whether a value is a number and it's divisible by divisor with given remainder
@@ -58,9 +59,14 @@ function divisibleWithRemainder(divisor: number, remainder: number, value?: numb
         throw new Error('Remainder cannot be greater than divisor');
     }
 
-    return handleCurry.call(this, arguments, (value: number) => {
-        return isNumber(value) && value % divisor === remainder;
-    }, 2);
+    return handleCurry.call(this, arguments,
+        setDescription(
+            (value: number) => {
+                return isNumber(value) && value % divisor === remainder;
+            },
+            'a number divisible by ' + divisor + ' with remainder ' + remainder
+        )
+        , 2);
 }
 
 export default divisibleWithRemainder;

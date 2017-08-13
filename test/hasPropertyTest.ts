@@ -1,5 +1,6 @@
 import hasProperty from '../src/hasProperty';
 import {assert} from 'chai';
+import {assertDescription} from "./common";
 
 describe('hasProperty', () => {
     it('returns a function if only property provided', function () {
@@ -54,5 +55,9 @@ describe('hasProperty', () => {
         assert.isFalse(hasProperty('property')('str'));
         assert.isFalse(hasProperty('property', []));
         assert.isFalse(hasProperty('property')([]));
+    });
+
+    it('description', () => {
+        assertDescription(hasProperty('name'), 'an object with "name" property');
     });
 });

@@ -1,6 +1,7 @@
 import isArray from './array';
 import handleCurry from './utils/handleCurry';
 import {Predicate} from './types';
+import {setDescription} from "./utils/description";
 
 /**
  * Checks whether a value exists in collection
@@ -38,7 +39,12 @@ function isIn(collection: any[], value?: any): boolean | Predicate {
         throw new Error('Collection cannot be empty');
     }
 
-    return handleCurry.call(this, arguments, (value: any) => collection.indexOf(value) !== -1);
+    return handleCurry.call(this, arguments,
+        setDescription(
+            (value: any) => collection.indexOf(value) !== -1,
+            'one of values: ' + collection.join(', ')
+        )
+    );
 }
 
 export default isIn;

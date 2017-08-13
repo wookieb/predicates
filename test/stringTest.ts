@@ -1,5 +1,6 @@
 import isString from '../src/string';
 import {assert} from 'chai';
+import {assertDescription} from "./common";
 
 describe('string', function () {
     const OBJECT_WITH_TO_STRING = {
@@ -13,4 +14,8 @@ describe('string', function () {
         assert.isTrue(isString(new String('test')));
         assert.isFalse(isString(OBJECT_WITH_TO_STRING));
     });
+
+    it('description', () => {
+        assertDescription(isString, 'a string');
+    })
 });

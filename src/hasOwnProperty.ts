@@ -2,6 +2,7 @@ import isObject from './object';
 import isString from './string';
 import handleCurry from './utils/handleCurry';
 import {Predicate} from './types';
+import {setDescription} from "./utils/description";
 
 /**
  * Checks whether an object has own property
@@ -39,9 +40,14 @@ function hasOwnProperty(property: string, object?: Object): boolean | Predicate 
     if (!isString(property)) {
         throw new TypeError('Property name must be a string');
     }
-    return handleCurry.call(this, arguments, (object: Object) => {
-        return isObject(object) && Object.prototype.hasOwnProperty.call(object, property);
-    });
+    return handleCurry.call(this, arguments,
+        setDescription(
+            (object: Object) => {
+                return isObject(object) && Object.prototype.hasOwnProperty.call(object, property);
+            },
+            'an object with own "' + property + '" property'
+        )
+    );
 }
 
 export default hasOwnProperty;

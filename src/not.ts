@@ -1,6 +1,7 @@
 import {Predicate} from './types';
 import isFunction from './function';
 import handleCurry from './utils/handleCurry';
+import {getDescription, setDescription} from "./utils/description";
 
 /**
  * Negates result of a predicate
@@ -25,7 +26,12 @@ export default function isNot(predicate: Predicate): Predicate {
         throw new TypeError('Predicate must be a function');
     }
 
-    return handleCurry.call(this, arguments, function () {
-        return !predicate.apply(this, arguments);
-    });
+    return handleCurry.call(this, arguments,
+        setDescription(
+            function () {
+                return !predicate.apply(this, arguments);
+            },
+            'not ' + getDescription(predicate)
+        )
+    );
 }

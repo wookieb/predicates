@@ -59,6 +59,8 @@ import weakMap from './weakMap';
 import weakSet from './weakSet';
 import not from './not';
 
+import {setDescription, getDescription} from "./utils/description";
+
 export {all, all as and};
 export {any, any as or};
 export {array, array as arr};
@@ -103,7 +105,7 @@ export {not as negate};
 export {notBlank};
 export {notEmptyArray, notEmptyArray as notEmptyArr};
 export {isNull as null};
-export {isNumber, isNumber as num};
+export {isNumber as number, isNumber as num};
 export {isObject as object, isObject as obj};
 export {objectOf, objectOf as objOf};
 export {oneOf};
@@ -125,3 +127,4 @@ export {isUndefined as undefined};
 export {undefinedOr};
 export {weakMap};
 export {weakSet};
+export {setDescription, getDescription};

@@ -3,6 +3,7 @@ import {Predicate} from './types';
 import isArray from './array';
 import isFunction from './function';
 import handleCurry from './utils/handleCurry';
+import {getDescription, setDescription} from "./utils/description";
 
 /**
  * Checks whether every element of an array passes the predicate
@@ -35,10 +36,14 @@ function isArrayOf(predicate: Predicate, value?: any[], ...extraArgs: any[]): bo
         throw new TypeError('Predicate must be a function');
     }
 
-    return handleCurry.call(this, arguments, function (value: any) {
-        const match = (value: any) => predicate.apply(this, [value].concat(extraArgs));
-        return isArray(value) && value.every(match);
-    });
+    return handleCurry.call(this, arguments,
+        setDescription(function (value: any) {
+                const match = (value: any) => predicate.apply(this, [value].concat(extraArgs));
+                return isArray(value) && value.every(match);
+            },
+            'an array of elements of type: ' + getDescription(predicate)
+        )
+    );
 }
 
 export default isArrayOf;

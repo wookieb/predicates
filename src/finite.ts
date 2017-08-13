@@ -1,4 +1,5 @@
 import isNumber from './number';
+import {setDescription} from "./utils/description";
 
 /**
  * Checks whether a value is a number and it's finite
@@ -19,5 +20,5 @@ function isFinitePolyfill(value: any): boolean {
 }
 
 const isFinite = ('isFinite' in Number) ? (<any>Number).isFinite : isFinitePolyfill;
-
+setDescription(isFinite, 'a finite number');
 export default isFinite;

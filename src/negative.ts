@@ -1,4 +1,3 @@
-
 import isNumber from './number';
 
 /**

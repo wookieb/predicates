@@ -1,4 +1,6 @@
 import isString from './string';
+import {setDescription} from "./utils/description";
+
 const CONTAINS_ONLY_WHITESPACES = /^\s*$/;
 
 /**
@@ -19,3 +21,5 @@ const CONTAINS_ONLY_WHITESPACES = /^\s*$/;
 export default function isBlank(value: any): boolean {
     return isString(value) && (value === '' || CONTAINS_ONLY_WHITESPACES.test(value));
 }
+
+setDescription(isBlank, 'a blank string');

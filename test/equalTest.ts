@@ -1,5 +1,6 @@
 import isEqual from '../src/equal';
 import {assert} from 'chai';
+import {assertDescription} from "./common";
 
 describe('equal', function () {
     it('returns a function if only one argument provided', function () {
@@ -17,4 +18,9 @@ describe('equal', function () {
         assert.isTrue(isEqual(5)('5'));
         assert.isTrue(isEqual(5)(5));
     });
+
+    it('description', () => {
+        assertDescription(isEqual(5), 'equal to 5');
+        assertDescription(isEqual("test"), 'equal to "test"');
+    })
 });

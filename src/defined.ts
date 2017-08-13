@@ -1,4 +1,5 @@
 import isUndefined from './undefined';
+import {setDescription} from "./utils/description";
 
 /**
  * Checks whether a value is not undefined - in other words, is defined
@@ -17,3 +18,5 @@ import isUndefined from './undefined';
 export default function isDefined(value: any): boolean {
     return !isUndefined(value);
 }
+
+setDescription(isDefined, 'not undefined');

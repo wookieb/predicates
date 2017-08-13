@@ -1,6 +1,8 @@
 import isArrayOf from '../src/arrayOf';
 import {assert} from 'chai'
 import * as sinon from 'sinon';
+import {assertDescription} from "./common";
+import isString from "../src/string";
 
 describe('arrayOf', function () {
     const IS_STRING = function (value: any) {
@@ -48,4 +50,16 @@ describe('arrayOf', function () {
         assert.isTrue(isArrayOf(IS_STRING)(['test', 'array']));
         assert.isFalse(isArrayOf(IS_STRING)([1, '3']));
     });
+
+    it('description', () => {
+        assertDescription(
+            isArrayOf(IS_STRING),
+            'an array of elements of type: satisfies custom predicate "IS_STRING"'
+        );
+
+        assertDescription(
+            isArrayOf(isString),
+            'an array of elements of type: a string'
+        )
+    })
 });

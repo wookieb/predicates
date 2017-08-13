@@ -1,5 +1,6 @@
 import blank from '../src/blank';
 import {assert} from 'chai';
+import {assertDescription} from "./common";
 
 describe('blank', function () {
     it('return false if a value is not a string', function () {
@@ -28,5 +29,9 @@ describe('blank', function () {
     it('returns true if string is empty', function () {
         assert.isTrue(blank(''));
         assert.isTrue(blank(new String('')));
+    });
+
+    it('description', () => {
+        assertDescription(blank, 'a blank string');
     });
 });

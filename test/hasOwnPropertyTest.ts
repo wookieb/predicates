@@ -1,5 +1,6 @@
 import hasOwnProperty from '../src/hasOwnProperty';
 import {assert} from 'chai';
+import {assertDescription} from "./common";
 
 describe('hasOwnProperty', function () {
     it('returns a function if only property provided', function () {
@@ -53,5 +54,9 @@ describe('hasOwnProperty', function () {
         assert.isFalse(hasOwnProperty('property')('str'));
         assert.isFalse(hasOwnProperty('property', []));
         assert.isFalse(hasOwnProperty('property')([]));
+    });
+
+    it('description', () => {
+        assertDescription(hasOwnProperty('name'), 'an object with own "name" property')
     });
 });

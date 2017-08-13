@@ -1,5 +1,6 @@
 import startsWith from '../src/startsWith';
 import {assert} from 'chai';
+import {assertDescription} from "./common";
 
 describe('startsWith', function () {
     it('returns a function if only one argument provided', function () {
@@ -38,4 +39,7 @@ describe('startsWith', function () {
         assert.isFalse(startsWith(prefix)(''));
     });
 
+    it('description', () => {
+        assertDescription(startsWith('PREF_'), 'a string that starts with "PREF_"');
+    });
 });

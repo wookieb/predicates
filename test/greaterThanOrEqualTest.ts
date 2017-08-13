@@ -1,5 +1,6 @@
 import isGreaterThanOrEqual from '../src/greaterThanOrEqual';
 import {assert} from 'chai';
+import {assertDescription} from "./common";
 
 describe('greaterThanOrEqual', function () {
     it('returns a function if only one argument provided', function () {
@@ -16,5 +17,9 @@ describe('greaterThanOrEqual', function () {
     it('returns false if value is less than expected value', function () {
         assert.isFalse(isGreaterThanOrEqual(10, 1));
         assert.isFalse(isGreaterThanOrEqual(10)(1));
+    });
+
+    it('description', () => {
+        assertDescription(isGreaterThanOrEqual(10), 'greater than or equal 10');
     });
 });

@@ -1,5 +1,6 @@
 import isBoolean from '../src/boolean';
 import {assert} from 'chai';
+import {assertDescription} from "./common";
 
 describe('boolean', function () {
     it('returns true if value is a boolean', function () {
@@ -13,6 +14,10 @@ describe('boolean', function () {
         assert.isFalse(isBoolean(''));
         assert.isFalse(isBoolean(undefined));
         assert.isFalse(isBoolean(null));
-    })
+    });
+
+    it('description', () => {
+        assertDescription(isBoolean, 'a boolean');
+    });
 });
 

@@ -1,5 +1,6 @@
 import isGreaterThan from '../src/greaterThan';
 import {assert} from 'chai';
+import {assertDescription} from "./common";
 
 describe('greaterThan', function () {
     it('returns a function if only one argument provided', function () {
@@ -17,4 +18,8 @@ describe('greaterThan', function () {
         assert.isFalse(isGreaterThan(10, 10));
         assert.isFalse(isGreaterThan(10)(10));
     });
+
+    it('description', () => {
+        assertDescription(isGreaterThan(10), 'greater than 10');
+    })
 });

@@ -1,4 +1,5 @@
 import isNumber from './number';
+import {setDescription} from "./utils/description";
 
 /**
  * Checks whether a value is a positive number
@@ -18,4 +19,5 @@ function isPositiveNumber(value: number): boolean {
     return isNumber(value) && value > 0;
 }
 
+setDescription(isPositiveNumber, 'a positive number')
 export default isPositiveNumber;

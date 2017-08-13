@@ -1,5 +1,6 @@
 import isTrue from '../src/true';
 import {assert} from 'chai';
+import {assertDescription} from "./common";
 
 describe('true', function () {
     it('checks whether value is strictly true', function () {
@@ -10,5 +11,9 @@ describe('true', function () {
         assert.isFalse(isTrue(false));
         assert.isFalse(isTrue('true'));
         assert.isFalse(isTrue({}));
+    });
+
+    it('description', () => {
+        assertDescription(isTrue, 'true');
     });
 });

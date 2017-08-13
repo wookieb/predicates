@@ -1,5 +1,5 @@
-
 import isNumber from './number';
+import {setDescription} from "./utils/description";
 
 /**
  * Checks whether a value is a NaN number
@@ -20,4 +20,5 @@ function isNotANumber(value: any): boolean {
     return isNumber(value) && isNaN(value);
 }
 
+setDescription(isNotANumber, 'not a number');
 export default isNotANumber;

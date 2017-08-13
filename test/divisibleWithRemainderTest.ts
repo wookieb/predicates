@@ -1,5 +1,6 @@
 import divisibleWithRemainder from '../src/divisibleWithRemainder';
 import {assert} from 'chai';
+import {assertDescription} from "./common";
 
 describe('divisibleWithRemainder', function () {
     it('checks whether the divisor is a finite number', function () {
@@ -55,4 +56,8 @@ describe('divisibleWithRemainder', function () {
         assert.isFalse(divisibleWithRemainder(10, 5, <any>{}));
         assert.isFalse(divisibleWithRemainder(10, 5)({}));
     });
+
+    it('description', () => {
+        assertDescription(divisibleWithRemainder(10, 5), 'a number divisible by 10 with remainder 5');
+    })
 });

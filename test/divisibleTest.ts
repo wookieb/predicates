@@ -1,5 +1,6 @@
 import divisible from '../src/divisible';
 import {assert} from 'chai';
+import {assertDescription} from "./common";
 
 describe('divisible', function () {
     it('checks whether divisor is a finite number', function () {
@@ -36,4 +37,8 @@ describe('divisible', function () {
         assert.isFalse(divisible(10, <any>{}));
         assert.isFalse(divisible(10)({}));
     });
+
+    it('description', () => {
+        assertDescription(divisible(10), 'a number divisible by 10 with remainder 0');
+    })
 });

@@ -1,6 +1,7 @@
 import {Predicate} from './types';
 
 import handleCurry from './utils/handleCurry';
+import {setDescription} from "./utils/description";
 
 /**
  * Checks whether values are equal (using == operator)
@@ -26,7 +27,12 @@ import handleCurry from './utils/handleCurry';
 function isEqual(expected: any): Predicate;
 function isEqual(expected: any, value: any): boolean;
 function isEqual(expected: any, value?: any): boolean | Predicate {
-    return handleCurry.call(this, arguments, (value: any) => expected == value);
+    return handleCurry.call(this, arguments,
+        setDescription(
+            (value: any) => expected == value,
+            'equal to ' + JSON.stringify(expected)
+        )
+    );
 }
 
 export default isEqual;

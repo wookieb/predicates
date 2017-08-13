@@ -1,4 +1,6 @@
 import isBoolean from './boolean';
+import {setDescription} from "./utils/description";
+
 /**
  * Checks whether a value is a boolean true
  *
@@ -12,4 +14,5 @@ function isTrue(value: any): boolean {
     return value === true || (isBoolean(value) && value == true);
 }
 
+setDescription(isTrue, 'true');
 export default isTrue;

@@ -1,5 +1,6 @@
 import isObject from '../src/object';
 import {assert} from 'chai';
+import {assertDescription} from "./common";
 
 describe('object', function () {
     it('checks whether value is an object', function () {
@@ -14,4 +15,8 @@ describe('object', function () {
         }));
         assert.isTrue(isObject(Object.create(null)));
     });
+
+    it('description', () => {
+        assertDescription(isObject, 'an object');
+    })
 });

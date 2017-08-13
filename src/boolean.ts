@@ -1,3 +1,5 @@
+import {setDescription} from "./utils/description";
+
 /**
  * Checks whether a value is a boolean
  *
@@ -17,3 +19,5 @@
 export default function isBoolean(value: any): boolean {
     return typeof value === 'boolean' || Object.prototype.toString.call(value) === '[object Boolean]';
 }
+
+setDescription(isBoolean, 'a boolean');

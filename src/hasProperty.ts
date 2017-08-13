@@ -2,6 +2,7 @@ import {Predicate} from './types';
 import isString from './string';
 import isObject from './object';
 import handleCurry from './utils/handleCurry';
+import {setDescription} from "./utils/description";
 
 /**
  * Checks whether an object has a given property
@@ -32,9 +33,14 @@ function hasProperty(property: string, object?: Object): boolean | Predicate {
     if (!isString(property)) {
         throw new TypeError('Property name must be a string');
     }
-    return handleCurry.call(this, arguments, (object: Object) => {
-        return isObject(object) && property in object;
-    });
+    return handleCurry.call(this, arguments,
+        setDescription(
+            (object: Object) => {
+                return isObject(object) && property in object;
+            },
+            'an object with "' + property + '" property'
+        )
+    );
 }
 
 export default hasProperty;

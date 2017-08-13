@@ -2,6 +2,7 @@ import nativeIsInteger from '../src/integer/native';
 import polyfillIsInteger from '../src/integer/polyfill';
 import isInteger from '../src/integer';
 import {assert} from 'chai';
+import {assertDescription} from "./common";
 
 describe('integer', function () {
     it('picks native or polyfill function', function () {
@@ -28,5 +29,11 @@ describe('integer', function () {
                 assert.isTrue(isInteger(201));
             });
         });
+
+
     });
+
+    it('description', () => {
+        assertDescription(isInteger, 'an integer');
+    })
 });

@@ -5,6 +5,10 @@
  * @param {*} value
  * @returns {boolean}
  */
+import {setDescription} from "./utils/description";
+
 export default function isThenable(value: any): boolean {
     return !!value && typeof value.then === 'function';
 }
+
+setDescription(isThenable, 'a thenable object')

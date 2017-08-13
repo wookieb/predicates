@@ -1,5 +1,6 @@
 import isObject from './object';
 import isNumber from './number';
+import {setDescription} from "./utils/description";
 
 /**
  * Checks whether a value looks like an array
@@ -26,3 +27,5 @@ import isNumber from './number';
 export default function isArrayLike(value: any): boolean {
     return isObject(value) && isNumber(value.length) && value.length >= 0;
 }
+
+setDescription(isArrayLike, 'an array like object');

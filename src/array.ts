@@ -14,4 +14,6 @@
  * @param {*} value
  * @returns {boolean}
  */
-export default Array.isArray;
+import {setDescription} from "./utils/description";
+
+export default setDescription(Array.isArray, 'an array');

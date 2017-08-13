@@ -3,6 +3,7 @@ import isNumber from '../src/number';
 import {assert} from 'chai';
 import {truePredicate} from "./common";
 import * as sinon from 'sinon';
+import {assertDescription} from "./common";
 
 describe('objectOf', function () {
 
@@ -65,5 +66,9 @@ describe('objectOf', function () {
         assert.isTrue(objectOf(isNumber)(EXAMPLE_OBJECT));
         assert.isFalse(objectOf(isNumber, invalidObject));
         assert.isFalse(objectOf(isNumber)(invalidObject));
+    });
+
+    it('description', () => {
+        assertDescription(objectOf(isNumber), 'an object of elements of type: a number');
     });
 });

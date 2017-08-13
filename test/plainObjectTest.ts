@@ -1,5 +1,6 @@
 import isPlainObject from '../src/plainObject';
 import {assert} from 'chai';
+import {assertDescription} from "./common";
 
 describe('plainObject', function () {
     class Foo {
@@ -21,5 +22,9 @@ describe('plainObject', function () {
 
     it('checks whether objects does not have prototype', function () {
         assert.isTrue(isPlainObject(Object.create(null)));
+    });
+
+    it('description', () => {
+        assertDescription(isPlainObject, 'a plain object');
     });
 });

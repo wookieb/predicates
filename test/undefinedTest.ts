@@ -1,5 +1,6 @@
 import isUndefined from '../src/undefined';
 import {assert} from 'chai';
+import {assertDescription} from "./common";
 
 
 describe('undefined', function () {
@@ -8,5 +9,9 @@ describe('undefined', function () {
         assert.isFalse(isUndefined(null));
         assert.isFalse(isUndefined('undefined'));
         assert.isFalse(isUndefined(0));
+    });
+
+    it('description', () => {
+        assertDescription(isUndefined, 'undefined');
     });
 });

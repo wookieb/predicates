@@ -1,6 +1,8 @@
 import undefinedOr from '../src/undefinedOr';
 import {assert} from 'chai';
 import * as sinon from 'sinon';
+import {setDescription} from "../src/utils/description";
+import {assertDescription} from "./common";
 
 describe('undefinedOr', function () {
     const PREDICATE = function (value: string) {
@@ -60,4 +62,11 @@ describe('undefinedOr', function () {
         assert.isFalse(undefinedOr(PREDICATE, 1));
         assert.isFalse(undefinedOr(PREDICATE)(1));
     });
+
+    it('description', () => {
+        const predicate = setDescription(() => true, 'some func');
+        const predicate2 = setDescription(() => true, 'some func2');
+        assertDescription(undefinedOr(predicate), 'undefined or some func');
+        assertDescription(undefinedOr(predicate2), 'undefined or some func2');
+    })
 });

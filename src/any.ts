@@ -1,5 +1,6 @@
 import {Predicate} from './types';
 import assertPredicates from './utils/assertPredicates';
+import {getDescription, setDescription} from "./utils/description";
 
 /**
  * Returns a function that calls predicates in the order until one of them will be satisfied, otherwise returns false.
@@ -24,8 +25,11 @@ import assertPredicates from './utils/assertPredicates';
 export default function any(...predicates: Predicate[]): Predicate {
     assertPredicates(predicates);
 
-    return function anyPredicate() {
-        const args = arguments;
-        return predicates.some(predicate => predicate.apply(this, args));
-    };
+    return setDescription(
+        function anyPredicate() {
+            const args = arguments;
+            return predicates.some(predicate => predicate.apply(this, args));
+        },
+        'satisfies any of predicates: ' + (predicates.map(getDescription)).join(', ')
+    );
 }

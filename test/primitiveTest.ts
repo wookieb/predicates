@@ -1,5 +1,6 @@
 import isPrimitive from '../src/primitive';
 import {assert} from 'chai';
+import {assertDescription} from "./common";
 
 describe('primitive', function () {
     it('checks whether value is a primitive string', function () {
@@ -36,4 +37,8 @@ describe('primitive', function () {
         assert.isFalse(isPrimitive(Object.create(null)));
         assert.isFalse(isPrimitive({}));
     });
+
+    it('description', () => {
+        assertDescription(isPrimitive, 'a primitive');
+    })
 });

@@ -1,6 +1,7 @@
 import {Predicate} from './types';
 import isString from './string';
 import handleCurry from './utils/handleCurry';
+import {setDescription} from "./utils/description"
 
 /**
  * Checks whether a string starts with a given prefix
@@ -30,9 +31,14 @@ function startsWith(prefix: string, value?: string): boolean | Predicate {
         throw new Error('Prefix cannot be empty');
     }
 
-    return handleCurry.call(this, arguments, function startsWithPredicate(value: any) {
-        return isString(value) && value.indexOf(prefix) === 0;
-    });
+    return handleCurry.call(this, arguments,
+        setDescription(
+            function startsWithPredicate(value: any) {
+                return isString(value) && value.indexOf(prefix) === 0;
+            },
+            'a string that starts with "' + prefix + '"'
+        )
+    );
 }
 
 export default startsWith;

@@ -1,3 +1,5 @@
+import {setDescription} from "./utils/description";
+
 /**
  * Checks whether a value is null
  *
@@ -16,4 +18,5 @@ function isNull(value: any): boolean {
     return value === null;
 }
 
+setDescription(isNull, 'null');
 export default isNull;

@@ -1,6 +1,7 @@
 import isObject from './object';
 import isString from './string';
 import isArrayLike from './arrayLike';
+import {setDescription} from "./utils/description";
 
 /**
  * Checks whether a value is empty
@@ -34,4 +35,5 @@ function isEmpty(value: any): boolean {
     return value === void 0;
 }
 
+setDescription(isEmpty, 'an empty value');
 export default isEmpty;

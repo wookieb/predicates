@@ -1,5 +1,6 @@
 import {Predicate} from './types';
 import assertPredicates from './utils/assertPredicates';
+import {getDescription, setDescription} from "./utils/description";
 
 /**
  * Returns a function that calls predicates and returns true if all of them are satisfied, otherwise returns false
@@ -22,8 +23,11 @@ import assertPredicates from './utils/assertPredicates';
 export default function all(...predicates: Predicate[]): Predicate {
     assertPredicates(predicates);
 
-    return function () {
-        const args = arguments;
-        return predicates.every(predicate => predicate.apply(this, args));
-    };
+    return setDescription(
+        function () {
+            const args = arguments;
+            return predicates.every(predicate => predicate.apply(this, args));
+        },
+        'satisfies all predicates: ' + (predicates.map(getDescription)).join(', ')
+    );
 }

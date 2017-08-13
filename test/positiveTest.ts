@@ -1,5 +1,6 @@
 import isPositive from '../src/positive';
 import {assert} from 'chai';
+import {assertDescription} from "./common";
 
 describe('positive', function () {
     it('checks whether value is greater than 0', function () {
@@ -14,4 +15,8 @@ describe('positive', function () {
         assert.isFalse(isPositive(<any>{}));
         assert.isFalse(isPositive(<any>[1, 2]));
     });
+
+    it('description', () => {
+        assertDescription(isPositive, 'a positive number');
+    })
 });

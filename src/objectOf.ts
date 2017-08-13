@@ -2,6 +2,7 @@ import isObject from './object';
 import isFunction from './function';
 import handleCurry from './utils/handleCurry';
 import {Predicate} from './types';
+import {setDescription, getDescription} from "./utils/description";
 
 /**
  * Checks whether every enumerable property of object satisfies a predicate
@@ -33,12 +34,16 @@ function isObjectOf(predicate: Predicate, value?: Object, ...extraArgs: any[]): 
         throw new TypeError('Predicate must be a function');
     }
 
-    return handleCurry.call(this, arguments, function isObjectOfPredicate(object: Object, ...extraArgs: any[]) {
-        return isObject(object) && Object.keys(object)
-                .every((key) => {
-                    return predicate.apply(this, [(<any>object)[key]].concat(extraArgs));
-                });
-    });
+    return handleCurry.call(this, arguments,
+        setDescription(function isObjectOfPredicate(object: Object, ...extraArgs: any[]) {
+                return isObject(object) && Object.keys(object)
+                    .every((key) => {
+                        return predicate.apply(this, [(<any>object)[key]].concat(extraArgs));
+                    });
+            },
+            'an object of elements of type: ' + getDescription(predicate)
+        )
+    );
 }
 
 export default isObjectOf;

@@ -1,6 +1,7 @@
 import {Predicate} from './types';
 import handleCurry from './utils/handleCurry';
 import isRegexp from './regexp';
+import {setDescription} from "./utils/description";
 
 function matches(regexp: RegExp): Predicate;
 function matches(regexp: RegExp, value: any): boolean;
@@ -33,7 +34,12 @@ function matches(regexp: RegExp, value?: any): boolean | Predicate {
         throw new TypeError('Regexp must be a RegExp object');
     }
 
-    return handleCurry.call(this, arguments, (value: any) => regexp.test(value));
+    return handleCurry.call(this, arguments,
+        setDescription(
+            (value: any) => regexp.test(value),
+            'matches regexp ' + regexp
+        )
+    );
 }
 
 export default matches;

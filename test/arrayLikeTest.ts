@@ -1,5 +1,6 @@
 import isArrayLike from '../src/arrayLike';
 import {assert} from 'chai';
+import {assertDescription} from "./common";
 
 describe('arrayLike', function () {
     it('checks whether is a array like object', function () {
@@ -12,4 +13,8 @@ describe('arrayLike', function () {
         assert.isFalse(isArrayLike({length: -1}));
         assert.isFalse(isArrayLike({}));
     });
+
+    it('description', () => {
+        assertDescription(isArrayLike, 'an array like object');
+    })
 });

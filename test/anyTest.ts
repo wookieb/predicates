@@ -1,7 +1,9 @@
 import any from '../src/any';
 import {assert} from 'chai';
 import * as sinon from 'sinon';
-import {falsePredicate, truePredicate} from "./common";
+import {assertDescription, falsePredicate, truePredicate} from "./common";
+import isString from "../src/string";
+import isNumber from "../src/number";
 
 describe('any', function () {
 
@@ -68,5 +70,9 @@ describe('any', function () {
         assert.isTrue(any(truePredicate, function () {
             throw new Error('Last predicate should not be called');
         })('value'));
+    });
+
+    it('description', () => {
+        assertDescription(any(isString, isNumber), 'satisfies any of predicates: a string, a number')
     });
 });

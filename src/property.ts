@@ -2,6 +2,7 @@ import {Predicate} from './types';
 import handleCurry from './utils/handleCurry';
 import isObject from './object';
 import isFunction from './function';
+import {getDescription, setDescription} from "./utils/description";
 
 
 /**
@@ -42,10 +43,16 @@ function property(propertyName: string, predicate: Predicate, object?: Object): 
         throw new TypeError('Predicate is not a function');
     }
 
-    return handleCurry.call(this, arguments, function isPropertySatisfiesPredicateTest(value: any) {
-        const args = Array.prototype.slice.call(arguments);
-        args.splice(0, 1, isObject(value) ? value[propertyName] : undefined);
-        return isObject(value) && predicate.apply(this, args);
-    }, 2);
+    return handleCurry.call(this, arguments,
+        setDescription(
+            function isPropertySatisfiesPredicateTest(value: any) {
+                const args = Array.prototype.slice.call(arguments);
+                args.splice(0, 1, isObject(value) ? value[propertyName] : undefined);
+                return isObject(value) && predicate.apply(this, args);
+            },
+            'an object with property "' + propertyName + '" of type: ' + getDescription(predicate)
+        ),
+        2);
 }
+
 export default property;
