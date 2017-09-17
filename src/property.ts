@@ -3,6 +3,7 @@ import handleCurry from './utils/handleCurry';
 import isObject from './object';
 import isFunction from './function';
 import {getDescription, setDescription} from "./utils/description";
+import {getPredicateForType} from "./typeToPredicate";
 
 
 /**
@@ -19,16 +20,16 @@ import {getDescription, setDescription} from "./utils/description";
  * is.property('name', is.string, {}); // false - since undefined is not a string
  *
  * @param {*} propertyName
- * @param {Predicate} predicate
+ * @param {Predicate} predicate or simple type constructor
  * @param {Object} [object]
  * @param {...*} [extraParams] additional arguments passed to the predicate
  *
  * @throws {TypeError} if predicate is not a function
  * @throws {Error} if too few arguments provided
  */
-function property(propertyName: string | Symbol, predicate: Predicate): Predicate;
-function property(propertyName: string | Symbol, predicate: Predicate, object: Object, ...extraParams: any[]): boolean;
-function property(propertyName: string | Symbol, predicate: Predicate, object?: Object): boolean | Predicate {
+function property(propertyName: string | Symbol, predicate: Predicate | Function): Predicate;
+function property(propertyName: string | Symbol, predicate: Predicate | Function, object: Object, ...extraParams: any[]): boolean;
+function property(propertyName: string | Symbol, predicate: Predicate | Function, object?: Object): boolean | Predicate {
     if (arguments.length < 2) {
         throw new Error('Too few arguments - 2 required');
     }
@@ -37,6 +38,7 @@ function property(propertyName: string | Symbol, predicate: Predicate, object?: 
         throw new TypeError('Predicate is not a function');
     }
 
+    predicate = getPredicateForType(predicate) || predicate;
     return handleCurry.call(this, arguments,
         setDescription(
             function isPropertySatisfiesPredicateTest(value: any) {
@@ -45,7 +47,7 @@ function property(propertyName: string | Symbol, predicate: Predicate, object?: 
                 args.splice(0, 1, isObject(value) ? value[<string>propertyName] : undefined);
                 return isObject(value) && predicate.apply(this, args);
             },
-            'an object with property "' + propertyName + '" of type: ' + getDescription(predicate)
+            'an object with property "' + propertyName + '" of type: ' + getDescription(<Predicate>predicate)
         ),
         2);
 }

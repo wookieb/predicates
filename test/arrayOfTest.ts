@@ -61,5 +61,16 @@ describe('arrayOf', function () {
             isArrayOf(isString),
             'an array of elements of type: a string'
         )
-    })
+    });
+
+    it('array of simple types', () => {
+        const noop = function() {};
+        assert.isTrue(isArrayOf(String, ['1', '2']));
+        assert.isTrue(isArrayOf(Boolean, [true, false]));
+        assert.isTrue(isArrayOf(RegExp, [/a/, /b/]));
+        assert.isTrue(isArrayOf(Object, [{test: 1}, {}]));
+        assert.isTrue(isArrayOf(Function, [noop, noop]));
+        assert.isTrue(isArrayOf(Date, [new Date(), new Date()]));
+        assert.isTrue(isArrayOf(Array, [[], []]));
+    });
 });

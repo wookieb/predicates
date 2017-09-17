@@ -8,6 +8,7 @@ Set of various predicates for type checking, simple assertions, filtering etc.
 * Written in typescript (with [type guards](type-guards-and-differentiating-types) and function overloading)
 * Has well defined [API design principles](docs/design.md)
 * Contains description for simpler assertions
+* Simple mapping of common types (like String, Boolean) to predicates to decrease verbosity
 
 ## Install
 ### NPM
@@ -69,6 +70,7 @@ new Person('Tom', '', 33); // Error: Surname must be a string and cannot be empt
 * Added type guards
 * Added description for all predicates
 * Added _assert_
+* Decreased verbosity with simple type to predicate mapping
 
 ### 2.0.0-rc1
 * Removes support for bower, use webpack or any other module bundler

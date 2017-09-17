@@ -5,6 +5,13 @@ import {truePredicate} from "./common";
 import * as sinon from 'sinon';
 import {assertDescription} from "./common";
 
+function createSimpleObject<T>(values: T[]) {
+    return values.reduce((result: { [k: string]: T }, value: T, index: number) => {
+        result['key' + index] = value;
+        return result;
+    }, {});
+}
+
 describe('objectOf', function () {
 
     const EXAMPLE_OBJECT: any = {
@@ -70,5 +77,17 @@ describe('objectOf', function () {
 
     it('description', () => {
         assertDescription(objectOf(isNumber), 'an object of elements of type: a number');
+    });
+
+    it('object of simple types', () => {
+        const noop = function () {
+        };
+        assert.isTrue(objectOf(String, createSimpleObject(['1', '2'])));
+        assert.isTrue(objectOf(Boolean, createSimpleObject([true, false])));
+        assert.isTrue(objectOf(RegExp, createSimpleObject([/a/, /b/])));
+        assert.isTrue(objectOf(Object, createSimpleObject([{test: 1}, {}])));
+        assert.isTrue(objectOf(Function, createSimpleObject([noop, noop])));
+        assert.isTrue(objectOf(Date, createSimpleObject([new Date(), new Date()])));
+        assert.isTrue(objectOf(Array, createSimpleObject([[], []])));
     });
 });

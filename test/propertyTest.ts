@@ -84,5 +84,25 @@ describe('property', function () {
             isProperty(PROPERTY, isString),
             `an object with property "${PROPERTY}" of type: a string`
         )
-    })
+    });
+
+    it('for simple types', () => {
+        function propertyPredicate(type: Function) {
+            return isProperty(PROPERTY, type);
+        }
+
+        function exampleObject(value: any) {
+            return {[PROPERTY]: value};
+        }
+
+        const noop = () => {
+        };
+        assert.isTrue(propertyPredicate(String)(exampleObject('1')));
+        assert.isTrue(propertyPredicate(Boolean)(exampleObject(false)));
+        assert.isTrue(propertyPredicate(RegExp)(exampleObject(/a/)));
+        assert.isTrue(propertyPredicate(Object)(exampleObject({test: 1})));
+        assert.isTrue(propertyPredicate(Function)(exampleObject(noop)));
+        assert.isTrue(propertyPredicate(Date)(exampleObject(new Date())));
+        assert.isTrue(propertyPredicate(Array)(exampleObject([])));
+    });
 });

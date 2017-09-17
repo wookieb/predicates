@@ -1,6 +1,7 @@
 import {Predicate} from './types';
 import assertPredicates from './utils/assertPredicates';
 import {getDescription, setDescription} from "./utils/description";
+import {getPredicateForType} from "./typeToPredicate";
 
 /**
  * Returns a function that calls predicates in the order until one of them will be satisfied, otherwise returns false.
@@ -12,18 +13,19 @@ import {getDescription, setDescription} from "./utils/description";
  * isStringOrNumber('string'); // true
  * isStringOrNumber(undefined); // false
  *
- * @param {...Predicate} predicates
+ * @param {...Predicate|Function} predicates or simple types constructors
  * @throws {TypeError} if not every predicate is a function
  * @returns {Predicate}
  */
-export default function any(...predicates: Predicate[]): Predicate {
-    assertPredicates(predicates);
+export default function any(...predicates: (Predicate | Function)[]): Predicate {
+    const convertedPredicates = predicates.map((p) => getPredicateForType(p) || <Predicate>p);
+    assertPredicates(convertedPredicates);
 
     return setDescription(
         function anyPredicate() {
             const args = arguments;
-            return predicates.some(predicate => predicate.apply(this, args));
+            return convertedPredicates.some(predicate => predicate.apply(this, args));
         },
-        'a value that satisfies any of predicates: ' + (predicates.map(getDescription)).join(', ')
+        'a value that satisfies any of predicates: ' + (convertedPredicates.map(getDescription)).join(', ')
     );
 }

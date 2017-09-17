@@ -75,4 +75,16 @@ describe('any', function () {
     it('description', () => {
         assertDescription(any(isString, isNumber), 'a value that satisfies any of predicates: a string, a number')
     });
+
+    it('for simple types', () => {
+        const noop = function () {
+        };
+        assert.isTrue(any(String, falsePredicate)('test'));
+        assert.isTrue(any(Boolean, falsePredicate)(false));
+        assert.isTrue(any(RegExp, falsePredicate)(/a/));
+        assert.isTrue(any(Object, falsePredicate)({test: 1}));
+        assert.isTrue(any(Function, falsePredicate)(noop));
+        assert.isTrue(any(Date, falsePredicate)(new Date()));
+        assert.isTrue(any(Array, falsePredicate)([]));
+    })
 });

@@ -4,6 +4,7 @@ import handleCurry from './utils/handleCurry';
 import objectOf from './objectOf';
 import isFunction from './function';
 import {getDescription, setDescription} from "./utils/description";
+import {getPredicateForType} from "./typeToPredicate";
 
 const isObjectOfPredicates = objectOf(isFunction);
 
@@ -68,14 +69,14 @@ const isObjectOfPredicates = objectOf(isFunction);
  *    walk: function() { return 'tup tup tup'; }
  * }); // yep, it's a duck
  *
- * @param {Object} structure
+ * @param {Object<Predicate | Function>} structure with predicates of simple type constructors
  * @param {Object} [value]
  * @param {...*} [extraArgs] additional arguments passed to the predicates
  * @return {(boolean|Predicate)} returns bool if more than 1 argument provided, otherwise a predicate
  */
-function isStructure(structure: { [name: string]: Predicate }): Predicate;
-function isStructure(structure: { [name: string]: Predicate }, value: Object): boolean;
-function isStructure(structure: { [name: string]: Predicate }, value?: Object, ...extraArgs: any[]): boolean | Predicate {
+function isStructure(structure: { [name: string]: Predicate | Function }): Predicate;
+function isStructure(structure: { [name: string]: Predicate | Function}, value: Object): boolean;
+function isStructure(structure: { [name: string]: Predicate | Function}, value?: Object, ...extraArgs: any[]): boolean | Predicate {
     if (!isObject(structure)) {
         throw new TypeError('Structure must be an object');
     }
@@ -89,9 +90,12 @@ function isStructure(structure: { [name: string]: Predicate }, value?: Object, .
         throw new TypeError('Structure object must consist of predicates');
     }
 
+    keys.forEach((key: string) => {
+        structure[key] = getPredicateForType(structure[key]) || structure[key];
+    });
     const structureDescription = keys
         .reduce((result, key) => {
-            result.push(`"${key}" - ` + getDescription(structure[key]));
+            result.push(`"${key}" - ` + getDescription(<Predicate>structure[key]));
             return result;
         }, [])
         .join(', ');

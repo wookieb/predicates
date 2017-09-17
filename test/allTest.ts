@@ -83,4 +83,16 @@ describe('all', function () {
             'a value that satisfies all predicates: a string, a number'
         )
     });
+
+    it('for simple types', () => {
+        const noop = function () {
+        };
+        assert.isTrue(all(String, truePredicate)('test'));
+        assert.isTrue(all(Boolean, truePredicate)(false));
+        assert.isTrue(all(RegExp, truePredicate)(/a/));
+        assert.isTrue(all(Object, truePredicate)({test: 1}));
+        assert.isTrue(all(Function, truePredicate)(noop));
+        assert.isTrue(all(Date, truePredicate)(new Date()));
+        assert.isTrue(all(Array, truePredicate)([]));
+    })
 });

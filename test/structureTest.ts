@@ -137,4 +137,24 @@ describe('structure', function () {
 
         assert.strictEqual(getDescription(isPerson), 'an object with properties: "firstName" - a string, "lastName" - a string');
     });
+
+    it('for simple types', () => {
+        function structure(func: Function) {
+            return isValidStructure({key: func});
+        }
+
+        function exampleObject(value: any) {
+            return {key: value};
+        }
+
+        const noop = function () {
+        };
+        assert.isTrue(structure(String)(exampleObject('1')));
+        assert.isTrue(structure(Boolean)(exampleObject(false)));
+        assert.isTrue(structure(RegExp)(exampleObject(/a/)));
+        assert.isTrue(structure(Object)(exampleObject({test: 1})));
+        assert.isTrue(structure(Function)(exampleObject(noop)));
+        assert.isTrue(structure(Date)(exampleObject(new Date())));
+        assert.isTrue(structure(Array)(exampleObject([])));
+    });
 });

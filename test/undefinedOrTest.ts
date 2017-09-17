@@ -68,5 +68,19 @@ describe('undefinedOr', function () {
         const predicate2 = setDescription(() => true, 'some func2');
         assertDescription(undefinedOr(predicate), 'undefined or some func');
         assertDescription(undefinedOr(predicate2), 'undefined or some func2');
-    })
+    });
+
+    it('undefinedOr for simple types', () => {
+        it('object of simple types', () => {
+            const noop = function () {
+            };
+            assert.isTrue(undefinedOr(String, '1'));
+            assert.isTrue(undefinedOr(Boolean, false));
+            assert.isTrue(undefinedOr(RegExp, /a/));
+            assert.isTrue(undefinedOr(Object, {test: 1}));
+            assert.isTrue(undefinedOr(Function, noop));
+            assert.isTrue(undefinedOr(Date, new Date()));
+            assert.isTrue(undefinedOr(Array, []));
+        });
+    });
 });

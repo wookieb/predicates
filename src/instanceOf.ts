@@ -20,7 +20,7 @@ import {setDescription} from "./utils/description";
  * isDuck(new Car); // false
  *
  *
- * @param {Function} clazz
+ * @param {Function} cl]azz
  * @param {*} [value]
  * @throws {TypeError} if class is not a function
  * @returns {(boolean|Predicate)} bool if at least two arguments provided, otherwise a predicate
@@ -40,15 +40,3 @@ function isInstanceOf<T>(clazz: Function, value?: any): boolean | TypeGuardPredi
 }
 
 export default isInstanceOf;
-
-
-class Testerek {
-    someProperty: string = null;
-}
-
-const t:any = {};
-
-
-if (isInstanceOf<Testerek>(Testerek)(t)) {
-
-}
