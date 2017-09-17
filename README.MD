@@ -1,6 +1,7 @@
 # Predicates
 [![Build Status](https://travis-ci.org/wookieb/predicates.svg)](https://travis-ci.org/wookieb/predicates)
-[![NPM version](https://badge.fury.io/js/predicates.png)](http://badge.fury.io/js/predicates)
+[![NPM version](https://badge.fury.io/js/predicates.svg)](http://badge.fury.io/js/predicates)
+[![Coverage Status](https://coveralls.io/repos/github/wookieb/predicates/badge.svg?branch=master)](https://coveralls.io/github/wookieb/predicates?branch=master)
 
 Set of various predicates for type checking, simple assertions, filtering etc.
 
