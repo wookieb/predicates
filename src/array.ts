@@ -8,7 +8,7 @@
  * @param {*} value
  * @returns {boolean}
  */
-import {setDescription} from "./utils/description";
+import {setDescription} from './utils/description';
 
 const isArray: <T = any>(value: any) => value is Array<T> = setDescription(Array.isArray, 'an array');
 

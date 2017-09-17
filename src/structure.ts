@@ -3,8 +3,8 @@ import isObject from './object';
 import handleCurry from './utils/handleCurry';
 import objectOf from './objectOf';
 import isFunction from './function';
-import {getDescription, setDescription} from "./utils/description";
-import {getPredicateForType} from "./typeToPredicate";
+import {getDescription, setDescription} from './utils/description';
+import {getPredicateForType} from './typeToPredicate';
 
 const isObjectOfPredicates = objectOf(isFunction);
 

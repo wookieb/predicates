@@ -1,6 +1,6 @@
 import native from './integer/native';
 import polyfill from './integer/polyfill';
-import {setDescription} from "./utils/description";
+import {setDescription} from './utils/description';
 
 /**
  * Checks whether a value is an integer

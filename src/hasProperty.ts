@@ -2,7 +2,7 @@ import {Predicate} from './types';
 import isString from './string';
 import isObject from './object';
 import handleCurry from './utils/handleCurry';
-import {setDescription} from "./utils/description";
+import {setDescription} from './utils/description';
 
 /**
  * Checks whether an object has a given property

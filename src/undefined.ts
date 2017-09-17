@@ -5,7 +5,7 @@
  * is.undefined(undefined); // true
  * is.undefined(0); // false
  */
-import {setDescription} from "./utils/description";
+import {setDescription} from './utils/description';
 
 function isUndefined(value: any): value is undefined {
     return typeof value === 'undefined';

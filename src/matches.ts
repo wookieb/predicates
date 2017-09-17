@@ -1,7 +1,7 @@
 import {Predicate, TypeGuardPredicate} from './types';
 import handleCurry from './utils/handleCurry';
 import isRegexp from './regexp';
-import {setDescription} from "./utils/description";
+import {setDescription} from './utils/description';
 import isString from './string';
 
 

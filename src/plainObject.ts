@@ -1,5 +1,5 @@
 import isObject from './object';
-import {setDescription} from "./utils/description";
+import {setDescription} from './utils/description';
 
 /**
  * Checks whether a value is a plain object.

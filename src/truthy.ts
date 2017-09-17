@@ -6,7 +6,7 @@
  * is.truthy(1); // true
  * is.truthy(0); // false
  */
-import {setDescription} from "./utils/description";
+import {setDescription} from './utils/description';
 
 function isTruthy(value: any): boolean {
     return !!value;

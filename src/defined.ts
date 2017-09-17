@@ -1,5 +1,5 @@
 import isUndefined from './undefined';
-import {setDescription} from "./utils/description";
+import {setDescription} from './utils/description';
 
 /**
  * Checks whether a value is not undefined - in other words, is defined

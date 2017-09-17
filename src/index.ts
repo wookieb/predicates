@@ -60,7 +60,7 @@ import weakMap from './weakMap';
 import weakSet from './weakSet';
 import not from './not';
 
-import {setDescription, getDescription} from "./utils/description";
+import {setDescription, getDescription} from './utils/description';
 
 export {all, all as and};
 export {any, any as or};

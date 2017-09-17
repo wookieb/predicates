@@ -1,7 +1,7 @@
 import {Predicate} from './types';
 import assertPredicates from './utils/assertPredicates';
-import {getDescription, setDescription} from "./utils/description";
-import {getPredicateForType} from "./typeToPredicate";
+import {getDescription, setDescription} from './utils/description';
+import {getPredicateForType} from './typeToPredicate';
 
 /**
  * Returns a function that calls predicates in the order until one of them will be satisfied, otherwise returns false.

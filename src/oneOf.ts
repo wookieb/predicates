@@ -1,5 +1,5 @@
 import {Predicate} from './types';
-import {setDescription} from "./utils/description";
+import {setDescription} from './utils/description';
 
 /**
  * Returns a function that checks whether a value is equal to one of allowed values
@@ -27,7 +27,7 @@ function isOneOf(...allowedValues: any[]): Predicate {
             return allowedValues.indexOf(value) !== -1;
         },
         'one of values: ' + allowedValues.join(', ')
-    )
+    );
 }
 
 export default isOneOf;

@@ -1,5 +1,5 @@
 import isString from './string';
-import {setDescription} from "./utils/description";
+import {setDescription} from './utils/description';
 
 const CONTAINS_ONLY_WHITESPACES = /^\s*$/;
 

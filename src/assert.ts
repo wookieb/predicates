@@ -1,5 +1,5 @@
-import {Predicate} from "./types";
-import {getDescription} from "./utils/description";
+import {Predicate} from './types';
+import {getDescription} from './utils/description';
 
 /**
  * Assert that values satisfies given predicate

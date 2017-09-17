@@ -1,7 +1,7 @@
 import {Predicate} from './types';
 
 import handleCurry from './utils/handleCurry';
-import {setDescription} from "./utils/description";
+import {setDescription} from './utils/description';
 
 /**
  * Checks whether values are equal (using == operator)

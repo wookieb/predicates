@@ -1,6 +1,6 @@
 import isObject from './object';
 import isNumber from './number';
-import {setDescription} from "./utils/description";
+import {setDescription} from './utils/description';
 
 /**
  * Checks whether a value looks like an array

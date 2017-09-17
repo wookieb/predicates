@@ -1,6 +1,6 @@
 import {Predicate, TypeGuardPredicate} from './types';
 import divisibleWithRemainder from './divisibleWithRemainder';
-import {setDescription} from "./utils/description";
+import {setDescription} from './utils/description';
 
 /**
  * Checks whether a value is a number and it's divisible by a divisor

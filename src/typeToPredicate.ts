@@ -1,15 +1,15 @@
 import isString from './string';
 import isBoolean from './boolean';
 import isNumber from './number';
-import {Predicate} from "./types";
-import isSymbol from "./symbol";
-import isWeakMap from "./weakMap";
-import isWeakSet from "./weakSet";
+import {Predicate} from './types';
+import isSymbol from './symbol';
+import isWeakMap from './weakMap';
+import isWeakSet from './weakSet';
 import isRegExp from './regexp';
 import isObject from './object';
-import isFunction from "./function";
-import isDate from "./date";
-import isArray from "./array";
+import isFunction from './function';
+import isDate from './date';
+import isArray from './array';
 
 const find = require('array-find');
 

@@ -1,7 +1,7 @@
 import {Predicate, TypeGuardPredicate} from './types';
 import handleCurry from './utils/handleCurry';
 import isFunction from './function';
-import {setDescription} from "./utils/description";
+import {setDescription} from './utils/description';
 
 
 /**

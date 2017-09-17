@@ -1,6 +1,6 @@
 import handleCurry from './utils/handleCurry';
 import {Predicate, TypeGuardPredicate} from './types';
-import {setDescription} from "./utils/description";
+import {setDescription} from './utils/description';
 
 /**
  * Checks whether a value is greater or equal to expected number

@@ -3,8 +3,8 @@ import {Predicate, TypeGuardPredicate} from './types';
 import handleCurry from './utils/handleCurry';
 import isUndefined from './undefined';
 import isFunction from './function';
-import {getDescription, setDescription} from "./utils/description";
-import {getPredicateForType} from "./typeToPredicate";
+import {getDescription, setDescription} from './utils/description';
+import {getPredicateForType} from './typeToPredicate';
 
 /**
  * Checks whether a value is undefined or satisfies given predicate

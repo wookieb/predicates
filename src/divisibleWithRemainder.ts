@@ -2,7 +2,7 @@ import handleCurry from './utils/handleCurry';
 import isFinitePredicate from './finite';
 import isNumber from './number';
 import {Predicate, TypeGuardPredicate} from './types';
-import {setDescription} from "./utils/description";
+import {setDescription} from './utils/description';
 
 /**
  * Checks whether a value is a number and it's divisible by divisor with given remainder

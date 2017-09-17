@@ -1,5 +1,5 @@
 import {asyncFunctionConstructor} from './utils/asyncFunctionConstructor';
-import {setDescription} from "./utils/description";
+import {setDescription} from './utils/description';
 
 /**
  * Checks whether value is async function.

@@ -6,7 +6,7 @@
  * is.regExp(new RegExp(/t/)); // true
  * is.regExp('.*'); // false
  */
-import {setDescription} from "./utils/description";
+import {setDescription} from './utils/description';
 
 function isRegexp(value: any): boolean {
     return Object.prototype.toString.call(value) === '[object RegExp]';

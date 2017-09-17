@@ -4,7 +4,7 @@
  * @param {*} value
  * @returns {boolean}
  */
-import {setDescription} from "./utils/description";
+import {setDescription} from './utils/description';
 
 export default function isSymbol(value: any): value is Symbol {
     return typeof value === 'symbol';

@@ -3,8 +3,8 @@ import {Predicate} from './types';
 import isArray from './array';
 import isFunction from './function';
 import handleCurry from './utils/handleCurry';
-import {getDescription, setDescription} from "./utils/description";
-import {getPredicateForType} from "./typeToPredicate";
+import {getDescription, setDescription} from './utils/description';
+import {getPredicateForType} from './typeToPredicate';
 
 /**
  * Checks whether every element of an array passes the predicate

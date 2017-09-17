@@ -2,8 +2,8 @@ import isObject from './object';
 import isFunction from './function';
 import handleCurry from './utils/handleCurry';
 import {Predicate} from './types';
-import {setDescription, getDescription} from "./utils/description";
-import {getPredicateForType} from "./typeToPredicate";
+import {setDescription, getDescription} from './utils/description';
+import {getPredicateForType} from './typeToPredicate';
 
 /**
  * Checks whether every enumerable property of object satisfies a predicate

@@ -2,8 +2,8 @@ import {Predicate} from './types';
 import handleCurry from './utils/handleCurry';
 import isObject from './object';
 import isFunction from './function';
-import {getDescription, setDescription} from "./utils/description";
-import {getPredicateForType} from "./typeToPredicate";
+import {getDescription, setDescription} from './utils/description';
+import {getPredicateForType} from './typeToPredicate';
 
 
 /**

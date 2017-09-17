@@ -5,7 +5,7 @@
  * @param {*} value
  * @returns {boolean}
  */
-import {setDescription} from "./utils/description";
+import {setDescription} from './utils/description';
 
 export default function isThenable(value: any): value is { then: (a: Function, b?: Function) => any } {
     return !!value && typeof value.then === 'function';

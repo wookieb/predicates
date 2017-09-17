@@ -1,5 +1,5 @@
 import isBoolean from './boolean';
-import {setDescription} from "./utils/description";
+import {setDescription} from './utils/description';
 
 /**
  * Checks whether a value is false a boolean false

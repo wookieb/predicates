@@ -1,5 +1,5 @@
 import isArray from './array';
-import {setDescription} from "./utils/description";
+import {setDescription} from './utils/description';
 
 /**
  * Checks whether value is an array and is not empty

@@ -1,7 +1,7 @@
 import isObject from './object';
 import isString from './string';
 import isArrayLike from './arrayLike';
-import {setDescription} from "./utils/description";
+import {setDescription} from './utils/description';
 
 /**
  * Checks whether a value is empty

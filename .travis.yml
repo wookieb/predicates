@@ -5,4 +5,5 @@ node_js:
   - "8.0.0"
 
 script:
+  - npm run lint
   - npm run test:ci

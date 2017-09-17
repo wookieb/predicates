@@ -4,7 +4,7 @@ import isBoolean from './boolean';
 import isUndefined from './undefined';
 import isNull from './null';
 import isObject from './object';
-import {setDescription} from "./utils/description";
+import {setDescription} from './utils/description';
 
 /**
  * Checks whether a value is a primitive.

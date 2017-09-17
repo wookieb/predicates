@@ -1,7 +1,7 @@
 import {Predicate} from './types';
 import isFunction from './function';
 import handleCurry from './utils/handleCurry';
-import {getDescription, setDescription} from "./utils/description";
+import {getDescription, setDescription} from './utils/description';
 
 /**
  * Negates result of a predicate
