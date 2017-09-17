@@ -15,7 +15,7 @@
         "postpack": "rm -f *.d.ts && rm -f *.js && rm -rf integer && rm -rf utils",
         "lint": "./node_modules/.bin/tslint --config ./.config/tslint.json src/*.ts",
         "test": "./node_modules/.bin/jest --config ./.config/jest.json",
-        "test:ci": "./node_modules/.bin/jest --config ./.config/jest.json --testResultsProcessor ./node_modules/jest-junit && var ./coverage/lcov.info | ./node_modules/.bin/coveralls"
+        "test:ci": "./node_modules/.bin/jest --config ./.config/jest.json --coverage --testResultsProcessor ./node_modules/jest-junit && cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
     },
     "engines": {
         "node": ">=4.3"
