@@ -11,6 +11,6 @@ import {getDescription} from "./utils/description";
  */
 export default function assert(predicate: Predicate, value: any, exceptionClass: { new (message: string): any } = Error, message?: string) {
     if (!predicate(value)) {
-        new exceptionClass(message || 'Assertion failed. Must be ' + getDescription(predicate));
+        throw new exceptionClass(message || 'Assertion failed. Must be ' + getDescription(predicate));
     }
 }
