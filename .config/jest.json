@@ -1,6 +1,8 @@
 {
     "globals": {
-        "__TS_CONFIG__": "./.config/tsconfig.json"
+        "ts-jest": {
+            "tsConfigFile": "./.config/tsconfig.json"
+        }
     },
     "rootDir": "../",
     "transform": {

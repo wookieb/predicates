@@ -5,7 +5,7 @@ import {assertDescription} from "./common";
 import isString from "../src/string";
 
 describe('arrayOf', function () {
-    const IS_STRING = function (value: any) {
+    const IS_STRING = function IS_STRING(value: any) {
         return typeof value === 'string';
     };
 
