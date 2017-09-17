@@ -5,12 +5,8 @@ import {getDescription, setDescription} from "./utils/description";
 /**
  * Returns a function that calls predicates and returns true if all of them are satisfied, otherwise returns false
  *
- * @function all
- * @function and
- *
  * @example
- * var is = require('predicates');
- * var isNumberGreaterThan10 = is.all(is.number, is.greaterThan(10));
+ * const isNumberGreaterThan10 = is.all(is.number, is.greaterThan(10));
  *
  * isNumberGreaterThan10(0); // false
  * isNumberGreaterThan10(11); // true
@@ -28,6 +24,6 @@ export default function all(...predicates: Predicate[]): Predicate {
             const args = arguments;
             return predicates.every(predicate => predicate.apply(this, args));
         },
-        'satisfies all predicates: ' + (predicates.map(getDescription)).join(', ')
+        'a value that satisfies all predicates: ' + (predicates.map(getDescription)).join(', ')
     );
 }

@@ -80,7 +80,7 @@ describe('all', function () {
     it('description', () => {
         assertDescription(
             all(isString, isNumber),
-            'satisfies all predicates: a string, a number'
+            'a value that satisfies all predicates: a string, a number'
         )
     });
 });

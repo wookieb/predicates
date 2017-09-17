@@ -1,19 +1,16 @@
-import {Predicate} from './types';
+import {Predicate, TypeGuardPredicate} from './types';
 
 import handleCurry from './utils/handleCurry';
 import isUndefined from './undefined';
 import isFunction from './function';
 import {getDescription, setDescription} from "./utils/description";
 
-
 /**
  * Checks whether a value is undefined or satisfies given predicate
  * Very useful to check optional arguments of function.
  *
  * @example
- * var is = require('predicates');
- *
- * var isUndefinedOrString = is.undefinedOr(is.string);
+ * const isUndefinedOrString = is.undefinedOr(is.string);
  *
  * isUndefinedOrString(undefined); // true
  * isUndefinedOrString('test'); // true
@@ -23,9 +20,9 @@ import {getDescription, setDescription} from "./utils/description";
  *
  * isUndefinedOrString({}); // false
  */
-function isUndefinedOr(predicate: Predicate): Predicate;
-function isUndefinedOr(predicate: Predicate, value: any): boolean;
-function isUndefinedOr(predicate: Predicate, value?: any): boolean | Predicate {
+function isUndefinedOr<T = any>(predicate: Predicate): TypeGuardPredicate<undefined | T>;
+function isUndefinedOr<T = any>(predicate: Predicate, value: any): value is (undefined | T);
+function isUndefinedOr<T = any>(predicate: Predicate, value?: any): boolean | TypeGuardPredicate<undefined | T> {
     if (!isFunction(predicate)) {
         throw new TypeError('Predicate must be a function');
     }

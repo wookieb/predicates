@@ -77,3 +77,10 @@ const assertName = is.all(is.string, function(value) {
 
 assertName('admin'); // Error: Admin is a reserved user name
 ```
+
+## Every predicate is a type guard if possible
+```typescript
+if (is.string(value)) {
+   // at this point typescript compiles knows that value is a string 
+}
+```

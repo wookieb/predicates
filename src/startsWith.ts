@@ -1,4 +1,4 @@
-import {Predicate} from './types';
+import {Predicate, TypeGuardPredicate} from './types';
 import isString from './string';
 import handleCurry from './utils/handleCurry';
 import {setDescription} from "./utils/description"
@@ -6,12 +6,8 @@ import {setDescription} from "./utils/description"
 /**
  * Checks whether a string starts with a given prefix
  *
- * @function startsWith
- *
  * @example
- * var is = require('predicates');
- *
- * var isProfessor = is.startsWith('Prof. ');
+ * const isProfessor = is.startsWith('Prof. ');
  * isProfessor('Prof. Bend Ovah'); // true
  * // same as
  * is.startsWith('Prof. ', 'Prof. Bend Ovah'); // true
@@ -21,9 +17,9 @@ import {setDescription} from "./utils/description"
  * @throws {TypeError} if prefix is not a string
  * @throws {Error} if prefix is empty
  */
-function startsWith(prefix: string): Predicate;
-function startsWith(prefix: string, value: string): boolean;
-function startsWith(prefix: string, value?: string): boolean | Predicate {
+function startsWith(prefix: string): TypeGuardPredicate<string>;
+function startsWith(prefix: string, value: any): value is string;
+function startsWith(prefix: string, value?: any): boolean | TypeGuardPredicate<string> {
     if (!isString(prefix)) {
         throw new TypeError('Prefix must be a string');
     }

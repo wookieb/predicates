@@ -7,14 +7,8 @@ import {setDescription} from "./utils/description";
 /**
  * Checks whether an object has a given property
  *
- * **Aliases** _has_
- *
- * @function hasProperty
- *
  * @example
- * var is = require('predicates');
- *
- * var isDuck = is.hasProperty('quack');
+ * const isDuck = is.hasProperty('quack');
  *
  * isDuck({quack: ':)'}); // true
  * // same as
@@ -22,20 +16,20 @@ import {setDescription} from "./utils/description";
  *
  * isDuck({type: 'car'}); // false
  *
- * @param {String} property
+ * @param {string|Symbol} property
  * @param {Object} [object]
  * @throws {TypeError} if property is not a string
  * @returns {(boolean|Predicate)} bool if at least two arguments provided, otherwise a predicate
  */
-function hasProperty(property: string): Predicate;
-function hasProperty(property: string, object: Object): boolean;
-function hasProperty(property: string, object?: Object): boolean | Predicate {
+function hasProperty(property: string | Symbol): Predicate;
+function hasProperty(property: string | Symbol, object: Object): boolean;
+function hasProperty(property: string | Symbol, object?: Object): boolean | Predicate {
     if (!isString(property)) {
         throw new TypeError('Property name must be a string');
     }
     return handleCurry.call(this, arguments,
         setDescription(
-            (object: Object) => {
+            (object: object) => {
                 return isObject(object) && property in object;
             },
             'an object with "' + property + '" property'

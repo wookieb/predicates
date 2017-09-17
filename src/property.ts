@@ -12,13 +12,7 @@ import {getDescription, setDescription} from "./utils/description";
  *
  * NOTE! Provided predicate will be called ALWAYS if a provided value is an object.
  *
- * **Aliases** _prop_
- *
- * @function property
- *
  * @example
- * var is = require('predicates');
- *
  * is.property('name', is.string, {name: 'Tommy'}); // true
  * is.property('name', is.string)({name: 'Tommy'}); // true
  * is.property('name', is.string, {name: 2}); // false - since 2 is not a string
@@ -32,9 +26,9 @@ import {getDescription, setDescription} from "./utils/description";
  * @throws {TypeError} if predicate is not a function
  * @throws {Error} if too few arguments provided
  */
-function property(propertyName: string, predicate: Predicate): Predicate;
-function property(propertyName: string, predicate: Predicate, object: Object, ...extraParams: any[]): boolean;
-function property(propertyName: string, predicate: Predicate, object?: Object): boolean | Predicate {
+function property(propertyName: string | Symbol, predicate: Predicate): Predicate;
+function property(propertyName: string | Symbol, predicate: Predicate, object: Object, ...extraParams: any[]): boolean;
+function property(propertyName: string | Symbol, predicate: Predicate, object?: Object): boolean | Predicate {
     if (arguments.length < 2) {
         throw new Error('Too few arguments - 2 required');
     }
@@ -47,7 +41,8 @@ function property(propertyName: string, predicate: Predicate, object?: Object): 
         setDescription(
             function isPropertySatisfiesPredicateTest(value: any) {
                 const args = Array.prototype.slice.call(arguments);
-                args.splice(0, 1, isObject(value) ? value[propertyName] : undefined);
+                // conersion to string is necessary until https://github.com/Microsoft/TypeScript/issues/1863 gets fixed
+                args.splice(0, 1, isObject(value) ? value[<string>propertyName] : undefined);
                 return isObject(value) && predicate.apply(this, args);
             },
             'an object with property "' + propertyName + '" of type: ' + getDescription(predicate)

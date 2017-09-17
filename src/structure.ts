@@ -3,6 +3,7 @@ import isObject from './object';
 import handleCurry from './utils/handleCurry';
 import objectOf from './objectOf';
 import isFunction from './function';
+import {getDescription, setDescription} from "./utils/description";
 
 const isObjectOfPredicates = objectOf(isFunction);
 
@@ -19,20 +20,15 @@ const isObjectOfPredicates = objectOf(isFunction);
  *
  * See examples for inspiration how you can use _structure_
  *
- * @function structure
- *
  * @example
- * // simple object matching
- * var is = require('predicates');
- *
- * var schema = {
+ * const schema = {
  *      name: is.string, // only string
  *      phone: is.or(is.string, is.number), // string or number
  *      surname: is.undefinedOr(is.string) // optional
  * },
  *     isPerson = is.structure(schema);
  *
- * var person = {name: 'Tommy', phone: 80129292};
+ * const person = {name: 'Tommy', phone: 80129292};
  * isPerson(person); // true
  * // same as
  * is.structure(schema, person); // true
@@ -40,15 +36,13 @@ const isObjectOfPredicates = objectOf(isFunction);
  *
  * @example
  * // filtering
- * var is = require('predicates');
- *
- * var people = [
+ * const people = [
  *  {name: 'Prof. Bend Ovah', age: 55, sex: 'male'},
  *  {name: 'Dr. Supa Kaki', age: 34, sex: 'female'},
  *  {name: 'Prof. Anti Santy', age: 46, sex: 'male'}
  * ];
  *
- * var professors = people.filter(is.structure({
+ * const professors = people.filter(is.structure({
  *  name: is.startsWith('Prof.')
  * }));
  *
@@ -60,7 +54,7 @@ const isObjectOfPredicates = objectOf(isFunction);
  * @example
  * // duck typing
  *
- * var isDuck = is.structure({
+ * const isDuck = is.structure({
  *  quack: is.function,
  *  walk: is.function
  * });
@@ -95,10 +89,21 @@ function isStructure(structure: { [name: string]: Predicate }, value?: Object, .
         throw new TypeError('Structure object must consist of predicates');
     }
 
-    return handleCurry.call(this, arguments, function isStructurePredicate(value: Object) {
-        const match = (key: string) => structure[key].apply(this, [(<any>value)[key]].concat(extraArgs));
-        return isObject(value) && keys.every(match);
-    });
+    const structureDescription = keys
+        .reduce((result, key) => {
+            result.push(`"${key}" - ` + getDescription(structure[key]));
+            return result;
+        }, [])
+        .join(', ');
+    return handleCurry.call(this, arguments,
+        setDescription(
+            function isStructurePredicate(value: Object) {
+                const match = (key: string) => structure[key].apply(this, [(<any>value)[key]].concat(extraArgs));
+                return isObject(value) && keys.every(match);
+            },
+            'an object with properties: ' + structureDescription
+        )
+    );
 }
 
 export default isStructure;

@@ -6,7 +6,7 @@
  */
 import {setDescription} from "./utils/description";
 
-export default function isSymbol(value: any): boolean {
+export default function isSymbol(value: any): value is Symbol {
     return typeof value === 'symbol';
 }
 

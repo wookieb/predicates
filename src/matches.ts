@@ -1,22 +1,15 @@
-import {Predicate} from './types';
+import {Predicate, TypeGuardPredicate} from './types';
 import handleCurry from './utils/handleCurry';
 import isRegexp from './regexp';
 import {setDescription} from "./utils/description";
+import isString from './string';
 
-function matches(regexp: RegExp): Predicate;
-function matches(regexp: RegExp, value: any): boolean;
 
 /**
- * Checks whether a value matches a regexp
- *
- * **Aliases** _match_
- *
- * @function matches
+ * Checks whether a value is a string and matches a regexp
  *
  * @example
- * var is = require('predicates');
- *
- * var isWindows9x = is.matches(/^Windows 9/);
+ * const isWindows9x = is.matches(/^Windows 9/);
  *
  * isWindows9x('Windows 9'); // true - :D
  * // same as
@@ -29,15 +22,17 @@ function matches(regexp: RegExp, value: any): boolean;
  * @throws {TypeError} if regexp is not a regexp
  * @returns {(boolean|Predicate)} bool if at least two arguments provided, otherwise a predicate
  */
-function matches(regexp: RegExp, value?: any): boolean | Predicate {
+function matches(regexp: RegExp): TypeGuardPredicate<string>;
+function matches(regexp: RegExp, value: string): value is string;
+function matches(regexp: RegExp, value?: string): boolean | TypeGuardPredicate<string> {
     if (!isRegexp(regexp)) {
         throw new TypeError('Regexp must be a RegExp object');
     }
 
     return handleCurry.call(this, arguments,
         setDescription(
-            (value: any) => regexp.test(value),
-            'matches regexp ' + regexp
+            (value: string) => isString(value) && regexp.test(<string><any>value),
+            'a string that matches regexp ' + regexp
         )
     );
 }

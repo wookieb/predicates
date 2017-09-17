@@ -24,6 +24,6 @@ describe('matches', function () {
     });
 
     it('description', () => {
-        assertDescription(matches(/wookieb/), 'matches regexp /wookieb/')
+        assertDescription(matches(/wookieb/), 'a string that matches regexp /wookieb/')
     })
 });

@@ -6,7 +6,7 @@
  */
 import {setDescription} from "./utils/description";
 
-export default function isWeakSet(value: any): boolean {
+export default function isWeakSet<T = any>(value: any): value is WeakSet<T> {
     return typeof WeakSet !== 'undefined' && value instanceof WeakSet;
 }
 

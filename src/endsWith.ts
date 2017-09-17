@@ -1,4 +1,4 @@
-import {Predicate} from './types';
+import {Predicate, TypeGuardPredicate} from './types';
 import isString from './string';
 import handleCurry from './utils/handleCurry';
 import {setDescription} from "./utils/description";
@@ -6,17 +6,13 @@ import {setDescription} from "./utils/description";
 /**
  * Checks whether a string ends with a given suffix
  *
- * @function endsWith
- *
  * @example
- * var is = require('predicates');
- *
- * var isYelling = is.endsWith('!');
+ * const isYelling = is.endsWith('!');
  *
  * isYelling('shut up!'); // true
  * // same as
  * is.endsWith('!', 'shut up!'); // true
- * isYelling('be quiet please'); // false
+ * isYelling('quiet please'); // false
  *
  * @param {String} suffix
  * @param {String} [value]
@@ -24,9 +20,9 @@ import {setDescription} from "./utils/description";
  * @throws {Error} if suffix is empty
  * @returns {(boolean|Predicate)} returns bool if at least two arguments provided, otherwise a predicate
  */
-function endsWith(suffix: string): Predicate;
-function endsWith(suffix: string, value: string): boolean;
-function endsWith(suffix: string, value?: string): boolean | Predicate {
+function endsWith(suffix: string): TypeGuardPredicate<string>;
+function endsWith(suffix: string, value: any): value is string;
+function endsWith(suffix: string, value?: any): boolean | TypeGuardPredicate<string> {
     if (!isString(suffix)) {
         throw new TypeError('Suffix must be a string');
     }

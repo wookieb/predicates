@@ -1,6 +1,7 @@
 import all from './all';
 import any from './any';
 import asyncFunction from './asyncFunction';
+import assert from './assert';
 import array from './array';
 import arrayLike from './arrayLike';
 import arrayOf from './arrayOf';

@@ -1,25 +1,19 @@
 import handleCurry from './utils/handleCurry';
 import isFinitePredicate from './finite';
 import isNumber from './number';
-import {Predicate} from './types';
+import {Predicate, TypeGuardPredicate} from './types';
 import {setDescription} from "./utils/description";
 
 /**
  * Checks whether a value is a number and it's divisible by divisor with given remainder
  * In other words value % div === remainder
  *
- * **Aliases** _divisibleByWithRemainder_, _divByWithRemainder_
- *
- * @function divisibleWithRemainder
- *
  * @example
- * var is = require('predicates');
- *
  * is.divisibleWithRemainder(3, 2, 5); // true since 5%3 === 2
  * is.divisibleWithRemainder(3, 2)(5); // true
  * is.divisibleWithRemainder(3, 1, 5); // false since 5%3 !== 1
  *
- * var isEven = is.divisibleWithRemainder(2, 1);
+ * const isEven = is.divisibleWithRemainder(2, 1);
  *
  * isEven(1); // true
  * isEven(2); // false
@@ -36,9 +30,9 @@ import {setDescription} from "./utils/description";
  * @throws {TypeError} if the remainder is not a finite number
  * @returns {(boolean|Predicate)} returns bool if at least 3 arguments provided, otherwise a predicate
  */
-function divisibleWithRemainder(divisor: number, remainder: number): Predicate;
-function divisibleWithRemainder(divisor: number, remainder: number, value: number): boolean;
-function divisibleWithRemainder(divisor: number, remainder: number, value?: number): boolean | Predicate {
+function divisibleWithRemainder(divisor: number, remainder: number): TypeGuardPredicate<number>;
+function divisibleWithRemainder(divisor: number, remainder: number, value: number): value is number;
+function divisibleWithRemainder(divisor: number, remainder: number, value?: number): boolean | TypeGuardPredicate<number> {
     if (arguments.length < 2) {
         throw new Error('Missing remainder');
     }

@@ -7,8 +7,8 @@
  */
 import {setDescription} from "./utils/description";
 
-export default function isThenable(value: any): boolean {
+export default function isThenable(value: any): value is { then: (a: Function, b?: Function) => any } {
     return !!value && typeof value.then === 'function';
 }
 
-setDescription(isThenable, 'a thenable object')
+setDescription(isThenable, 'a thenable object');

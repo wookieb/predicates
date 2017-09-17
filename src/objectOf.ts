@@ -7,14 +7,8 @@ import {setDescription, getDescription} from "./utils/description";
 /**
  * Checks whether every enumerable property of object satisfies a predicate
  *
- * **Aliases** _objOf_
- *
- * @function objectOf
- *
  * @example
- * var is = require('predicates');
- *
- * var isObjectOfStrings = is.objectOf(is.string);
+ * const isObjectOfStrings = is.objectOf(is.string);
  *
  * isObjectOfStrings({key: 'value', key1: 'value'}); // true
  * // same as

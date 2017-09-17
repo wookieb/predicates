@@ -6,13 +6,8 @@ import {setDescription} from "./utils/description";
 /**
  * Checks whether values are equal (using == operator)
  *
- * **Aliases** _equalTo_, _eq_
- * @function equal
- *
  * @example
- * var is = require('predicates');
- *
- * var isTimmy = is.equal('Timmy');
+ * const isTimmy = is.equal('Timmy');
  *
  * isTimmy('Timmy'); // true
  * // same as

@@ -4,20 +4,21 @@
 
 Set of various predicates for type checking, simple assertions, filtering etc.
 
+## Features
+* Written in typescript (with [type guards](type-guards-and-differentiating-types) and function overloading)
+* Has well defined [API design principles](docs/design.md)
+* Contains description for simpler assertions
+
 ## Install
 ### NPM
 ```
 npm install predicates
 ```
 
-## Documentation
-
-If you wonder why _predicates_ is different, read [API design principles](docs/design.md)
-
 ## Example
 
 ```js
-var is = require('predicates');
+const is = require('predicates');
 
 is.string(1); // false
 is.string('test'); // true
@@ -27,7 +28,7 @@ is.undefinedOr(is.string, 'timmy'); // true
 is.undefinedOr(is.string)(undefined); // true
 is.undefinedOr(is.string)('timmy'); // true
 
-var isPerson = is.structure({
+const isPerson = is.structure({
 	name: is.string,
 	surname: is.undefinedOr(is.string),
 	age: is.number
@@ -43,7 +44,7 @@ isPerson({surname: 'Welling', age: 100}); // false, lack of name property
 NOTE! This is not suppose to replace such powerful tools like "chai" or "should.js" which are designed mostly for testing and producing user readable input in case of failure. 
 
 ```js
-var assertName = createAssert(is.string, 'Name must be a string'),
+const assertName = createAssert(is.string, 'Name must be a string'),
     assertSurname = createAssert(is.all(
         is.string, is.not(is.empty)
     ), 'Surname must be a string and cannot be empty'),
@@ -51,7 +52,7 @@ var assertName = createAssert(is.string, 'Name must be a string'),
         'Age must be a number and greater than 0');
 
 
-var Person = function(name, surname, age) {
+const Person = function(name, surname, age) {
     assertName(name);
     assertSurname(surname);
     assertAge(age);
@@ -63,6 +64,11 @@ new Person('Tom', '', 33); // Error: Surname must be a string and cannot be empt
 ```
 
 ## Changelog
+
+### 2.0.0-rc2
+* Added type guards
+* Added description for all predicates
+* Added _assert_
 
 ### 2.0.0-rc1
 * Removes support for bower, use webpack or any other module bundler

@@ -5,12 +5,10 @@ import {setDescription} from "./utils/description";
  * Checks whether a value is a boolean true
  *
  * @example
- * var is = require('predicates');
- *
  * is.true(true); // true
  * is.true('true'); // false
  */
-function isTrue(value: any): boolean {
+function isTrue(value: any): value is boolean {
     return value === true || (isBoolean(value) && value == true);
 }
 

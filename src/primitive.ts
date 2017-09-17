@@ -15,15 +15,11 @@ import {setDescription} from "./utils/description";
  *
  * NOTE! A primitive value wrapped by a corresponding object is not a primitive anymore
  * ```js
- * var a = 'test' // this is a primitive
+ * const a = 'test' // this is a primitive
  * a = new String('test'); // and this is not a primitive
  * ```
  *
- * @function primitive
- *
  * @example
- * var is = require('predicates');
- *
  * is.primitive('test'); // true
  * is.primitive(undefined); // true
  * is.primitive(10); // true

@@ -10,6 +10,6 @@ describe('defined', function () {
     });
 
     it('description', () => {
-        assertDescription(isDefined, 'not undefined');
+        assertDescription(isDefined, 'defined');
     })
 });

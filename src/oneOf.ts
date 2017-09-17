@@ -5,14 +5,10 @@ import {setDescription} from "./utils/description";
  * Returns a function that checks whether a value is equal to one of allowed values
  * Function compares values using === operator
  *
- * @function oneOf
- *
  * @example
- * var is = require('predicates');
- *
- * var isAllowedToAccess = is.oneOf('ROLE_ADMIN', 'ROLE_USER');
+ * const isAllowedToAccess = is.oneOf('ROLE_ADMIN', 'ROLE_USER');
  * // same as
- * // var isAllowedToAccess = is.in(['ROLE_ADMIN', 'ROLE_USER']);
+ * // const isAllowedToAccess = is.in(['ROLE_ADMIN', 'ROLE_USER']);
  *
  * isAllowedToAccess('ROLE_ADMIN'); // true
  * isAllowedToAccess('ROLE_ANONYMOUS'); // false

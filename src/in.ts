@@ -7,14 +7,10 @@ import {setDescription} from "./utils/description";
  * Checks whether a value exists in collection
  * Values are compared using === operator
  *
- * @function in
- *
  * @example
- * var is = require('predicates');
- *
- * var isImage = is.in(['image/gif', 'image/jpeg']);
+ * const isImage = is.in(['image/gif', 'image/jpeg']);
  * // same as
- * // var isImage = is.oneOf('image/gif', 'image/jpeg');
+ * // const isImage = is.oneOf('image/gif', 'image/jpeg');
  *
  * isImage('image/jpeg'); // true
  * // same as

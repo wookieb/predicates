@@ -9,13 +9,7 @@ import {setDescription} from "./utils/description";
  * * has 'length' property
  * * 'length' property is a number greater or equal 0
  *
- * **Aliases** _arrLike_
- *
- * @function arrayLike
- *
  * @example
- * var is = require('predicates');
- *
  * is.arrayLike(arguments); // true
  * is.arrayLike(document.querySelectorAll('div')); // true
  * is.arrayLike([1, 2, 3]); // true

@@ -4,6 +4,10 @@ import {setDescription} from "./utils/description";
 /**
  * Checks whether a value is generator
  *
+ * @example
+ * is.generator(function* gen() {}); // true
+ * is.generator(function(){})); // false
+ *
  * @param {*} value
  * @returns {boolean}
  */

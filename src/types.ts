@@ -6,3 +6,5 @@
  * @return {boolean}
  */
 export type Predicate<T = any> = (value: T, ...extraArgs: any[]) => boolean;
+
+export type TypeGuardPredicate<T = any> = (value: any, ...extraArgs: any[]) => value is T;

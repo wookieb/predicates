@@ -73,6 +73,6 @@ describe('any', function () {
     });
 
     it('description', () => {
-        assertDescription(any(isString, isNumber), 'satisfies any of predicates: a string, a number')
+        assertDescription(any(isString, isNumber), 'a value that satisfies any of predicates: a string, a number')
     });
 });

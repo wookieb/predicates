@@ -8,14 +8,8 @@ import {getDescription, setDescription} from "./utils/description";
 /**
  * Checks whether every element of an array passes the predicate
  *
- * **Aliases** _arrOf_
- *
- * @function arrayOf
- *
  * @example
- * var is = require('predicates');
- *
- * var isArrayOfStrings = is.arrayOf(is.string);
+ * const isArrayOfStrings = is.arrayOf(is.string);
  *
  * isArrayOfStrings(['1', '2']); // true
  * // same as

@@ -1,6 +1,8 @@
 import isValidStructure from '../src/structure';
 import {assert} from 'chai';
+import isString from '../src/string';
 import * as sinon from 'sinon';
+import {getDescription} from "../src/utils/description";
 
 describe('structure', function () {
     const STRUCTURE = {
@@ -125,5 +127,14 @@ describe('structure', function () {
 
         sinon.assert.calledWith(structure.key0, 1, ...extraArgs);
         sinon.assert.calledWith(structure.key1, 'string', ...extraArgs);
+    });
+
+    it('description', () => {
+        const isPerson = isValidStructure({
+            firstName: isString,
+            lastName: isString
+        });
+
+        assert.strictEqual(getDescription(isPerson), 'an object with properties: "firstName" - a string, "lastName" - a string');
     });
 });

@@ -4,11 +4,7 @@ import {setDescription} from "./utils/description";
 /**
  * Checks whether a value is false a boolean false
  *
- * @function false
- *
  * @example
- * var is = require('predicates');
- *
  * is.false(false); // true
  * is.false(0); // false
  *
@@ -16,7 +12,7 @@ import {setDescription} from "./utils/description";
  * @returns {boolean}
  * @name false
  */
-function isFalse(value: boolean): boolean {
+function isFalse(value: boolean): value is boolean {
     return value === false || (isBoolean(value) && value.valueOf() === false);
 }
 

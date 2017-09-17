@@ -7,10 +7,8 @@ import {setDescription} from "./utils/description";
  * Checks whether a value is strictly equal to expected value (uses === operator)
  *
  * @example
- * var is = require('predicates');
- *
- * var mom = {};
- * var isMyMom = is.strictEqual(mom);
+ * const mom = {};
+ * const isMyMom = is.strictEqual(mom);
  *
  * isMyMom(mom); // true - mom is only one. Remember about it...
  * // same as

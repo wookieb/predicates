@@ -10,11 +10,7 @@ import {setDescription} from "./utils/description";
  * * is an object without enumerable properties
  * * is an empty string
  *
- * @function empty
- *
  * @example
- * var is = require('predicates');
- *
  * is.empty(''); // true
  * is.empty([]); // true
  * is.empty({}); // true

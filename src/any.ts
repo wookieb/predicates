@@ -5,14 +5,8 @@ import {getDescription, setDescription} from "./utils/description";
 /**
  * Returns a function that calls predicates in the order until one of them will be satisfied, otherwise returns false.
  *
- * **Aliases** _or_
- *
- * @function any
- *
  * @example
- * var is = require('predicates');
- *
- * var isStringOrNumber = is.any(is.string, is.number);
+ * const isStringOrNumber = is.any(is.string, is.number);
  *
  * isStringOrNumber(0); // true
  * isStringOrNumber('string'); // true
@@ -30,6 +24,6 @@ export default function any(...predicates: Predicate[]): Predicate {
             const args = arguments;
             return predicates.some(predicate => predicate.apply(this, args));
         },
-        'satisfies any of predicates: ' + (predicates.map(getDescription)).join(', ')
+        'a value that satisfies any of predicates: ' + (predicates.map(getDescription)).join(', ')
     );
 }

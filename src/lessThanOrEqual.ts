@@ -1,18 +1,12 @@
-import {Predicate} from './types';
+import {Predicate, TypeGuardPredicate} from './types';
 import handleCurry from './utils/handleCurry';
 import {setDescription} from "./utils/description";
 
 /**
  * Checks whether a value is less or equal to expected number
  *
- * **Aliases** _lessOrEqual_, _lessEq_, _ltEq_
- *
- * @function lessThanOrEqual
- *
  * @example
- * var is = require('predicates');
- *
- * var isChildAge = is.lessThanOrEqual(17);
+ * const isChildAge = is.lessThanOrEqual(17);
  *
  * isChildAge(10); // true
  * // same as
@@ -24,12 +18,12 @@ import {setDescription} from "./utils/description";
  * @param {Number} [value]
  * @returns {(boolean|Predicate)} bool if at least two arguments provided, otherwise a predicate
  */
-function isLessThanOrEqual(expected: number): Predicate;
-function isLessThanOrEqual(expected: number, value: number): boolean;
-function isLessThanOrEqual(expected: number, value?: number): boolean | Predicate {
+function isLessThanOrEqual<T = number>(expected: T): TypeGuardPredicate<T>;
+function isLessThanOrEqual<T = number>(expected: T, value: any): value is T;
+function isLessThanOrEqual<T = number>(expected: T, value?: any): boolean | TypeGuardPredicate<T> {
     return handleCurry.call(this, arguments,
         setDescription(
-            (value: number) => value <= expected,
+            (value: T) => value <= expected,
             'less than or equal ' + expected
         )
     );

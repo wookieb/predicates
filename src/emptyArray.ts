@@ -7,7 +7,7 @@ import {setDescription} from "./utils/description";
  * @param {*} value
  * @returns {boolean}
  */
-export default function isEmptyArray(value: any): boolean {
+export default function isEmptyArray<T = any>(value: any): value is Array<T> {
     return isArray(value) && value.length === 0;
 }
 
