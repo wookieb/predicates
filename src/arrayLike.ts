@@ -9,6 +9,8 @@ import {setDescription} from './utils/description';
  * * has 'length' property
  * * 'length' property is a number greater or equal 0
  *
+ * **Type guard:** _none_
+ *
  * @example
  * is.arrayLike(arguments); // true
  * is.arrayLike(document.querySelectorAll('div')); // true

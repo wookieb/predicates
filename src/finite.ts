@@ -4,6 +4,8 @@ import {setDescription} from './utils/description';
 /**
  * Checks whether a value is a number and it's finite
  *
+ * **Type guard:** value is number
+ *
  * @example
  * is.finite(1); // false
  * is.finite(Infinity); // false

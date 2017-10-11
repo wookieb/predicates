@@ -6,6 +6,8 @@ import {setDescription} from './utils/description';
 /**
  * Checks whether values are equal (using == operator)
  *
+ * **Type guard:** _none_
+ *
  * @example
  * const isTimmy = is.equal('Timmy');
  *

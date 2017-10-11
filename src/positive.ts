@@ -4,6 +4,8 @@ import {setDescription} from './utils/description';
 /**
  * Checks whether a value is a positive number
  *
+ * **Type guard:** value is number
+ *
  * @example
  * is.positive(10); // true
  * is.positive(-1); // false

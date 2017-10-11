@@ -5,6 +5,8 @@ import {setDescription} from './utils/description';
 /**
  * Checks whether a value is greater or equal to expected number
  *
+ * **Type guard:** value is T = number
+ *
  * @example
  * const isAdultAge = is.greaterThanOrEqual(18);
  *

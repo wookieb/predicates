@@ -9,11 +9,15 @@ import {setDescription} from './utils/description';
  * * is an array like object with length === 0
  * * is an object without enumerable properties
  * * is an empty string
+ * * is undefined
+ *
+ * **Type guard:** _none_
  *
  * @example
  * is.empty(''); // true
  * is.empty([]); // true
  * is.empty({}); // true
+ * is.empty(undefined); // true
  * is.empty([1]); // false
  * is.empty('test'); // false
  *

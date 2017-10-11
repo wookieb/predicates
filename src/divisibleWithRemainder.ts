@@ -8,6 +8,8 @@ import {setDescription} from './utils/description';
  * Checks whether a value is a number and it's divisible by divisor with given remainder
  * In other words value % div === remainder
  *
+ * **Type guard:** value is number
+ *
  * @example
  * is.divisibleWithRemainder(3, 2, 5); // true since 5%3 === 2
  * is.divisibleWithRemainder(3, 2)(5); // true

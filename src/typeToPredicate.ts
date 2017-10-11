@@ -39,6 +39,7 @@ if (typeof WeakSet !== 'undefined') {
 /**
  * Finds mapping for given type constructor
  *
+ * @private
  * @param {Function} type
  * @returns {Predicate}
  */

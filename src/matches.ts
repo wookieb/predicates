@@ -8,6 +8,8 @@ import isString from './string';
 /**
  * Checks whether a value is a string and matches a regexp
  *
+ * **Type guard:** value is string
+ *
  * @example
  * const isWindows9x = is.matches(/^Windows 9/);
  *
@@ -15,7 +17,7 @@ import isString from './string';
  * // same as
  * is.matches(/^Windows 9/, 'Windows 9'); // also true - hue hue
  *
- * isWindows9x('Windows 10); // false
+ * isWindows9x('Windows 10'); // false
  *
  * @param {RegExp} regexp
  * @param {string} [value]

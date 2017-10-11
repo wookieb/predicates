@@ -3,7 +3,9 @@ import {setDescription} from './utils/description';
 
 /**
  * Checks whether a value is a plain object.
- * Plain object is an object which prototype is Object.prototype or null
+ * Plain object is an object of which prototype is Object.prototype or null
+ *
+ * **Type guard:** value is Object
  *
  * @example
  * is.plainObject({property: 'value'}); // true

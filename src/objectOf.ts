@@ -8,6 +8,8 @@ import {getPredicateForType} from './typeToPredicate';
 /**
  * Checks whether every enumerable property of object satisfies a predicate
  *
+ * **Type guard:** _none_
+ *
  * @example
  * const isObjectOfStrings = is.objectOf(is.string);
  *

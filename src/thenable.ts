@@ -1,6 +1,14 @@
 /**
  * Checks whether value is thenable according to Promise A+ spec https://promisesaplus.com/
- * Useful to asses whether value might be used as promise
+ * Useful to asses whether value might be used as promise.
+ *
+ * **Type guard:** value is {then: (a: Function, b?: Function) => any}
+ *
+ * @example
+ *
+ * is.thenable(Promise.resolve('test')); // true
+ * is.thenable({then: () => {}}); // this is still a thenable (according to spec)
+ * is.thenable({}); // false
  *
  * @param {*} value
  * @returns {boolean}

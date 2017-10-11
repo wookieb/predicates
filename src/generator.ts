@@ -4,6 +4,7 @@ import {setDescription} from './utils/description';
 /**
  * Checks whether a value is generator
  *
+ * **Type guard:** _none_
  * @example
  * is.generator(function* gen() {}); // true
  * is.generator(function(){})); // false

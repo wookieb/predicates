@@ -5,6 +5,8 @@ import {setDescription} from './utils/description';
 /**
  * Checks whether a value is an integer
  *
+ * **Type guard:** value is number
+ *
  * @example
  * is.integer(10); // true
  * is.integer(10.4); // false

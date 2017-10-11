@@ -5,6 +5,8 @@ import {setDescription} from './utils/description';
  * Returns a function that checks whether a value is equal to one of allowed values
  * Function compares values using === operator
  *
+ * **Type guard:** _none_
+ *
  * @example
  * const isAllowedToAccess = is.oneOf('ROLE_ADMIN', 'ROLE_USER');
  * // same as

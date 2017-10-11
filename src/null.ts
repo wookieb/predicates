@@ -3,6 +3,8 @@ import {setDescription} from './utils/description';
 /**
  * Checks whether a value is null
  *
+ * **Type guard:** value is null
+ *
  * @example
  * is.null(null); // true
  * is.null({}); // false

@@ -5,6 +5,8 @@ import {setDescription} from './utils/description';
 /**
  * Checks whether a value is a number and it's divisible by a divisor
  *
+ * **Type guard:** value is number
+ *
  * @example
  * is.divisible(7, 14); // true
  * is.divisible(7)(14); // true

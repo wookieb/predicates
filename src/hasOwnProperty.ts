@@ -7,6 +7,8 @@ import {setDescription} from './utils/description';
 /**
  * Checks whether an object has own property
  *
+ * **Type guard:** _none_
+ *
  * @example
  * const isCustomized = is.hasOwnProperty('delay');
  *

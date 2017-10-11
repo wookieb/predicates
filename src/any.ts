@@ -6,6 +6,8 @@ import {getPredicateForType} from './typeToPredicate';
 /**
  * Returns a function that calls predicates in the order until one of them will be satisfied, otherwise returns false.
  *
+ * **Type guard:** _none_
+ *
  * @example
  * const isStringOrNumber = is.any(is.string, is.number);
  *

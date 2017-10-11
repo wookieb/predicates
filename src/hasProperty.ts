@@ -7,6 +7,8 @@ import {setDescription} from './utils/description';
 /**
  * Checks whether an object has a given property
  *
+ * **Type guard:** _none_
+ *
  * @example
  * const isDuck = is.hasProperty('quack');
  *

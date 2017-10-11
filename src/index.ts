@@ -1,131 +1,75 @@
-import all from './all';
-import any from './any';
-import asyncFunction from './asyncFunction';
-import assert from './assert';
-import array from './array';
-import arrayLike from './arrayLike';
-import arrayOf from './arrayOf';
-import blank from './blank';
-import boolean from './boolean';
-import date from './date';
-import defined from './defined';
-import divisible from './divisible';
-import divisibleWithRemainder from './divisibleWithRemainder';
-import empty from './empty';
-import emptyArray from './emptyArray';
-import endsWith from './endsWith';
-import equal from './equal';
-import isFalse from './false';
-import falsy from './falsy';
-import finite from './finite';
-import isFunction from './function';
-import generator from './generator';
-import greaterThan from './greaterThan';
-import greaterThanOrEqual from './greaterThanOrEqual';
-import hasOwnProperty from './hasOwnProperty';
-import hasProperty from './hasProperty';
-import isIn from './in';
-import instanceOf from './instanceOf';
-import integer from './integer';
-import lessThan from './lessThan';
-import lessThanOrEqual from './lessThanOrEqual';
-import matches from './matches';
-import map from './map';
-import notANumber from './nan';
-import negative from './negative';
-import notBlank from './notBlank';
-import notEmptyArray from './notEmptyArray';
-import isNull from './null';
-import isNumber from './number';
-import isObject from './object';
-import objectOf from './objectOf';
-import oneOf from './oneOf';
-import plainObject from './plainObject';
-import positive from './positive';
-import primitive from './primitive';
-import property from './property';
-import thenable from './thenable';
-import regexp from './regexp';
-import set from './set';
-import startsWith from './startsWith';
-import strictEqual from './startsWith';
-import string from './string';
-import structure from './structure';
-import symbol from './symbol';
-import isTrue from './true';
-import truthy from './truthy';
-import isUndefined from './undefined';
-import undefinedOr from './undefinedOr';
-import weakMap from './weakMap';
-import weakSet from './weakSet';
-import not from './not';
-
-import {setDescription, getDescription} from './utils/description';
-
-export {all, all as and};
-export {any, any as or};
-export {array, array as arr};
-export {asyncFunction, asyncFunction as asyncFn};
-export {arrayLike, arrayLike as arrLike};
-export {arrayOf, arrayOf as arrOf};
-export {blank};
-export {boolean, boolean as bool};
-export {date};
-export {defined};
-export {divisible, divisible as divisibleBy, divisible as divBy};
-export {divisibleWithRemainder, divisible as divisibleByWithRemainder, divisible as divByWithRemainder};
-export {empty};
-export {emptyArray, emptyArray as emptyArr};
-export {endsWith};
-export {equal, equal as equalTo, equal as eq};
-
-export {isFalse as false};
-export {falsy, falsy as falsey};
-export {finite};
-export {isFunction as function, isFunction as fn, isFunction as func};
-export {generator};
-export {greaterThan, greaterThan as greater, greaterThan as gt};
+export {default as all, default as and} from './all';
+export {default as any, default as or} from './any';
+export {default as array, default as arr} from './array';
+export {default as asyncFunction, default as asyncFn} from './asyncFunction';
+export {default as arrayLike, default as arrLike} from './arrayLike';
+export {default as arrayOf, default as arrOf} from './arrayOf';
+export {default as blank} from './blank';
+export {default as boolean, default as bool} from './boolean';
+export {default as date} from './date';
+export {default as defined} from './defined';
+export {default as divisible, default as divisibleBy, default as divBy} from './divisible';
 export {
-    greaterThanOrEqual,
-    greaterThanOrEqual as greaterOrEqual,
-    greaterThanOrEqual as greaterEq,
-    greaterThanOrEqual as gtEq
-};
-export {hasOwnProperty, hasOwnProperty as hasOwn};
-export {hasProperty, hasProperty as has};
-export {isIn as in};
-export {instanceOf, instanceOf as instance};
-export {integer, integer as int};
-export {lessThan, lessThan as less, lessThan as lt};
-export {lessThanOrEqual, lessThanOrEqual as lessOrEqual, lessThanOrEqual as lessEq, lessThanOrEqual as ltEq};
-export {matches, matches as match};
-export {map};
-export {notANumber, notANumber as nan, notANumber as NaN};
-export {negative};
-export {not as negate};
-export {notBlank};
-export {notEmptyArray, notEmptyArray as notEmptyArr};
-export {isNull as null};
-export {isNumber as number, isNumber as num};
-export {isObject as object, isObject as obj};
-export {objectOf, objectOf as objOf};
-export {oneOf};
-export {plainObject};
-export {positive};
-export {primitive};
-export {property, property as prop};
-export {regexp, regexp as regExp};
-export {startsWith};
-export {set};
-export {strictEqual, strictEqual as strictEqualTo};
-export {string, string as str};
-export {structure, structure as struct};
-export {symbol};
-export {isTrue as true};
-export {truthy};
-export {thenable, thenable as promiseLike};
-export {isUndefined as undefined};
-export {undefinedOr};
-export {weakMap};
-export {weakSet};
-export {setDescription, getDescription};
+    default as divisibleWithRemainder,
+    default as divisibleByWithRemainder,
+    default as divByWithRemainder
+} from './divisibleWithRemainder';
+export {default as empty} from './empty';
+export {default as emptyArray, default as emptyArr} from './emptyArray';
+export {default as endsWith} from './endsWith';
+export {default as equal, default as equalTo, default as eq} from './equal';
+export {default as false} from './false';
+export {default as falsy, default as falsey} from './falsy';
+export {default as finite} from './finite';
+export {default as function, default as fn, default as func} from './function';
+export {default as generator} from './generator';
+export {default as greaterThan, default as greater, default as gt} from './greaterThan';
+export {
+    default as greaterThanOrEqual,
+    default as greaterOrEqual,
+    default as greaterEq,
+    default as gtEq
+} from './greaterThanOrEqual';
+export {default as hasOwnProperty, default  as hasOwn} from './hasOwnProperty';
+export {default as hasProperty, default as has} from './hasProperty';
+export {default as in} from './in';
+export {default as instanceOf, default as instance} from './instanceOf';
+export {default as integer, default as int} from './integer';
+export {default as lessThan, default as less, default as lt} from './lessThan';
+export {
+    default as lessThanOrEqual,
+    default as lessOrEqual,
+    default as lessEq,
+    default as ltEq
+} from './lessThanOrEqual';
+export {default as matches, default as match} from './matches';
+export {default as map} from './map';
+export {default as notANumber, default as nan, default as NaN} from './nan';
+export {default as negative} from './negative';
+export {default as negate, default as not} from './not';
+export {default as notBlank} from './notBlank';
+export {default as notEmptyArray, default as notEmptyArr} from './notEmptyArray';
+export {default as null} from './null';
+export {default as number, default as num} from './number';
+export {default as object, default as obj} from './object';
+export {default as objectOf, default as objOf} from './objectOf';
+export {default as oneOf} from './oneOf';
+export {default as plainObject} from './plainObject';
+export {default as positive} from './positive';
+export {default as primitive} from './primitive';
+export {default as property, default as prop} from './property';
+export {default as regexp, default as regExp} from './regexp';
+export {default as startsWith} from './startsWith';
+export {default as set} from './set';
+export {default as strictEqual, default as strictEqualTo} from './strictEqual';
+export {default as string, default as str} from './string';
+export {default as structure, default as struct} from './structure';
+export {default as symbol} from './symbol';
+export {default as true} from './true';
+export {default as truthy} from './truthy';
+export {default as thenable, default as promiseLike} from './thenable';
+export {default as undefined} from './undefined';
+export {default as undefinedOr} from './undefinedOr';
+export {default as weakMap} from './weakMap';
+export {default as weakSet} from './weakSet';
+export {setDescription, getDescription} from './utils/description';

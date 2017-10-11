@@ -7,6 +7,8 @@ import {setDescription} from './utils/description';
  * Checks whether a value exists in collection
  * Values are compared using === operator
  *
+ * **Type guard:** _none_
+ *
  * @example
  * const isImage = is.in(['image/gif', 'image/jpeg']);
  * // same as

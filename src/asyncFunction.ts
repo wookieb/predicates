@@ -7,11 +7,17 @@ import {setDescription} from './utils/description';
  * Regular function that returns promise or accepts callback is not an async function.
  *
  * More info: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/AsyncFunction
+ * **Type guard:** value is (...args: any[]) => Promise<T = any>
+ *
+ * @example
+ * is.asyncFunction(async () => {}); // true
+ * is.asyncFunction(function* () {}); // false
+ * is.asyncFunction(function() {}); // false
  *
  * @param {*} value
  * @returns {boolean}
  */
-export default function isAsyncFunction(value: any): boolean {
+export default function isAsyncFunction<T = any>(value: any): value is (...args: any[]) => Promise<T> {
     return !!asyncFunctionConstructor && value instanceof asyncFunctionConstructor;
 }
 

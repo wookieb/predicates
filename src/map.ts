@@ -3,6 +3,8 @@ import {setDescription} from './utils/description';
 /**
  * Check whether value is Map
  *
+ * **Type guard:** value is Map<K = any, V = any>
+ *
  * @param {*} value
  * @returns {boolean}
  */

@@ -14,18 +14,19 @@ const isObjectOfPredicates = objectOf(isFunction);
  * NOTE: All predicates defined in structure must be satisfied.
  * If some of the properties are optional use [undefinedOr](#undefinedOr)
  *
- * You shouldn't use this function to validate input from the user and expect complex report "what's wrong with this is object".
+ * You shouldn't use this function to validate input from the user and expect complex report of what is invalid.
  * There are few reasons for that:
- * * it's just a predicate (that returns only true or false)
+ * * it's just a predicate (that always returns only true or false)
  * * breaks [the design rule](design.md#user-content-defined-and-generated-predicates-will-not-throw-any-errors)
  *
  * See examples for inspiration how you can use _structure_
  *
+ * **Type guard:** _none_
  * @example
  * const schema = {
- *      name: is.string, // only string
- *      phone: is.or(is.string, is.number), // string or number
- *      surname: is.undefinedOr(is.string) // optional
+ *      name: String, // only string
+ *      phone: is.or(String, Number), // string or number
+ *      surname: is.undefinedOr(String) // optional
  * },
  *     isPerson = is.structure(schema);
  *
@@ -75,8 +76,8 @@ const isObjectOfPredicates = objectOf(isFunction);
  * @return {(boolean|Predicate)} returns bool if more than 1 argument provided, otherwise a predicate
  */
 function isStructure(structure: { [name: string]: Predicate | Function }): Predicate;
-function isStructure(structure: { [name: string]: Predicate | Function}, value: Object): boolean;
-function isStructure(structure: { [name: string]: Predicate | Function}, value?: Object, ...extraArgs: any[]): boolean | Predicate {
+function isStructure(structure: { [name: string]: Predicate | Function }, value: Object): boolean;
+function isStructure(structure: { [name: string]: Predicate | Function }, value?: Object, ...extraArgs: any[]): boolean | Predicate {
     if (!isObject(structure)) {
         throw new TypeError('Structure must be an object');
     }

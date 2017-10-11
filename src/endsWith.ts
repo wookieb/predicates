@@ -6,6 +6,8 @@ import {setDescription} from './utils/description';
 /**
  * Checks whether a string ends with a given suffix
  *
+ * **Type guard:** value is string
+ *
  * @example
  * const isYelling = is.endsWith('!');
  *

@@ -5,6 +5,8 @@ import {setDescription} from './utils/description';
 /**
  * Checks whether a value is greater than expected number
  *
+ * **Type guard:** value is T = number
+ *
  * @example
  * const isGreaterThan0 = is.greaterThan(0);
  *

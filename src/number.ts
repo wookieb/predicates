@@ -1,10 +1,14 @@
 import {setDescription} from './utils/description';
+
 /**
  * Checks whether a value is a number
+ *
+ * **Type guard:** value is number
  *
  * @example
  * is.number(10); // true
  * is.number('10'); // false
+ *
  * @param {*} value
  * @returns {boolean}
  */

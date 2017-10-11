@@ -6,12 +6,14 @@ const CONTAINS_ONLY_WHITESPACES = /^\s*$/;
 /**
  * Checks whether a value is empty string or contains only whitespaces
  *
+ * **Type guard:** value is string
+ *
  * @example
  * is.blank(''); // true
  * is.blank('    '); // true
  * is.blank('test'); // false
  *
- * @param {string} value
+ * @param {*} value
  * @returns {boolean}
  */
 export default function isBlank(value: any): value is string {

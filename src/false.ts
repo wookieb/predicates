@@ -4,6 +4,8 @@ import {setDescription} from './utils/description';
 /**
  * Checks whether a value is false a boolean false
  *
+ * **Type guard:** value is boolean
+ *
  * @example
  * is.false(false); // true
  * is.false(0); // false

@@ -9,7 +9,7 @@ Set of various predicates for type checking, simple assertions, filtering etc.
 * Written in typescript (with [type guards](type-guards-and-differentiating-types) and function overloading)
 * Has well defined [API design principles](docs/design.md)
 * Contains description for simpler assertions
-* Simple mapping of common types (like String, Boolean) to predicates to decrease verbosity
+* Simple mapping of common types (like String, Boolean) to predicates for verbosity purposes 
 
 ## Install
 ### NPM
@@ -25,6 +25,8 @@ const is = require('predicates');
 is.string(1); // false
 is.string('test'); // true
 
+is.undefinedOr(String, undefined); // true
+is.undefinedOr(String, 'string'); // true
 is.undefinedOr(is.string, undefined); // true
 is.undefinedOr(is.string, 'timmy'); // true
 is.undefinedOr(is.string)(undefined); // true
@@ -38,12 +40,7 @@ const isPerson = is.structure({
 
 isPerson({name: 'Tom', age: 10}); // true
 isPerson({surname: 'Welling', age: 100}); // false, lack of name property
-```
-
-## Assertions
-[Assert-generator](https://github.com/wookieb/assert-generator) helps create assertions directly from predicates which is very useful for arguments assertions.
-
-NOTE! This is not suppose to replace such powerful tools like "chai" or "should.js" which are designed mostly for testing and producing user readable input in case of failure. 
+``` 
 
 ```js
 const assertName = createAssert(is.string, 'Name must be a string'),

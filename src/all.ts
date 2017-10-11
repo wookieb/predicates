@@ -6,6 +6,8 @@ import {getPredicateForType} from './typeToPredicate';
 /**
  * Returns a function that calls predicates and returns true if all of them are satisfied, otherwise returns false
  *
+ * **Type guard:** _none_
+ *
  * @example
  * const isNumberGreaterThan10 = is.all(is.number, is.greaterThan(10));
  *
