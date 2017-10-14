@@ -7,7 +7,7 @@ Set of various predicates for type checking, simple assertions, filtering etc.
 
 ## Features
 * written in typescript (with [type guards](#type-guards) and function overloading)
-* well defined [API design principles](#design)
+* well defined [API design principles](#api-design)
 * predicates description every predicate contains a proper description for easier debugging and automatic assertion generation
 * supports simple type checks with unnecessary verbosity
 * every predicate supports currying if possible
@@ -16,6 +16,7 @@ Set of various predicates for type checking, simple assertions, filtering etc.
 ```
 npm install predicates
 ```
+## [Full API](API.md)
 
 ## Example
 
@@ -61,8 +62,6 @@ new Person('Tom', 'Welling', 33); // OK!
 new Person('Tom', 'Welling'); // OK!
 new Person('Tom', '', 33); // Error: Surname must be a string and cannot be emptye
 ```
-
-## [Full API](API.md)
 
 ## API design
 
