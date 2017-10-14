@@ -82,10 +82,4 @@ describe('assert', () => {
             libAssert(isString, 'Must be a string', TypeError)(100);
         }, TypeError, 'Must be a string');
     });
-
-    it('does nothing if predicate is satisfied', () => {
-        assert.doesNotThrow(() => {
-            libAssert(isString)('test');
-        });
-    });
 });
