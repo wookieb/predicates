@@ -17,6 +17,17 @@ describe('hasOwnProperty', function () {
         }, TypeError, /must be a string/);
     });
 
+    it('works on symbols as well', () => {
+        const sym = Symbol('foo');
+        const sym2 = Symbol('bar');
+        const object = {
+            [sym]: 'value'
+        };
+
+        assert.isTrue(hasOwnProperty(sym, object));
+        assert.isFalse(hasOwnProperty(sym2, object));
+    });
+
     it('checks whether an object has own property', function () {
         const objectWithUndefinedProperty: any = {
             property: undefined

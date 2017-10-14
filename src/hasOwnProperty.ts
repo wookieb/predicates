@@ -3,6 +3,7 @@ import isString from './string';
 import handleCurry from './utils/handleCurry';
 import {Predicate} from './types';
 import {setDescription} from './utils/description';
+import isSymbol from "./symbol";
 
 /**
  * Checks whether an object has own property
@@ -28,7 +29,7 @@ import {setDescription} from './utils/description';
 function hasOwnProperty(property: string | Symbol): Predicate ;
 function hasOwnProperty(property: string | Symbol, object: object): boolean;
 function hasOwnProperty(property: string | Symbol, object?: object): boolean | Predicate {
-    if (!isString(property)) {
+    if (!isString(property) && !isSymbol(property)) {
         throw new TypeError('Property name must be a string');
     }
     return handleCurry.call(this, arguments,
@@ -36,7 +37,7 @@ function hasOwnProperty(property: string | Symbol, object?: object): boolean | P
             (object: object) => {
                 return isObject(object) && Object.prototype.hasOwnProperty.call(object, property);
             },
-            'an object with own "' + property + '" property'
+            'an object with own ' + (isSymbol(property) ? property.toString() : '"'+property+'"') + ' property'
         )
     );
 }
