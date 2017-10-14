@@ -1,4 +1,7 @@
-import {default as Ast, ExportDeclaration, FunctionDeclaration, SignaturedDeclaration} from "ts-simple-ast";
+import {
+    default as Ast, ExportDeclaration, FunctionDeclaration, SignaturedDeclaration,
+    VariableDeclaration
+} from "ts-simple-ast";
 import {parse as parseJSDoc, type} from 'doctrine';
 import NameExpression = type.NameExpression;
 import {readFileSync} from 'fs';
@@ -90,10 +93,26 @@ function getMetaInfo() {
         const file = ast.getSourceFile(modulePath);
         const func = file.getFunctions()[0];
         if (!func) {
-            return [];
+
+            const varDeclaration = file.getVariableDeclaration((v) => {
+                return v.getName() === file.getDefaultExportSymbol().getAliasedSymbol().getName();
+            });
+
+            return getDataForVariable(forcedFunctionName, varDeclaration, file.getText());
         }
 
         return getDataForFunction(forcedFunctionName, func);
+    }
+
+    function getDataForVariable(name: string, varDeclaration: VariableDeclaration, fileContent: string) {
+
+        const [,comment] = fileContent.match(/(\/\*\*[\s\S]+?\*\/)/);
+        return {
+            declarations: [
+                name + varDeclaration.getType().getText()
+            ],
+            ...parseJSDOC(comment)
+        }
     }
 
     function getDataForFunction(name: string, func: FunctionDeclaration) {
@@ -102,7 +121,6 @@ function getMetaInfo() {
                 ...func.getOverloads().map(o => getFunctionDefinition(name, o)),
                 getFunctionDefinition(name, func)
             ],
-
             ...getJsDocData(func)
         }
     }
@@ -144,23 +162,27 @@ function getMetaInfo() {
             .filter(x => x)[0];
 
         if (docComment) {
-            const parsed = parseJSDoc(docComment, {unwrap: true});
-
-            return {
-                description: parsed.description,
-                throws: parsed.tags.filter(t => t.title === 'throws')
-                    .map(t => ({
-                        type: (<NameExpression>t.type).name,
-                        description: t.description
-                    })),
-                examples: parsed.tags.filter(t => t.title === 'example')
-                    .map(t => ({
-                        caption: (<any>t).caption,
-                        body: t.description
-                    }))
-            }
+            return parseJSDOC(docComment);
         }
         return {};
+    }
+
+    function parseJSDOC(comment: string) {
+        const parsed = parseJSDoc(comment, {unwrap: true});
+
+        return {
+            description: parsed.description,
+            throws: parsed.tags.filter(t => t.title === 'throws')
+                .map(t => ({
+                    type: (<NameExpression>t.type).name,
+                    description: t.description
+                })),
+            examples: parsed.tags.filter(t => t.title === 'example')
+                .map(t => ({
+                    caption: (<any>t).caption,
+                    body: t.description
+                }))
+        }
     }
 }
 

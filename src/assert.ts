@@ -1,6 +1,6 @@
 import {Predicate} from './types';
 import {getDescription} from './utils/description';
-import {getPredicateForType} from "./typeToPredicate";
+import {getPredicateForType} from './typeToPredicate';
 
 /**
  * Asserts that value satisfies given predicate, otherwise throws a given error with provided message
@@ -25,5 +25,5 @@ export function assert(predicate: (Predicate | Function), message?: string, exce
         if (!(<Predicate>predicate)(value, ...extraArgs)) {
             throw new exceptionClass(message || 'Assertion failed. Must be ' + getDescription(<Predicate>predicate));
         }
-    }
+    };
 }

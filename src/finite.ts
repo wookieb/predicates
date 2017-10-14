@@ -5,7 +5,7 @@ import {setDescription} from './utils/description';
  * Checks whether a value is a number and it's finite
  *
  * @example
- * is.finite(1); // false
+ * is.finite(1); // true
  * is.finite(Infinity); // false
  */
 function isFinitePolyfill(value: any): value is number {
