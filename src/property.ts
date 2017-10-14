@@ -4,6 +4,8 @@ import isObject from './object';
 import isFunction from './function';
 import {getDescription, setDescription} from './utils/description';
 import {getPredicateForType} from './typeToPredicate';
+import isSymbol from './symbol';
+import isString from './string';
 
 
 /**
@@ -19,10 +21,16 @@ import {getPredicateForType} from './typeToPredicate';
  *
  * @throws {TypeError} if predicate is not a function
  * @throws {Error} if too few arguments provided
+ * @throws {TypeError} is property name is not a string or a symbol
  */
 function property(propertyName: string | Symbol, predicate: Predicate | Function): Predicate;
 function property(propertyName: string | Symbol, predicate: Predicate | Function, object: Object, ...extraParams: any[]): boolean;
 function property(propertyName: string | Symbol, predicate: Predicate | Function, object?: Object): boolean | Predicate {
+
+    if (!isSymbol(propertyName) && !isString(propertyName)) {
+        throw new TypeError('Property must be a string or a symbol')
+    }
+
     if (arguments.length < 2) {
         throw new Error('Too few arguments - 2 required');
     }
@@ -40,9 +48,9 @@ function property(propertyName: string | Symbol, predicate: Predicate | Function
                 args.splice(0, 1, isObject(value) ? value[<string>propertyName] : undefined);
                 return isObject(value) && predicate.apply(this, args);
             },
-            'an object with property "' + propertyName + '" of type: ' + getDescription(<Predicate>predicate)
-        ),
-        2);
+            'an object with property ' + (isSymbol(propertyName) ? propertyName.toString() : '"' + propertyName + '"') +
+            ' of type: ' + getDescription(<Predicate>predicate)
+        ), 2);
 }
 
 export default property;

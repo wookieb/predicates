@@ -24,7 +24,7 @@ import isSymbol from "./symbol";
  *
  * isCustomized(timer2); // false
  *
- * @throws {TypeError} if property is not a string
+ * @throws {TypeError} if property is not a string or a symbol
  */
 function hasOwnProperty(property: string | Symbol): Predicate ;
 function hasOwnProperty(property: string | Symbol, object: object): boolean;

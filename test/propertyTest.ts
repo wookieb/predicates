@@ -16,6 +16,12 @@ describe('property', function () {
         }, TypeError, /Predicate is not a function/i);
     });
 
+    it('throws an error if property name is not a string or a symbol', () => {
+        assert.throws(() => {
+            isProperty(<any>1, isString);
+        }, TypeError, /Property must be a string or a symbol/)
+    });
+
     it('requires at least 2 arguments', function () {
         assert.throws(function () {
             isProperty.call(null, PROPERTY);
@@ -24,6 +30,15 @@ describe('property', function () {
 
     it('returns a predicate if 2 arguments provided', function () {
         assert.isFunction(isProperty(PROPERTY, PREDICATE));
+    });
+
+
+    it('works on symbols', () => {
+        const sym = Symbol('foo');
+        const sym2 = Symbol('bar');
+
+        assert.isTrue(isProperty(sym, isString, {[sym]: 'test'}));
+        assert.isFalse(isProperty(sym, isString, {[sym2]: 'test'}));
     });
 
     it('automatically fails if provided value is not an object', function () {
