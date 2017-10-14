@@ -14,7 +14,6 @@ describe('assert', () => {
     });
 
     it('simple assertion with base types', () => {
-
         assert.throws(() => {
             libAssert(String)(1);
         }, Error, 'Assertion failed. Must be a string');
@@ -82,6 +81,11 @@ describe('assert', () => {
         assert.throws(() => {
             libAssert(isString, 'Must be a string', TypeError)(100);
         }, TypeError, 'Must be a string');
-    })
+    });
 
+    it('does nothing if predicate is satisfied', () => {
+        assert.doesNotThrow(() => {
+            libAssert(isString)('test');
+        });
+    });
 });

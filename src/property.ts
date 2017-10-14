@@ -28,7 +28,7 @@ function property(propertyName: string | Symbol, predicate: Predicate | Function
 function property(propertyName: string | Symbol, predicate: Predicate | Function, object?: Object): boolean | Predicate {
 
     if (!isSymbol(propertyName) && !isString(propertyName)) {
-        throw new TypeError('Property must be a string or a symbol')
+        throw new TypeError('Property must be a string or a symbol');
     }
 
     if (arguments.length < 2) {

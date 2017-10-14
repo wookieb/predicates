@@ -3,7 +3,7 @@ import isString from './string';
 import handleCurry from './utils/handleCurry';
 import {Predicate} from './types';
 import {setDescription} from './utils/description';
-import isSymbol from "./symbol";
+import isSymbol from './symbol';
 
 /**
  * Checks whether an object has own property
