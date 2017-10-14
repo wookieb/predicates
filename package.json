@@ -30,8 +30,11 @@
         "filter"
     ],
     "files": [
-        "**/*.d.ts",
-        "**/*.js"
+        "*.d.ts",
+        "*.js",
+        "utils/*",
+        "integer/*",
+        "finite/*"
     ],
     "dependencies": {
         "array-find": "^1.0.0"
