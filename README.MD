@@ -44,13 +44,9 @@ isPerson({surname: 'Welling', age: 100}); // false, lack of name property
 ``` 
 
 ```js
-const assertName = createAssert(is.string, 'Name must be a string'),
-    assertSurname = createAssert(is.all(
-        is.string, is.not(is.empty)
-    ), 'Surname must be a string and cannot be empty'),
-    assertAge = createAssert(is.undefinedOr(is.positive),
-        'Age must be a number and greater than 0');
-
+const assertName = is.assert(is.string);
+const assertSurname = is.assert(is.notBlank);
+const assertAge = is.assert(is.undefinedOr(is.positive));
 
 const Person = function(name, surname, age) {
     assertName(name);
