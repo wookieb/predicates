@@ -6,7 +6,6 @@ import {getPredicateForType} from './typeToPredicate';
 /**
  * Returns a function that calls predicates in the order until one of them will be satisfied, otherwise returns false.
  *
- * **Type guard:** _none_
  *
  * @example
  * const isStringOrNumber = is.any(is.string, is.number);
@@ -15,9 +14,7 @@ import {getPredicateForType} from './typeToPredicate';
  * isStringOrNumber('string'); // true
  * isStringOrNumber(undefined); // false
  *
- * @param {...Predicate|Function} predicates or simple types constructors
  * @throws {TypeError} if not every predicate is a function
- * @returns {Predicate}
  */
 export default function any(...predicates: (Predicate | Function)[]): Predicate {
     const convertedPredicates = predicates.map((p) => getPredicateForType(p) || <Predicate>p);

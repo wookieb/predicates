@@ -2,11 +2,6 @@ import {setDescription} from './utils/description';
 
 /**
  * Checks whether value is an instance of WeakSet
- *
- * **Type guard:** value is WeakSet<T = any>
- *
- * @param {*} value
- * @returns {boolean}
  */
 export default function isWeakSet<T = any>(value: any): value is WeakSet<T> {
     return typeof WeakSet !== 'undefined' && value instanceof WeakSet;

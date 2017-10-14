@@ -10,8 +10,6 @@ import {getPredicateForType} from './typeToPredicate';
  * Checks whether a value is undefined or satisfies given predicate
  * Very useful to check optional arguments of function.
  *
- * **Type guard:** value is (undefined | T = any)
- *
  * @example
  * const isUndefinedOrString = is.undefinedOr(is.string);
  *
@@ -28,10 +26,7 @@ import {getPredicateForType} from './typeToPredicate';
  * is.undefinedOr(String)(undefined); // true
  * is.undefinedOr(String)('test'); // true
  *
- * @param {Predicate|Function} predicate or simple type constructor
- * @param {*} [value]
  * @throws {TypeError} if provided predicate is not a function
- * @returns {Predicate|bool} returns predicate is value is not provided
  */
 function isUndefinedOr<T = any>(predicate: Predicate | Function): TypeGuardPredicate<undefined | T>;
 function isUndefinedOr<T = any>(predicate: Predicate | Function, value: any): value is (undefined | T);

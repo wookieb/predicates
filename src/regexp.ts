@@ -1,15 +1,10 @@
 /**
  * Checks whether a value is a regexp
  *
- * **Type guard:** value is RegExp
- *
  * @example
  * is.regExp(/t/); // true
  * is.regExp(new RegExp(/t/)); // true
  * is.regExp('.*'); // false
- *
- * @param {*} value
- * @returns {bool}
  */
 import {setDescription} from './utils/description';
 

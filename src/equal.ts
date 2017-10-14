@@ -6,8 +6,6 @@ import {setDescription} from './utils/description';
 /**
  * Checks whether values are equal (using == operator)
  *
- * **Type guard:** _none_
- *
  * @example
  * const isTimmy = is.equal('Timmy');
  *
@@ -16,10 +14,6 @@ import {setDescription} from './utils/description';
  * is.equal('Timmy', 'Timmy'); // true
  * is.equal(1, '1'); // true
  * isTimmy('Franko'); // false
- *
- * @param {*} expected
- * @param {*} [value]
- * @returns {(boolean|Predicate)} bool if at least two arguments provided, otherwise a predicate
  */
 function isEqual(expected: any): Predicate;
 function isEqual(expected: any, value: any): boolean;

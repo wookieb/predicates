@@ -15,7 +15,6 @@ import {setDescription} from './utils/description';
  *
  * NOTE! A primitive value wrapped by a corresponding object is not a primitive anymore
  *
- * **Type guard:** value is string | number | boolean | null | undefined
  *
  * @example
  * is.primitive('test'); // true
@@ -28,9 +27,6 @@ import {setDescription} from './utils/description';
  * is.primitive(new String('test')); // false
  * is.primitive(new Boolean(true)); // false
  * is.primitive({}); // false
- *
- * @param {*} value
- * @returns {boolean}
  */
 function isPrimitive<T = string | number | boolean | null | undefined>(value: T): value is T {
     return !isObject(value) && (isString(value) || isNumber(value) || isBoolean(value) || isUndefined(value) || isNull(value));

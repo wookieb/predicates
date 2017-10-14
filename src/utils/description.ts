@@ -3,11 +3,18 @@ import {Predicate} from "../types";
 export const descriptionKey = '__predicateDescription';
 
 /**
- * Sets description of predicate
+ * Sets description of predicate.
  *
- * @param {Predicate} predicate
- * @param {string} desc
- * @returns {Predicate}
+ * Underneath assigns a non-enumerable property to a given predicate
+ *
+ * @example
+ *
+ * function customPredicate(value) {
+ *  // implementation
+ * }
+ *
+ * is.setDescription(customPredicate, 'some custom description')
+ * is.getDescription(customPredicate); // 'some custom description'
  */
 export function setDescription<T extends Predicate>(predicate: T, desc: string): T {
     Object.defineProperty(predicate, descriptionKey, {
@@ -20,8 +27,15 @@ export function setDescription<T extends Predicate>(predicate: T, desc: string):
 /**
  * Returns predicate description
  *
- * @param {Predicate} predicate
- * @returns {string}
+ * @example
+ * is.getDescription(is.string); // 'a string'
+ *
+ * function someCustomPredicate(value) {
+ *   // implementation
+ * }
+ * is.getDescription(someCustomPredicate); // 'satisfied custom predicate "someCustomPredicate"'
+ *
+ * is.getDescription(function(value) {}); // 'satisfied custom predicate "anonymous"'
  */
 export function getDescription(predicate: Predicate) {
     const desc = (<any>predicate)[descriptionKey];

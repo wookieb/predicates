@@ -8,8 +8,6 @@ import isString from './string';
 /**
  * Checks whether a value is a string and matches a regexp
  *
- * **Type guard:** value is string
- *
  * @example
  * const isWindows9x = is.matches(/^Windows 9/);
  *
@@ -19,10 +17,7 @@ import isString from './string';
  *
  * isWindows9x('Windows 10'); // false
  *
- * @param {RegExp} regexp
- * @param {string} [value]
  * @throws {TypeError} if regexp is not a regexp
- * @returns {(boolean|Predicate)} bool if at least two arguments provided, otherwise a predicate
  */
 function matches(regexp: RegExp): TypeGuardPredicate<string>;
 function matches(regexp: RegExp, value: string): value is string;

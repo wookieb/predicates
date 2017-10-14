@@ -8,8 +8,6 @@ import {getPredicateForType} from './typeToPredicate';
 /**
  * Checks whether every enumerable property of object satisfies a predicate
  *
- * **Type guard:** _none_
- *
  * @example
  * const isObjectOfStrings = is.objectOf(is.string);
  *
@@ -18,11 +16,6 @@ import {getPredicateForType} from './typeToPredicate';
  * is.objectOf(is.string, {key: 'value', key1: 'value'}); // true
  *
  * isObjectOfStrings({key: 1, key1: 'value'}); // false
- *
- * @param {Predicate|Function} predicate or simple type constructor
- * @param {Object} [object]
- * @param {...*} [additionalArgs] additional arguments passed to the predicate
- * @returns {(boolean|Predicate)} returns bool if at least two arguments provided, otherwise a predicate
  */
 function isObjectOf(predicate: Predicate | Function): Predicate;
 function isObjectOf(predicate: Predicate | Function, value: Object): boolean;

@@ -9,8 +9,6 @@ import {getPredicateForType} from './typeToPredicate';
 /**
  * Checks whether every element of an array passes the predicate
  *
- * **Type guard:** value is Array<T = any>
- *
  * @example
  * const isArrayOfStrings = is.arrayOf(is.string);
  *
@@ -22,11 +20,7 @@ import {getPredicateForType} from './typeToPredicate';
  *
  * isArrayOfStrings([1, 2]); // false
  *
- * @param {Predicate|Function} predicate or simple type constructor
- * @param {Array} [value]
- * @param {...*} [extraArgs] additional arguments passed to the predicate
  * @throws {TypeError} if predicate is not a function
- * @returns {(boolean|Predicate)} returns bool if at least two arguments provided, otherwise a predicate
  */
 function isArrayOf<T = any>(predicate: Predicate | Function): TypeGuardPredicate<Array<T>>;
 function isArrayOf<T = any>(predicate: Predicate | Function, value: any[]): value is Array<T>;

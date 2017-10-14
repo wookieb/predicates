@@ -21,8 +21,7 @@ const isObjectOfPredicates = objectOf(isFunction);
  *
  * See examples for inspiration how you can use _structure_
  *
- * **Type guard:** _none_
- * @example
+ * @example <caption>Structure check</caption>
  * const schema = {
  *      name: String, // only string
  *      phone: is.or(String, Number), // string or number
@@ -36,8 +35,7 @@ const isObjectOfPredicates = objectOf(isFunction);
  * is.structure(schema, person); // true
  * isPerson({name: 'Tommy'});
  *
- * @example
- * // filtering
+ * @example <caption>filtering</caption>
  * const people = [
  *  {name: 'Prof. Bend Ovah', age: 55, sex: 'male'},
  *  {name: 'Dr. Supa Kaki', age: 34, sex: 'female'},
@@ -53,8 +51,7 @@ const isObjectOfPredicates = objectOf(isFunction);
  * //   {name: 'Prof. Anti Santy', age: 46, sex: 'male'}
  * // ]
  *
- * @example
- * // duck typing
+ * @example <caption>duck typing</caption>
  *
  * const isDuck = is.structure({
  *  quack: is.function,
@@ -70,10 +67,7 @@ const isObjectOfPredicates = objectOf(isFunction);
  *    walk: function() { return 'tup tup tup'; }
  * }); // yep, it's a duck
  *
- * @param {Object<Predicate | Function>} structure with predicates of simple type constructors
- * @param {Object} [value]
- * @param {...*} [extraArgs] additional arguments passed to the predicates
- * @return {(boolean|Predicate)} returns bool if more than 1 argument provided, otherwise a predicate
+ * @throws {TypeError} if structure is not an object
  */
 function isStructure(structure: { [name: string]: Predicate | Function }): Predicate;
 function isStructure(structure: { [name: string]: Predicate | Function }, value: Object): boolean;

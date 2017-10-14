@@ -1,16 +1,29 @@
 import {Predicate} from './types';
 import {getDescription} from './utils/description';
+import {getPredicateForType} from "./typeToPredicate";
 
 /**
- * Assert that values satisfies given predicate
+ * Asserts that value satisfies given predicate, otherwise throws a given error with provided message
  *
- * @param {Predicate} predicate
- * @param {any} value
- * @param {Function} [exceptionClass=Error] error class to create on failed assertion
- * @param {string} [message] message to use instead default message generated from predicate description
+ * @example
+ *
+ * // if no message provided then description of the predicate will be taken
+ * is.assert(is.string)(null) // Error('Assertion failed. Must be a string')
+ *
+ * // simple types are mapped to predicates so they get the same description
+ * is.assert(String)(null) // Error('Assertion failed. Must be a string')
+ *
+ * is.assert(String)('string') // undefined - everything is fine
+ * is.assert(is.not(is.empty), 'Value is required')(''); // Error('Value is required')
+ *
+ * // custom error class allowed
+ * is.assert(String, undefined, CustomErrorClass)(null); // CustomErrorClass('Assertion failed. Must be a string');
  */
-export default function assert(predicate: Predicate, value: any, exceptionClass: { new (message: string): any } = Error, message?: string) {
-    if (!predicate(value)) {
-        throw new exceptionClass(message || 'Assertion failed. Must be ' + getDescription(predicate));
+export function assert(predicate: (Predicate | Function), message?: string, exceptionClass: { new (message: string): any } = Error) {
+    predicate = getPredicateForType(predicate) || <Predicate>predicate;
+    return function (value: any, ...extraArgs: any[]) {
+        if (!(<Predicate>predicate)(value, ...extraArgs)) {
+            throw new exceptionClass(message || 'Assertion failed. Must be ' + getDescription(<Predicate>predicate));
+        }
     }
 }

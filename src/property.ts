@@ -10,7 +10,6 @@ import {getPredicateForType} from './typeToPredicate';
  * Checks whether a value of given property of an object satisfies a predicate
  *
  * If you need to check more properties at a time use {@link structure}.
- * **Type guard:** _none_
  *
  * @example
  * is.property('name', is.string, {name: 'Tommy'}); // true
@@ -18,15 +17,8 @@ import {getPredicateForType} from './typeToPredicate';
  * is.property('name', is.string, {name: 2}); // false - since 2 is not a string
  * is.property('name', is.string, {}); // false - since undefined is not a string
  *
- * @param {*} propertyName
- * @param {Predicate|Function} predicate or simple type constructor
- * @param {Object} [object]
- * @param {...*} [extraParams] additional arguments passed to predicates
- *
  * @throws {TypeError} if predicate is not a function
  * @throws {Error} if too few arguments provided
- *
- * @returns {bool|Predicate}
  */
 function property(propertyName: string | Symbol, predicate: Predicate | Function): Predicate;
 function property(propertyName: string | Symbol, predicate: Predicate | Function, object: Object, ...extraParams: any[]): boolean;

@@ -6,8 +6,6 @@ import {setDescription} from './utils/description';
 /**
  * Checks whether a string ends with a given suffix
  *
- * **Type guard:** value is string
- *
  * @example
  * const isYelling = is.endsWith('!');
  *
@@ -16,11 +14,8 @@ import {setDescription} from './utils/description';
  * is.endsWith('!', 'shut up!'); // true
  * isYelling('quiet please'); // false
  *
- * @param {String} suffix
- * @param {String} [value]
  * @throws {TypeError} if suffix is not a string
  * @throws {Error} if suffix is empty
- * @returns {(boolean|Predicate)} returns bool if at least two arguments provided, otherwise a predicate
  */
 function endsWith(suffix: string): TypeGuardPredicate<string>;
 function endsWith(suffix: string, value: any): value is string;

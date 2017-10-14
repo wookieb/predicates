@@ -7,8 +7,6 @@ import {setDescription} from './utils/description';
 /**
  * Checks whether a value is an instance of given "class"
  *
- * **Type guard:** value is T
- *
  * @example
  * const Duck = function() {};
  * const Car = function() {};
@@ -21,10 +19,7 @@ import {setDescription} from './utils/description';
  *
  * isDuck(new Car); // false
  *
- * @param {Function} clazz
- * @param {*} [value]
  * @throws {TypeError} if class is not a function
- * @returns {(boolean|Predicate)} bool if at least two arguments provided, otherwise a predicate
  */
 function isInstanceOf<T>(clazz: Function): TypeGuardPredicate<T>;
 function isInstanceOf<T>(clazz: Function, value: any): value is T;

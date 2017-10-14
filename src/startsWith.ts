@@ -6,8 +6,6 @@ import {setDescription} from './utils/description';
 /**
  * Checks whether a string starts with a given prefix
  *
- * **Type guard:** value is string
- *
  * @example
  * const isProfessor = is.startsWith('Prof. ');
  * isProfessor('Prof. Bend Ovah'); // true
@@ -16,11 +14,8 @@ import {setDescription} from './utils/description';
  *
  * isProfessor('Dr. Here U\' Are'); // false
  *
- * @param {string} prefix
- * @param {*} [value]
  * @throws {TypeError} if prefix is not a string
  * @throws {Error} if prefix is empty
- * @returns {bool|Predicate}
  */
 function startsWith(prefix: string): TypeGuardPredicate<string>;
 function startsWith(prefix: string, value: any): value is string;

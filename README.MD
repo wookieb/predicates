@@ -6,13 +6,13 @@
 Set of various predicates for type checking, simple assertions, filtering etc.
 
 ## Features
-* Written in typescript (with [type guards](type-guards-and-differentiating-types) and function overloading)
-* Has well defined [API design principles](docs/design.md)
-* Contains description for simpler assertions
-* Simple mapping of common types (like String, Boolean) to predicates for verbosity purposes 
+* written in typescript (with [type guards](#type-guards) and function overloading)
+* well defined [API design principles](#design)
+* predicates description every predicate contains a proper description for easier debugging and automatic assertion generation
+* supports simple type checks with unnecessary verbosity
+* every predicate supports currying if possible
 
 ## Install
-### NPM
 ```
 npm install predicates
 ```
@@ -62,48 +62,100 @@ new Person('Tom', 'Welling'); // OK!
 new Person('Tom', '', 33); // Error: Surname must be a string and cannot be emptye
 ```
 
-## Changelog
+## [Full API](API.md)
 
-### 2.0.0-rc2
-* Added type guards
-* Added description for all predicates
-* Added _assert_
-* Decreased verbosity with simple type to predicate mapping
+## API design
 
-### 2.0.0-rc1
-* Removes support for bower, use webpack or any other module bundler
-* Rewritten in typescript for much better code completion and function signature detection
-* Added _asyncFunction_, _generator_, _map_, _set_, _symbol_, _thenable_, _weakMap_, _weakSet_, _emptyArray_, _notEmptyArray_ (#22) predicates
-* Fixed #23
+### Generated predicates can be called with more than one argument
 
-### 1.0.1
-* Fixed #21
+Most of type checking, utility libraries force you use predicates with only one argument but _predicates_ doesn.t
+Additionally _predicates_ preserves the context of function call which allows you to create even more powerful logic.
 
-### 1.0.0-rc.2
-* Added bower support #16
 
-### 1.0.0-rc.1
-* Provided names for all the functions to make debugging easier #13
-* Added _primitive_ predicate #12
-* Added _plainObject_ predicate #4
-* Added _divisible_ and _divisibleWithRemainder_ predicates
-* Added _property_ predicate #14
-* Added _notBlank_ predicate
-* Improved performance
+```js
+const is = require('predicates');
 
-### 0.3
-* Fixed path to finite polyfill
-* Better support for is.NaN #11
-* Added _notEmpty_ predicate #9
-* Improved is.false and is.true to accept new Boolean(true/false) as well
-* Fixed behavior of is.object to accept Object.create(null) #10
+const isOkToModifyTags = is.all(
+    is.arrayOf(is.string), 
+    function(tags, previousTags) {
+        // no need to save them again if they are the same as previous ones
+        return tags.join(',') !== previousTags.join(',');
+    }
+);
 
-### 0.2.1
-* Fix: instanceof renamed to instanceOf
+Module.prototype.modifyTags = function(entityId, tags) {
+    var previousTags = getTags(entityId);
+    if (isOkToModifyTags(tags, previousTags)) {
+        this.saveTags(entityId, tags);
+    } else {
+        // no need to save them again if they are the same as previous ones
+    }
+}
+```
 
-### 0.2
-* Added information how to use _predicates_ for arguments assertions
-* Added documentation with examples and design rules
-* Added "startsWith" and "endsWith" functions
-* Added type checking for property names for hasOwnProperty and hasProperty predicate
-* Fixed error type declaration for @throws
+### Prevents stupid mistakes (fail fast)
+_Predicates_ checks whether generated predicate is misconfigured and throws an error as fast as possible.
+
+```js
+is.startsWith(''); // Error: Prefix cannot be empty
+// since that would be true for all strings
+
+is.in([]); // Error: Collection cannot be empty
+// always false
+```
+
+That's why it's a good practice to create predicates at the beginning of a module definition to quickly catch any mistake.
+
+```js
+// some module
+const is = require('predicates');
+const isImage = is.in([]); // Error: Collection cannot be empty
+
+// You don't need to run the whole application to get the error that your predicate is wrong
+export class Module {
+    
+}
+```
+
+### Defined and generated predicates will never throw any error
+You don't need to check the arguments provided to predicates to make sure they won't cause an error - _predicates_ does it for you.
+
+```js
+const isDuck = is.hasProperty('quack');
+
+isDuck(undefined); // false - no error
+isDuck(1); // false - no error
+isDuck('duck'); // false - no error
+
+is.matches(/.*\.ts/)(100); // false - no error
+```
+
+NOTE! This rule applies only for predicates defined in the library. Any user-defined predicate MAY throw errors (however I don't advise to do so) and _predicates_ will not catch them.
+
+```
+const assertName = is.all(is.string, function(value) {
+    if (value === 'admin') {
+        throw new Error('Admin is a reserved user name');
+    }
+});
+
+assertName('admin'); // Error: Admin is a reserved user name
+```
+
+### Type guards 
+Every predicate (if possible) is a type guard
+```typescript
+if (is.string(value)) {
+   // at this point typescript compiler knows that value is a string 
+}
+```
+
+### Core types are automatically translated to proper predicate
+
+```js
+is.property('foo', is.string)({foo: 'bar'}); // true
+
+// for less verbosity this is possible as well
+is.property('foo', String)({foo: 'bar'}); // true
+is.arrayOf(String)(['foo']); // true
+```

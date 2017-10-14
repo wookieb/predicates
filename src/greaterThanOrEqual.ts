@@ -1,11 +1,9 @@
 import handleCurry from './utils/handleCurry';
-import {Predicate, TypeGuardPredicate} from './types';
-import {setDescription} from './utils/description';
+ import {Predicate, TypeGuardPredicate} from './types';
+ import {setDescription} from './utils/description';
 
-/**
+ /**
  * Checks whether a value is greater or equal to expected number
- *
- * **Type guard:** value is T = number
  *
  * @example
  * const isAdultAge = is.greaterThanOrEqual(18);
@@ -15,10 +13,6 @@ import {setDescription} from './utils/description';
  * is.greaterThanOrEqual(18, 22);
  *
  * isAdultAge(16); // false
- *
- * @param {*} expected
- * @param {*} [value]
- * @returns {(boolean|Predicate)} bool if at least two arguments provided, otherwise a predicate
  */
 function isGreaterThanOrEqual<T = number>(expected: T): TypeGuardPredicate<T>;
 function isGreaterThanOrEqual<T = number>(expected: T, value: any): value is T;

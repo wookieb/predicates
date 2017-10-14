@@ -9,16 +9,11 @@ import {setDescription} from './utils/description';
  * * has 'length' property
  * * 'length' property is a number greater or equal 0
  *
- * **Type guard:** _none_
- *
  * @example
  * is.arrayLike(arguments); // true
  * is.arrayLike(document.querySelectorAll('div')); // true
  * is.arrayLike([1, 2, 3]); // true
  * is.arrayLike({}); // false
- *
- * @param {*} value
- * @returns {boolean}
  */
 export default function isArrayLike(value: any): boolean {
     return isObject(value) && isNumber(value.length) && value.length >= 0;

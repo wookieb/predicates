@@ -7,8 +7,6 @@ import {setDescription} from './utils/description';
 /**
  * Checks whether an object has a given property
  *
- * **Type guard:** _none_
- *
  * @example
  * const isDuck = is.hasProperty('quack');
  *
@@ -18,10 +16,7 @@ import {setDescription} from './utils/description';
  *
  * isDuck({type: 'car'}); // false
  *
- * @param {string|Symbol} property
- * @param {Object} [object]
  * @throws {TypeError} if property is not a string
- * @returns {(boolean|Predicate)} bool if at least two arguments provided, otherwise a predicate
  */
 function hasProperty(property: string | Symbol): Predicate;
 function hasProperty(property: string | Symbol, object: Object): boolean;

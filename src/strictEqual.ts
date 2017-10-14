@@ -6,8 +6,6 @@ import {setDescription} from './utils/description';
 /**
  * Checks whether a value is strictly equal to expected value (uses === operator)
  *
- * **Type guard:** value is T
- *
  * @example
  * const mom = {};
  * const isMyMom = is.strictEqual(mom);
@@ -16,10 +14,6 @@ import {setDescription} from './utils/description';
  * // same as
  * is.strictEqual(mom, mom); // true
  * isMyMom({}); // false
- *
- * @param {*} expected
- * @param {*} [value]
- * @returns {bool|Predicate}
  */
 function isStrictEqual<T = any>(expected: T): TypeGuardPredicate<T>;
 function isStrictEqual<T = any>(expected: T, value: any): value is T;

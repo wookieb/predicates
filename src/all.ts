@@ -6,18 +6,15 @@ import {getPredicateForType} from './typeToPredicate';
 /**
  * Returns a function that calls predicates and returns true if all of them are satisfied, otherwise returns false
  *
- * **Type guard:** _none_
+
  *
  * @example
- * const isNumberGreaterThan10 = is.all(is.number, is.greaterThan(10));
+ * const isBetween10And100 = is.all(is.greaterThan(10), is.lessThan(100));
  *
- * isNumberGreaterThan10(0); // false
- * isNumberGreaterThan10(11); // true
- * isNumberGreaterThan10('11'); // false
+ * isBetween10And100(0); // false
+ * isBetween10And100(11); // true
  *
- * @param {...Predicate|Function} predicates or simple types constructors
  * @throws {TypeError} if not every predicate is a function
- * @returns {Predicate}
  */
 export default function all(...predicates: (Predicate | Function)[]): Predicate {
     const convertedPredicates = predicates.map((p) => getPredicateForType(p) || <Predicate>p);

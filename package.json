@@ -1,6 +1,6 @@
 {
     "name": "predicates",
-    "version": "2.0.0-rc1",
+    "version": "2.0.0-rc3",
     "description": "Set of various predicates for type checking, assertions, filtering etc",
     "main": "index.js",
     "types": "index.d.ts",
@@ -15,7 +15,8 @@
         "postpack": "rm -f *.d.ts && rm -f *.js && rm -rf integer && rm -rf utils",
         "lint": "./node_modules/.bin/tslint --config ./.config/tslint.json src/*.ts",
         "test": "./node_modules/.bin/jest --config ./.config/jest.json",
-        "test:ci": "./node_modules/.bin/jest --config ./.config/jest.json --coverage --testResultsProcessor ./node_modules/jest-junit && cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
+        "test:ci": "./node_modules/.bin/jest --config ./.config/jest.json --coverage --testResultsProcessor ./node_modules/jest-junit && cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
+        "gen-dock": "ts-node docs-gen/generator.ts > API.md"
     },
     "engines": {
         "node": ">=4.3"
@@ -37,15 +38,19 @@
     },
     "devDependencies": {
         "@types/chai": "^3.5.2",
+        "@types/doctrine": "0.0.3",
         "@types/jest": "^19.2.4",
         "@types/node": "^8.0.28",
         "@types/sinon": "^2.2.1",
         "chai": "^1.10.0",
         "coveralls": "^2.13.1",
+        "doctrine": "^2.0.0",
+        "handlebars": "^4.0.10",
         "jest": "^20.0.0",
         "jest-junit": "^1.5.1",
         "sinon": "^2.2.0",
         "ts-jest": "^20.0.0",
+        "ts-simple-ast": "^0.72.2",
         "tslint": "^5.2.0",
         "typescript": "^2.3.2"
     },

@@ -1,0 +1,86 @@
+# Table of contents
+
+* Predicates
+{{#each predicatesNames}}
+    * [{{{this}}}](#{{{toLowerCase this}}})
+{{/each}}
+
+* Helpers
+{{#each helpers}}
+    * [{{{name}}}](#{{{toLowerCase name}}})
+{{/each}}
+
+* Common types
+    * [Predicate](#predicate)
+    * [TypeGuardPredicate](#typeguardpredicate)
+
+
+
+
+{{#each predicates}}
+### {{{name}}}
+{{#each aliases}}
+### {{this}}
+{{/each}}
+
+{{{description}}}
+{{#each examples ~}}
+```typescript
+{{#if caption~}}// {{{caption}}}
+{{~/if~}}{{{body}}}
+```
+{{/each}}
+
+Signature
+```typescript
+{{#each declarations}}
+{{{this}}}
+{{/each}}
+```
+
+{{#if throws.length}}
+Throws:
+{{#each throws}}
+* {{{type}}} - {{{description}}}
+{{/each}}
+{{/if}}
+
+{{/each}}
+
+{{#each helpers}}
+### {{{name}}}
+
+{{{description}}}
+{{#each examples ~}}
+```typescript
+{{#if caption~}}// {{{caption}}}
+{{~/if}}{{{body}}}
+```
+{{/each}}
+
+Signature
+```typescript
+{{#each declarations}}
+    {{{this}}}
+{{/each}}
+```
+
+{{#if throws.length}}
+Throws:
+{{#each throws}}
+    * {{{type}}} - {{{description}}}
+{{/each}}
+{{/if}}
+{{/each}}
+
+### Predicate
+A function that returns true or false based on input arguments
+```typescript
+type Predicate<T = any> = (value: T, ...extraArgs: any[]) => boolean;
+```
+
+### TypeGuardPredicate
+A function that returns true or false based on input arguments but additionally is a TypeGuard for Typescript compiler
+```typescript
+type TypeGuardPredicate<T = any> = (value: any, ...extraArgs: any[]) => value is T;
+```

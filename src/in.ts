@@ -7,8 +7,6 @@ import {setDescription} from './utils/description';
  * Checks whether a value exists in collection
  * Values are compared using === operator
  *
- * **Type guard:** _none_
- *
  * @example
  * const isImage = is.in(['image/gif', 'image/jpeg']);
  * // same as
@@ -20,11 +18,8 @@ import {setDescription} from './utils/description';
  *
  * isImage('text/html'); // false
  *
- * @param {Array} collection of allowed values
- * @param {*} [value]
  * @throws {TypeError} if collection is not an array
  * @throws {Error} if collection is empty
- * @returns {(boolean|Predicate)} bool if at least two arguments provided, otherwise a predicate
  */
 function isIn(collection: any[]): Predicate;
 function isIn(collection: any[], value: any): boolean;

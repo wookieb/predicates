@@ -5,8 +5,6 @@ import {setDescription} from './utils/description';
 /**
  * Checks whether a value is greater than expected number
  *
- * **Type guard:** value is T = number
- *
  * @example
  * const isGreaterThan0 = is.greaterThan(0);
  *
@@ -14,10 +12,6 @@ import {setDescription} from './utils/description';
  * // same as
  * is.greaterThan(0, 10); // true
  * isGreaterThan0(-1); // false
- *
- * @param {*} expected
- * @param {*} [value]
- * @returns {(boolean|Predicate)} bool if at least two arguments provided, otherwise a predicate
  */
 function isGreaterThan<T = number>(expected: T): TypeGuardPredicate<T>;
 function isGreaterThan<T = number>(expected: T, value: any): value is T;

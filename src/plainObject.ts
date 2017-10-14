@@ -5,8 +5,6 @@ import {setDescription} from './utils/description';
  * Checks whether a value is a plain object.
  * Plain object is an object of which prototype is Object.prototype or null
  *
- * **Type guard:** value is Object
- *
  * @example
  * is.plainObject({property: 'value'}); // true
  * is.plainObject(new Object); // true
@@ -15,9 +13,6 @@ import {setDescription} from './utils/description';
  *
  * const Foo = function() {};
  * is.plainObject(new Foo); // false
- *
- * @param {*} value
- * @returns {boolean}
  */
 function isPlainObject(value: any): value is Object {
     if (!isObject(value)) {

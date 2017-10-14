@@ -73,3 +73,4 @@ export {default as undefinedOr} from './undefinedOr';
 export {default as weakMap} from './weakMap';
 export {default as weakSet} from './weakSet';
 export {setDescription, getDescription} from './utils/description';
+export {assert} from './assert';

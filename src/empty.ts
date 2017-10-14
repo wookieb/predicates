@@ -11,8 +11,6 @@ import {setDescription} from './utils/description';
  * * is an empty string
  * * is undefined
  *
- * **Type guard:** _none_
- *
  * @example
  * is.empty(''); // true
  * is.empty([]); // true
@@ -20,9 +18,6 @@ import {setDescription} from './utils/description';
  * is.empty(undefined); // true
  * is.empty([1]); // false
  * is.empty('test'); // false
- *
- * @param {*} value
- * @returns {boolean}
  */
 function isEmpty(value: any): boolean {
     if (isArrayLike(value)) {

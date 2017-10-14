@@ -7,8 +7,6 @@ import {setDescription} from './utils/description';
 /**
  * Checks whether an object has own property
  *
- * **Type guard:** _none_
- *
  * @example
  * const isCustomized = is.hasOwnProperty('delay');
  *
@@ -25,10 +23,7 @@ import {setDescription} from './utils/description';
  *
  * isCustomized(timer2); // false
  *
- * @param {string|Symbol} property
- * @param {Object} [object]
  * @throws {TypeError} if property is not a string
- * @returns {(boolean|Predicate)} bool if at least two arguments provided, otherwise a predicate
  */
 function hasOwnProperty(property: string | Symbol): Predicate ;
 function hasOwnProperty(property: string | Symbol, object: object): boolean;

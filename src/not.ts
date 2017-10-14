@@ -6,17 +6,12 @@ import {getDescription, setDescription} from './utils/description';
 /**
  * Negates result of a predicate
  *
- * **Type guard:** _none_
- *
  * @example
  * const isNotEmpty = is.not(is.empty);
  * isNotEmpty([1, 2]);// true
  * // same as
  * is.not(is.empty, [1, 2]); // true
  * isNotEmpty(''); // false
- *
- * @param {Predicate} predicate
- * @returns {Predicate}
  */
 export default function isNot(predicate: Predicate): Predicate {
     if (!isFunction(predicate)) {
