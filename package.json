@@ -16,7 +16,7 @@
         "lint": "./node_modules/.bin/tslint --config ./.config/tslint.json src/*.ts",
         "test": "./node_modules/.bin/jest --config ./.config/jest.json",
         "test:ci": "./node_modules/.bin/jest --config ./.config/jest.json --coverage --testResultsProcessor ./node_modules/jest-junit && cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
-        "gen-dock": "ts-node docs-gen/generator.ts > API.md"
+        "gen-docs": "ts-node docs-gen/generator.ts > API.md"
     },
     "engines": {
         "node": ">=4.3"

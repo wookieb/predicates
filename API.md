@@ -471,7 +471,7 @@ is.falsy(value: any) => boolean
 
 Checks whether a value is a number and it's finite
 ```typescript
-is.finite(1); // false
+is.finite(1); // true
 is.finite(Infinity); // false
 ```
 
@@ -587,7 +587,7 @@ is.hasOwnProperty(property: string | Symbol, object?: object) => boolean | Predi
 ```
 
 Throws:
-* TypeError - if property is not a string
+* TypeError - if property is not a string or a symbol
 
 ### hasProperty
 ### has
@@ -1014,6 +1014,7 @@ is.property(propertyName: string | Symbol, predicate: Predicate | Function, obje
 Throws:
 * TypeError - if predicate is not a function
 * Error - if too few arguments provided
+* TypeError - is property name is not a string or a symbol
 
 ### regexp
 ### regExp
