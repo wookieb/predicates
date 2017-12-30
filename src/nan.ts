@@ -8,7 +8,7 @@ import {setDescription} from './utils/description';
  * is.NaN(NaN); // true
  * is.NaN(10); // false
  */
-function isNotANumber(value: any): value is number {
+function isNotANumber(value: any): boolean {
     return isNumber(value) && isNaN(value);
 }
 

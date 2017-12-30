@@ -20,9 +20,9 @@ import {setDescription} from './utils/description';
  * @param {Number} [value]
  * @returns {(boolean|Predicate)} bool if at least two arguments provided, otherwise a predicate
  */
-function isLessThanOrEqual<T = number>(expected: T): TypeGuardPredicate<T>;
-function isLessThanOrEqual<T = number>(expected: T, value: any): value is T;
-function isLessThanOrEqual<T = number>(expected: T, value?: any): boolean | TypeGuardPredicate<T> {
+function isLessThanOrEqual<T = number>(expected: T): Predicate<T>;
+function isLessThanOrEqual<T = number>(expected: T, value: any): boolean;
+function isLessThanOrEqual<T = number>(expected: T, value?: any): boolean | Predicate<T> {
     return handleCurry.call(this, arguments,
         setDescription(
             (value: T) => value <= expected,

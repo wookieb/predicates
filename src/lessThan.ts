@@ -1,5 +1,5 @@
 import handleCurry from './utils/handleCurry';
-import {Predicate, TypeGuardPredicate} from './types';
+import {Predicate} from './types';
 import {setDescription} from './utils/description';
 
 /**
@@ -13,9 +13,9 @@ import {setDescription} from './utils/description';
  * is.lessThan(18, 10); // true
  * isChildAge(18); // false
  */
-function isLessThan<T = number>(expected: T): TypeGuardPredicate<T>;
-function isLessThan<T = number>(expected: T, value: any): value is T;
-function isLessThan<T = number>(expected: T, value?: any): boolean | TypeGuardPredicate<T> {
+function isLessThan<T = number>(expected: T): Predicate<T>;
+function isLessThan<T = number>(expected: T, value: any): boolean;
+function isLessThan<T = number>(expected: T, value?: any): boolean | Predicate<T> {
     return handleCurry.call(this, arguments,
         setDescription(
             (value: T) => value < expected,

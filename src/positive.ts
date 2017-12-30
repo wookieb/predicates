@@ -8,7 +8,7 @@ import {setDescription} from './utils/description';
  * is.positive(10); // true
  * is.positive(-1); // false
  */
-function isPositiveNumber(value: number): value is number {
+function isPositiveNumber(value: number): boolean {
     return isNumber(value) && value > 0;
 }
 

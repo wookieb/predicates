@@ -314,9 +314,9 @@ is.divisible(7, 10); // false
 
 Signature
 ```typescript
-is.divisible(divisor: number) => TypeGuardPredicate<number>
+is.divisible(divisor: number) => Predicate<number>
 is.divisible(divisor: number, value: number) => boolean
-is.divisible(divisor: number, value?: number) => boolean | TypeGuardPredicate<number>
+is.divisible(divisor: number, value?: number) => boolean | Predicate<number>
 ```
 
 
@@ -340,9 +340,9 @@ isEven(3); // true
 
 Signature
 ```typescript
-is.divisibleWithRemainder(divisor: number, remainder: number) => TypeGuardPredicate<number>
+is.divisibleWithRemainder(divisor: number, remainder: number) => Predicate<number>
 is.divisibleWithRemainder(divisor: number, remainder: number, value: number) => boolean
-is.divisibleWithRemainder(divisor: number, remainder: number, value?: number) => boolean | TypeGuardPredicate<number>
+is.divisibleWithRemainder(divisor: number, remainder: number, value?: number) => boolean | Predicate<number>
 ```
 
 Throws:
@@ -405,9 +405,9 @@ isYelling('quiet please'); // false
 
 Signature
 ```typescript
-is.endsWith(suffix: string) => TypeGuardPredicate<string>
-is.endsWith(suffix: string, value: any) => boolean
-is.endsWith(suffix: string, value?: any) => boolean | TypeGuardPredicate<string>
+is.endsWith(suffix: string) => Predicate<string>
+is.endsWith(suffix: string, value: string) => boolean
+is.endsWith(suffix: string, value?: string) => boolean | Predicate<string>
 ```
 
 Throws:
@@ -528,9 +528,9 @@ isGreaterThan0(-1); // false
 
 Signature
 ```typescript
-is.greaterThan<T = number>(expected: T) => TypeGuardPredicate<T>
+is.greaterThan<T = number>(expected: T) => Predicate<T>
 is.greaterThan<T = number>(expected: T, value: any) => boolean
-is.greaterThan<T = number>(expected: T, value?: any) => boolean | TypeGuardPredicate<T>
+is.greaterThan<T = number>(expected: T, value?: any) => boolean | Predicate<T>
 ```
 
 
@@ -552,9 +552,9 @@ isAdultAge(16); // false
 
 Signature
 ```typescript
-is.greaterThanOrEqual<T = number>(expected: T) => TypeGuardPredicate<T>
+is.greaterThanOrEqual<T = number>(expected: T) => Predicate<T>
 is.greaterThanOrEqual<T = number>(expected: T, value: any) => boolean
-is.greaterThanOrEqual<T = number>(expected: T, value?: any) => boolean | TypeGuardPredicate<T>
+is.greaterThanOrEqual<T = number>(expected: T, value?: any) => boolean | Predicate<T>
 ```
 
 
@@ -678,7 +678,7 @@ is.integer(10.4); // false
 
 Signature
 ```typescript
-is.integer(value: any) => value is number
+is.integer(value: any) => boolean
 ```
 
 
@@ -698,9 +698,9 @@ isChildAge(18); // false
 
 Signature
 ```typescript
-is.lessThan<T = number>(expected: T) => TypeGuardPredicate<T>
+is.lessThan<T = number>(expected: T) => Predicate<T>
 is.lessThan<T = number>(expected: T, value: any) => boolean
-is.lessThan<T = number>(expected: T, value?: any) => boolean | TypeGuardPredicate<T>
+is.lessThan<T = number>(expected: T, value?: any) => boolean | Predicate<T>
 ```
 
 
@@ -722,9 +722,9 @@ isChildAge(18); // false
 
 Signature
 ```typescript
-is.lessThanOrEqual<T = number>(expected: T) => TypeGuardPredicate<T>
+is.lessThanOrEqual<T = number>(expected: T) => Predicate<T>
 is.lessThanOrEqual<T = number>(expected: T, value: any) => boolean
-is.lessThanOrEqual<T = number>(expected: T, value?: any) => boolean | TypeGuardPredicate<T>
+is.lessThanOrEqual<T = number>(expected: T, value?: any) => boolean | Predicate<T>
 ```
 
 
@@ -744,9 +744,9 @@ isWindows9x('Windows 10'); // false
 
 Signature
 ```typescript
-is.matches(regexp: RegExp) => TypeGuardPredicate<string>
+is.matches(regexp: RegExp) => Predicate<string>
 is.matches(regexp: RegExp, value: string) => boolean
-is.matches(regexp: RegExp, value?: string) => boolean | TypeGuardPredicate<string>
+is.matches(regexp: RegExp, value?: string) => boolean | Predicate<string>
 ```
 
 Throws:
@@ -1041,9 +1041,9 @@ isProfessor('Dr. Here U\' Are'); // false
 
 Signature
 ```typescript
-is.startsWith(prefix: string) => TypeGuardPredicate<string>
+is.startsWith(prefix: string) => Predicate<string>
 is.startsWith(prefix: string, value: any) => boolean
-is.startsWith(prefix: string, value?: any) => boolean | TypeGuardPredicate<string>
+is.startsWith(prefix: string, value?: any) => boolean | Predicate<string>
 ```
 
 Throws:
@@ -1076,9 +1076,9 @@ isMyMom({}); // false
 
 Signature
 ```typescript
-is.strictEqual<T = any>(expected: T) => TypeGuardPredicate<T>
+is.strictEqual<T = any>(expected: T) => Predicate<T>
 is.strictEqual<T = any>(expected: T, value: any) => boolean
-is.strictEqual<T = any>(expected: T, value?: any) => boolean | TypeGuardPredicate<T>
+is.strictEqual<T = any>(expected: T, value?: any) => boolean | Predicate<T>
 ```
 
 
@@ -1264,9 +1264,9 @@ is.undefinedOr(String)('test'); // true
 
 Signature
 ```typescript
-is.undefinedOr<T = any>(predicate: Predicate | Function) => TypeGuardPredicate<T>
+is.undefinedOr<T = any>(predicate: Predicate | Function) => Predicate<T>
 is.undefinedOr<T = any>(predicate: Predicate | Function, value: any) => boolean
-is.undefinedOr<T = any>(predicate: Predicate | Function, value?: any) => boolean | TypeGuardPredicate<T>
+is.undefinedOr<T = any>(predicate: Predicate | Function, value?: any) => boolean | Predicate<T>
 ```
 
 Throws:

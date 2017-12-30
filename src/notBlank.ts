@@ -12,7 +12,7 @@ const CONTAINS_AT_LEAST_ONE_NON_WHITESPACE = /\S/;
  * is.notBlank('test'); // true
  * is.notBlank({toString: function() { return 'test'; }}); // false - since values are not converted to strings
  */
-function notBlank(value: any): value is string {
+function notBlank(value: any): boolean {
     return isString(value) && CONTAINS_AT_LEAST_ONE_NON_WHITESPACE.test(value);
 }
 

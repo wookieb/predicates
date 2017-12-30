@@ -19,9 +19,9 @@ import isString from './string';
  *
  * @throws {TypeError} if regexp is not a regexp
  */
-function matches(regexp: RegExp): TypeGuardPredicate<string>;
-function matches(regexp: RegExp, value: string): value is string;
-function matches(regexp: RegExp, value?: string): boolean | TypeGuardPredicate<string> {
+function matches(regexp: RegExp): Predicate<string>;
+function matches(regexp: RegExp, value: string): boolean;
+function matches(regexp: RegExp, value?: string): boolean | Predicate<string> {
     if (!isRegexp(regexp)) {
         throw new TypeError('Regexp must be a RegExp object');
     }

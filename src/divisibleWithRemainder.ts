@@ -1,8 +1,8 @@
 import handleCurry from './utils/handleCurry';
 import isFinitePredicate from './finite';
 import isNumber from './number';
-import {TypeGuardPredicate} from './types';
 import {setDescription} from './utils/description';
+import {Predicate} from './types';
 
 /**
  * Checks whether a value is a number and it's divisible by divisor with given remainder
@@ -25,9 +25,9 @@ import {setDescription} from './utils/description';
  * @throws {TypeError} if the divisor is not a finite number
  * @throws {TypeError} if the remainder is not a finite number
  */
-function divisibleWithRemainder(divisor: number, remainder: number): TypeGuardPredicate<number>;
-function divisibleWithRemainder(divisor: number, remainder: number, value: number): value is number;
-function divisibleWithRemainder(divisor: number, remainder: number, value?: number): boolean | TypeGuardPredicate<number> {
+function divisibleWithRemainder(divisor: number, remainder: number): Predicate<number>;
+function divisibleWithRemainder(divisor: number, remainder: number, value: number): boolean;
+function divisibleWithRemainder(divisor: number, remainder: number, value?: number): boolean | Predicate<number> {
     if (arguments.length < 2) {
         throw new Error('Missing remainder');
     }

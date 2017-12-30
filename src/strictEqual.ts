@@ -1,4 +1,4 @@
-import {TypeGuardPredicate} from './types';
+import {Predicate} from './types';
 import handleCurry from './utils/handleCurry';
 import {setDescription} from './utils/description';
 
@@ -15,9 +15,9 @@ import {setDescription} from './utils/description';
  * is.strictEqual(mom, mom); // true
  * isMyMom({}); // false
  */
-function isStrictEqual<T = any>(expected: T): TypeGuardPredicate<T>;
-function isStrictEqual<T = any>(expected: T, value: any): value is T;
-function isStrictEqual<T = any>(expected: T, value?: any): boolean | TypeGuardPredicate<T> {
+function isStrictEqual<T = any>(expected: T): Predicate<T>;
+function isStrictEqual<T = any>(expected: T, value: any): boolean;
+function isStrictEqual<T = any>(expected: T, value?: any): boolean | Predicate<T> {
     return handleCurry.call(this, arguments,
         setDescription(
             (value: any) => expected === value,

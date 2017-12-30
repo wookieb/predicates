@@ -1,4 +1,4 @@
-import {Predicate, TypeGuardPredicate} from './types';
+import {Predicate} from './types';
 import isString from './string';
 import handleCurry from './utils/handleCurry';
 import {setDescription} from './utils/description';
@@ -17,9 +17,9 @@ import {setDescription} from './utils/description';
  * @throws {TypeError} if prefix is not a string
  * @throws {Error} if prefix is empty
  */
-function startsWith(prefix: string): TypeGuardPredicate<string>;
-function startsWith(prefix: string, value: any): value is string;
-function startsWith(prefix: string, value?: any): boolean | TypeGuardPredicate<string> {
+function startsWith(prefix: string): Predicate<string>;
+function startsWith(prefix: string, value: any): boolean;
+function startsWith(prefix: string, value?: any): boolean | Predicate<string> {
     if (!isString(prefix)) {
         throw new TypeError('Prefix must be a string');
     }

@@ -14,9 +14,9 @@ import handleCurry from './utils/handleCurry';
  *
  * isAdultAge(16); // false
  */
-function isGreaterThanOrEqual<T = number>(expected: T): TypeGuardPredicate<T>;
-function isGreaterThanOrEqual<T = number>(expected: T, value: any): value is T;
-function isGreaterThanOrEqual<T = number>(expected: T, value?: any): boolean | TypeGuardPredicate<T> {
+function isGreaterThanOrEqual<T = number>(expected: T): Predicate<T>;
+function isGreaterThanOrEqual<T = number>(expected: T, value: any): boolean;
+function isGreaterThanOrEqual<T = number>(expected: T, value?: any): boolean | Predicate<T> {
     return handleCurry.call(this, arguments,
         setDescription(
             (value: any) => value >= expected,

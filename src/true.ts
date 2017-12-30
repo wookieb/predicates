@@ -8,7 +8,7 @@ import {setDescription} from './utils/description';
  * is.true(true); // true
  * is.true('true'); // false
  */
-function isTrue(value: any): value is boolean {
+function isTrue(value: any): boolean {
     return value === true || (isBoolean(value) && value == true);
 }
 

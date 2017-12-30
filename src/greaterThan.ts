@@ -13,9 +13,9 @@ import {setDescription} from './utils/description';
  * is.greaterThan(0, 10); // true
  * isGreaterThan0(-1); // false
  */
-function isGreaterThan<T = number>(expected: T): TypeGuardPredicate<T>;
-function isGreaterThan<T = number>(expected: T, value: any): value is T;
-function isGreaterThan<T = number>(expected: T, value?: any): boolean | TypeGuardPredicate<T> {
+function isGreaterThan<T = number>(expected: T): Predicate<T>;
+function isGreaterThan<T = number>(expected: T, value: any): boolean;
+function isGreaterThan<T = number>(expected: T, value?: any): boolean | Predicate<T> {
     return handleCurry.call(this, arguments,
         setDescription(
             (value: any) => value > expected,

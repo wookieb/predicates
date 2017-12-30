@@ -1,4 +1,4 @@
-import {Predicate, TypeGuardPredicate} from './types';
+import {Predicate} from './types';
 
 import handleCurry from './utils/handleCurry';
 import isUndefined from './undefined';
@@ -28,9 +28,9 @@ import {getPredicateForType} from './typeToPredicate';
  *
  * @throws {TypeError} if provided predicate is not a function
  */
-function isUndefinedOr<T = any>(predicate: Predicate | Function): TypeGuardPredicate<undefined | T>;
-function isUndefinedOr<T = any>(predicate: Predicate | Function, value: any): value is (undefined | T);
-function isUndefinedOr<T = any>(predicate: Predicate | Function, value?: any): boolean | TypeGuardPredicate<undefined | T> {
+function isUndefinedOr<T = any>(predicate: Predicate | Function): Predicate<undefined | T>;
+function isUndefinedOr<T = any>(predicate: Predicate | Function, value: any): boolean;
+function isUndefinedOr<T = any>(predicate: Predicate | Function, value?: any): boolean | Predicate<undefined | T> {
     if (!isFunction(predicate)) {
         throw new TypeError('Predicate must be a function');
     }

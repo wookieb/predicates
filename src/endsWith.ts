@@ -1,7 +1,7 @@
-import {Predicate, TypeGuardPredicate} from './types';
 import isString from './string';
 import handleCurry from './utils/handleCurry';
 import {setDescription} from './utils/description';
+import {Predicate} from './types';
 
 /**
  * Checks whether a string ends with a given suffix
@@ -17,9 +17,9 @@ import {setDescription} from './utils/description';
  * @throws {TypeError} if suffix is not a string
  * @throws {Error} if suffix is empty
  */
-function endsWith(suffix: string): TypeGuardPredicate<string>;
-function endsWith(suffix: string, value: any): value is string;
-function endsWith(suffix: string, value?: any): boolean | TypeGuardPredicate<string> {
+function endsWith(suffix: string): Predicate<string>;
+function endsWith(suffix: string, value: string): boolean;
+function endsWith(suffix: string, value?: string): boolean | Predicate<string> {
     if (!isString(suffix)) {
         throw new TypeError('Suffix must be a string');
     }

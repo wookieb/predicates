@@ -1,4 +1,4 @@
-import {Predicate, TypeGuardPredicate} from './types';
+import {Predicate} from './types';
 import divisibleWithRemainder from './divisibleWithRemainder';
 
 /**
@@ -15,9 +15,9 @@ import divisibleWithRemainder from './divisibleWithRemainder';
  * @throws {TypeError} if divisor is not a finite number
  * @returns {(boolean|Predicate)} returns bool if at least 2 arguments provided, otherwise a predicate
  */
-function divisible(divisor: number): TypeGuardPredicate<number>;
-function divisible(divisor: number, value: number): value is number;
-function divisible(divisor: number, value?: number): boolean | TypeGuardPredicate<number> {
+function divisible(divisor: number): Predicate<number>;
+function divisible(divisor: number, value: number): boolean;
+function divisible(divisor: number, value?: number): boolean | Predicate<number> {
     const args = Array.prototype.slice.call(arguments);
     args.splice(1, 0, 0);
     return divisibleWithRemainder.apply(this, args);

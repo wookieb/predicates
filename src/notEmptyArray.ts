@@ -9,7 +9,7 @@ import {setDescription} from './utils/description';
  * is.notEmptyArray([]); // false
  * is.notEmptyArray('string'); // false
  */
-export default function notEmptyArray<T = any>(value: any): value is Array<T> {
+export default function notEmptyArray<T = any>(value: any): boolean {
     return isArray(value) && value.length > 0;
 }
 
