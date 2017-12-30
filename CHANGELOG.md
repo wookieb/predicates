@@ -1,5 +1,11 @@
 # Changelog
  
+## 2.0.1
+* Fixed #26
+
+## 2.0.0
+* 2.0.0-rc2 became 2.0.0
+ 
 ## 2.0.0-rc2
 * Added type guards
 * Added description for all predicates
