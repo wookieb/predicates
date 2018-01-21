@@ -28,7 +28,7 @@ import {setDescription} from './utils/description';
  * is.primitive(new Boolean(true)); // false
  * is.primitive({}); // false
  */
-function isPrimitive<T = string | number | boolean | null | undefined>(value: T): value is T {
+function isPrimitive(value: any): value is (string | number | boolean | null | undefined) {
     return !isObject(value) && (isString(value) || isNumber(value) || isBoolean(value) || isUndefined(value) || isNull(value));
 }
 
