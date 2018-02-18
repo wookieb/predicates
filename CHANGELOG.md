@@ -1,5 +1,8 @@
 # Changelog
  
+## 2.0.3
+* Fixed compatibility with typescript 2.7
+
 ## 2.0.1
 * Fixed #26
 

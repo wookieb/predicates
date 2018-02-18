@@ -1,6 +1,6 @@
 {
     "name": "predicates",
-    "version": "2.0.2",
+    "version": "2.0.3",
     "description": "Set of various predicates for type checking, assertions, filtering etc",
     "main": "index.js",
     "types": "index.d.ts",
@@ -55,7 +55,7 @@
         "ts-jest": "^20.0.0",
         "ts-simple-ast": "^0.72.2",
         "tslint": "^5.2.0",
-        "typescript": "^2.3.2"
+        "typescript": "^2.7.0"
     },
     "author": "Łukasz Kużyński",
     "license": "MIT"
