@@ -98,7 +98,7 @@ function isStructure(structure: { [name: string]: Predicate | Function }, value?
         setDescription(
             function isStructurePredicate(value: Object) {
                 const match = (key: string) => structure[key].apply(this, [(<any>value)[key]].concat(extraArgs));
-                return isObject(value) && keys.every(match);
+                return isObject(value) && !Array.isArray(value) && keys.every(match);
             },
             'an object with properties: ' + structureDescription
         )
