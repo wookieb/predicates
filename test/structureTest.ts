@@ -3,6 +3,8 @@ import {assert} from 'chai';
 import isString from '../src/string';
 import * as sinon from 'sinon';
 import {getDescription} from "../src/utils/description";
+import isUndefinedOr from '../src/undefinedOr';
+import isUndefined from '../src/undefined';
 
 describe('structure', function () {
     const STRUCTURE = {
@@ -156,5 +158,14 @@ describe('structure', function () {
         assert.isTrue(structure(Function)(exampleObject(noop)));
         assert.isTrue(structure(Date)(exampleObject(new Date())));
         assert.isTrue(structure(Array)(exampleObject([])));
+    });
+
+    it('array is not a valid argument for a structure check', () => {
+        function structure(func: Function) {
+            return isValidStructure({key: func});
+        }
+
+        assert.isFalse(structure(isUndefinedOr(isString))([]));
+        assert.isFalse(structure(isUndefined)([]));
     });
 });
