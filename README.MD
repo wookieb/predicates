@@ -63,8 +63,8 @@ new Person('Tom', '', 33); // Error: Surname must be a string and cannot be empt
 
 ### Generated predicates can be called with more than one argument
 
-Most of type checking, utility libraries force you use predicates with only one argument but _predicates_ doesn.t
-Additionally _predicates_ preserves the context of function call which allows you to create even more powerful logic.
+Most of type checking, utility libraries force you to use predicates with only one argument but _predicates_ doesn't.
+Additionally, _predicates_ preserves the context of function calls which allows you to create even more powerful logic.
 
 
 ```js
@@ -89,7 +89,7 @@ Module.prototype.modifyTags = function(entityId, tags) {
 ```
 
 ### Prevents stupid mistakes (fail fast)
-_Predicates_ checks whether generated predicate is misconfigured and throws an error as fast as possible.
+_Predicates_ checks whether generated a predicate is misconfigured and throws an error as fast as possible.
 
 ```js
 is.startsWith(''); // Error: Prefix cannot be empty
@@ -99,7 +99,7 @@ is.in([]); // Error: Collection cannot be empty
 // always false
 ```
 
-That's why it's a good practice to create predicates at the beginning of a module definition to quickly catch any mistake.
+That's why it's a good practice to create predicates at the beginning of a module definition to quickly catch any mistakes.
 
 ```js
 // some module
